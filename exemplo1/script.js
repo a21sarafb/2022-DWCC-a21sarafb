@@ -69,22 +69,22 @@ console.log(
 	"1. Pide por teclado o día da semana (luns - domingo) e mostra unha mensaxe indicando se é laborable ou non."
 );
 const dia = prompt("Ingrese un día da semana(luns - domingo): ");
-const diaMinusculas = dia.toLowerCase;
+const diaMinusculas = dia.toLowerCase();
 switch (diaMinusculas) {
 	case "luns":
-		console.log(dia + " É laborable");
+		console.log(dia + " é laborable");
 		break;
 	case "martes":
-		console.log(dia + " É laborable");
+		console.log(dia + " é laborable");
 		break;
 	case "mercores":
-		console.log(dia + " É laborable");
+		console.log(dia + " é laborable");
 		break;
 	case "xoves":
-		console.log(dia + " É laborable");
+		console.log(dia + " é laborable");
 		break;
 	case "venres":
-		console.log(dia + " É laborable");
+		console.log(dia + " é laborable");
 		break;
 	case "sabado":
 		console.log(dia + " NON é laborable");
@@ -145,19 +145,33 @@ let aleatorio = random(0, 100);
 function random(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
-let adivina = prompt("Ingrese un número do 0 ao 100: ");
+let adivina = prompt("Ingrese un número do 0 ao 100: " + aleatorio);
 while (aleatorio != adivina) {
 	if (aleatorio > adivina) {
-		let adivina = prompt("O número que ingresou é menor, volva a intentalo");
+		console.log(
+			"O número que introduciches é menor ao que debes acertar, volve a intentalo"
+		);
 	} else if (aleatorio < adivina) {
-		let adivina = prompt("O número que ingresou é maior, volva a intentalo");
+		console.log(
+			"O número que introduciches é maior ao que debes acertar, volve a intentalo"
+		);
+	} else {
+		console.log("ACERTOU!!");
 	}
+	adivina = prompt("Ingrese outro número do 0 ao 100: ");
 }
 /*6. Pide un número por teclado ao usuario. Calcula o factorial dese número e mostra a
 resultado por consola. (5! = 5*4*3*2*1).*/
 console.log(
 	"6. Pide un número por teclado ao usuario. Calcula o factorial dese número e mostra a resultado por consola. (5! = 5*4*3*2*1)."
 );
+let num = prompt("Ingrese un número para que calcule su factorial");
+let factorial = 1;
+for (i = 1; i <= num; i++) {
+	factorial = i * factorial;
+}
+console.log("O factorial de " + num + " é: " + factorial);
+
 /*7. Pide un número por teclado ao usuario. Despois crea unha variable de tipo array e
 asígnalle a lista de números enteiros dende o 0 ao número tecleado polo usuario.
 Ademais, fai a suma de todos os valores contidos no array e mostra por consola o
@@ -167,6 +181,27 @@ con contador, for…in e for…of.*/
 console.log(
 	"7. Pide un número por teclado ao usuario. Despois crea unha variable de tipo array e asígnalle a lista de números enteiros dende o 0 ao número tecleado polo usuario. Ademais, fai a suma de todos os valores contidos no array e mostra por consola o resultado da suma. Utiliza un bucle for para recorrer o array. Proba a facelo das 3 formas posibles: for con contador, for…in e for…of."
 );
+let arrayUsuario = prompt("Ingrese un número ");
+const arr = [];
+let suma = 0;
+for (x = 0; x <= arrayUsuario; x++) {
+	arr.push(x);
+	suma = suma + x;
+}
+console.log("A suma de todos os elementos do array creado é: " + suma);
+console.log("Array recorrido con for of : ");
+for (let valor of arr) {
+	console.log(valor);
+}
+console.log("Array recorrido con for in: ");
+for (let y in arr) {
+	console.log(y);
+}
+console.log("Array recorrido con for con contador: ");
+for (z = 0; z < arr.length; z++) {
+	console.log(z);
+}
+
 /*8. Cálculo do IMC (índice de masa corporal):
 a. Almacena en variables o peso e altura de dúas persoas.
 b. Calcula o IMC das dúas persoas.
@@ -175,3 +210,28 @@ primeira persoa é maior que o da segunda persoa (22.5)!'*/
 console.log(
 	"8. Cálculo do IMC (índice de masa corporal): a. Almacena en variables o peso e altura de dúas persoas. b. Calcula o IMC das dúas persoas. c. Indica que persoa ten o maior IMC cunha cadea similar a: 'O IMC (25.3) da primeira persoa é maior que o da segunda persoa (22.5)!'"
 );
+const peso1 = prompt("Ingrese o peso da 1º persoa (en kilogramos)");
+const altura1 = prompt("Ingrese a altura da 1º persoa (en metros)");
+const peso2 = prompt("Ingrese o peso da 2º persoa (en kilogramos)");
+const altura2 = prompt("Ingrese a altura da 2º persoa (en metros)");
+const imc1 = peso1 / (altura1 * altura1);
+const imc2 = peso2 / (altura2 * altura2);
+if (imc1 > imc2) {
+	console.log(
+		"O IMC (" +
+			Math.round(imc1) +
+			") da primeira persoa é maior que o da segunda persoa (" +
+			Math.round(imc2) +
+			")!"
+	);
+} else if (imc2 > imc1) {
+	console.log(
+		"O IMC (" +
+			Math.round(imc2) +
+			") da segunda persoa é maior que o da primeira persoa (" +
+			Math.round(imc1) +
+			")!"
+	);
+} else {
+	console.log("Os dous IMC son iguais (" + Math.round(imc1) + ")");
+}
