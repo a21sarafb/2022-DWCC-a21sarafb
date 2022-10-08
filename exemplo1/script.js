@@ -304,10 +304,24 @@ console.log(checkDni(dni));*/
 /*console.log(
 	"6. Crea unha función que reciba un array bidimensional de lonxitude variable que se corresponda cun escenario do xogo de Buscaminas. Este array almacenará un -1 nas posicións onde hai minas e un 0 en caso contrario. A función debe devolver un array bidimensional onde cada posición que non teña mina, debe ter a información do número de minas adxacentes (diagonal, horizontal e vertical). Exemplo: arrayEntrada = [[0, 0, -1, 0], [0, -1, -1, 0]]; arraySaida = [[1, 3, -1, 2], [1, -1, -1, 2]];"
 );
+const buscaMinas = (arrayEntrada) => {
+	const arraySaida = [[]];
+	for (let i = 0; i < arrayEntrada.length; i++) {
+		for (let j = 0; j < arrayEntrada[i].length; j++) {
+			if (arrayEntrada[i][j] == 0) {
+			} else if (arrayEntrada[i][j] == -1) {
+			}
+		}
+	}
+	return arraySaida;
+};
+const arrayEntrada = [
+	[0, 0, -1, 0],
+	[0, -1, -1, 0],
+];
+console.log(buscaMinas(arrayEntrada));*/
 
-
-*/
-console.log(
+/*console.log(
 	"7. Crea unha función JavaScript que comprobe se é poxible axendar unha reunión dentro do horario laboral."
 );
 const inicioXornada = "07:30";
@@ -375,7 +389,7 @@ console.assert(
 console.assert(
 	axendarReunion("17:30", 30) == false,
 	'Fallo comprobando axendarReunión("17:30", 30) == false'
-);
+);*/
 
 /*console.log(
 	"8. Crea unha función chamada buscarPatron(texto, patron) que reciba como parámetros un texto e un patrón. A función debe devolver como resultado o número de veces que aparece o patrón no texto. Hai que implementar a función de forma manual e non utilizar as funcións proporcionadas pola linguaxe JavaScript. Non se deben distinguir maiúsculas de minúsculas. Un carácter pode formar parte de máis dun patrón encontrado. Exemplo: buscarPatron(“000111101000ABCHO”, “00”) debe devolver 4."
@@ -389,9 +403,147 @@ buscarPatron(“000111101000ABCHO”, “00”);
 	"9. Crea unha función que reciba como parámetro unha cantidade enteira e faga o desglose do número de billetes e moedas necesarios para obtela. Debe usarse o número mínimo de billetes e moedas."
 );
 const cambio = (dinero) => {
-}
-console.log(cambio(56));
-console.log(cambio(25));
-console.log(cambio(37));
-console.log(cambio(138));
-*/
+	const moeda1 = 1;
+	const moeda2 = 2;
+	const billete5 = 5;
+	const billete10 = 10;
+	const billete20 = 20;
+	const billete50 = 50;
+	const billete100 = 100;
+	const billete200 = 200;
+	const billete500 = 500;
+	let cambio = "";
+	let contador = "";
+	if (dinero / billete500 >= 1) {
+		contador = "0";
+		while (dinero / billete500 >= 1) {
+			dinero -= billete500;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 500 ";
+		} else {
+			cambio = cambio + contador + " billete de 500 ";
+		}
+	}
+	if (dinero / billete200 >= 1) {
+		contador = "0";
+		while (dinero / billete200 >= 1) {
+			dinero -= billete200;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 200 ";
+		} else {
+			cambio = cambio + contador + " billete de 200 ";
+		}
+	}
+	if (dinero / billete100 >= 1) {
+		contador = "0";
+		while (dinero / billete100 >= 1) {
+			dinero -= billete100;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 100 ";
+		} else {
+			cambio = cambio + contador + " billete de 100 ";
+		}
+	}
+	if (dinero / billete50 >= 1) {
+		contador = "0";
+		while (dinero / billete50 >= 1) {
+			dinero -= billete50;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 50 ";
+		} else {
+			cambio = cambio + contador + " billete de 50 ";
+		}
+	}
+	if (dinero / billete20 >= 1) {
+		contador = "0";
+		while (dinero / billete20 >= 1) {
+			dinero -= billete20;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 20 ";
+		} else {
+			cambio = cambio + contador + " billete de 20 ";
+		}
+	}
+	if (dinero / billete10 >= 1) {
+		contador = "0";
+		while (dinero / billete10 >= 1) {
+			dinero -= billete10;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 10 ";
+		} else {
+			cambio = cambio + contador + " billete de 10 ";
+		}
+	}
+	if (dinero / billete5 >= 1) {
+		contador = "0";
+		while (dinero / billete5 >= 1) {
+			dinero -= billete5;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " billetes de 5 ";
+		} else {
+			cambio = cambio + contador + " billete de 5 ";
+		}
+	}
+	if (dinero / moeda2 >= 1) {
+		contador = "0";
+		while (dinero / moeda2 >= 1) {
+			dinero -= moeda2;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " moedas de 2 ";
+		} else {
+			cambio = cambio + contador + " moeda de 2 ";
+		}
+	}
+	if (dinero / moeda1 >= 1) {
+		contador = "0";
+		while (dinero / moeda1 >= 1) {
+			dinero -= moeda1;
+			parseInt(contador);
+			contador++;
+			String(contador);
+		}
+		if (parseInt(contador) > 1) {
+			cambio = cambio + contador + " moedas de 1 ";
+		} else {
+			cambio = cambio + contador + " moeda de 1 ";
+		}
+	}
+	return cambio;
+};
+console.log("56 = " + cambio(56));
+console.log("25 = " + cambio(25));
+console.log("37 = " + cambio(37));
+console.log("138 = " + cambio(138));
+console.log("1574 = " + cambio(1574));*/
