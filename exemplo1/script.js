@@ -301,15 +301,48 @@ const checkDni = (dni) => {
 };
 console.log(checkDni(dni));*/
 
-/*console.log(
-	"6. Crea unha función que reciba un array bidimensional de lonxitude variable que se corresponda cun escenario do xogo de Buscaminas. Este array almacenará un -1 nas posicións onde hai minas e un 0 en caso contrario. A función debe devolver un array bidimensional onde cada posición que non teña mina, debe ter a información do número de minas adxacentes (diagonal, horizontal e vertical). Exemplo: arrayEntrada = [[0, 0, -1, 0], [0, -1, -1, 0]]; arraySaida = [[1, 3, -1, 2], [1, -1, -1, 2]];"
+console.log(
+	"6. Crea unha función que reciba un array bidimensional de lonxitude variable que se corresponda cun escenario do xogo de Buscaminas. Este array almacenará un -1 nas posicións onde hai minas e un 0 en caso contrario. A función debe devolver un array bidimensional onde cada posición que non teña mina, debe ter a información do número de minas adxacentes (diagonal, horizontal e vertical). Exemplo: arrayEntrada = [[0, 0, -1, 0], [0, -1, -1, 0]]; arraySaida = [[1, 3, -1, 2], [1, -1, -1, 2]]; "
 );
 const buscaMinas = (arrayEntrada) => {
 	const arraySaida = [[]];
 	for (let i = 0; i < arrayEntrada.length; i++) {
 		for (let j = 0; j < arrayEntrada[i].length; j++) {
+			let contador = 0;
 			if (arrayEntrada[i][j] == 0) {
+				if (i - 1 > 0) {
+					if (arrayEntrada[i - 1][j] == -1) {
+						contador++;
+					}
+				}
+				if (j - 1 > 0) {
+					if (arrayEntrada[i][j - 1] == -1) {
+						contador++;
+					}
+				}
+				if (i - 1 > 0 && j - 1 > 0) {
+					if (arrayEntrada[i - 1][j - 1] == -1) {
+						contador++;
+					}
+				}
+				if (i + 1 <= arrayEntrada[i].length) {
+					if (arrayEntrada[i + 1][j] == -1) {
+						contador++;
+					}
+				}
+				if (j + 1 <= arrayEntrada.length) {
+					if (arrayEntrada[i][j + 1] == -1) {
+						contador++;
+					}
+				}
+				if (i + 1 <= arrayEntrada.length && j + 1 <= arrayEntrada.length) {
+					if (arrayEntrada[i + 1][j + 1] == -1) {
+						contador++;
+					}
+				}
+				arraySaida.push(contador);
 			} else if (arrayEntrada[i][j] == -1) {
+				arraySaida.push(-1);
 			}
 		}
 	}
@@ -319,7 +352,7 @@ const arrayEntrada = [
 	[0, 0, -1, 0],
 	[0, -1, -1, 0],
 ];
-console.log(buscaMinas(arrayEntrada));*/
+console.log(buscaMinas(arrayEntrada));
 
 /*console.log(
 	"7. Crea unha función JavaScript que comprobe se é poxible axendar unha reunión dentro do horario laboral."
@@ -335,29 +368,44 @@ const minsFinalXornada = parseInt(finalXornadaSeparada[1]);
 let dentroHorario = true;
 const axendarReunion = (horaInicioReunion, duracionEnMinutos) => {
 	const limpio = horaInicioReunion.split(":");
-	const hora = parseInt(limpio[0]);
-	const mins = parseInt(limpio[1]);
-	let minsAcabaReunion = duracionEnMinutos + mins;
-	let minsDespuesReunion = 0;
-	let horaDespuesReunion = 0;
+	const hora_InicioReunion = parseInt(limpio[0]);
+	const mins_InicioReunion = parseInt(limpio[1]);
+	let minsAcabaReunion = duracionEnMinutos + mins_InicioReunion;
+	let minsDespuesReunion = minsAcabaReunion;
+	let horaDespuesReunion = hora_InicioReunion;
 	while (minsAcabaReunion >= 60) {
-		minsDespuesReunion = minsAcabaReunion - 60;
-		horaDespuesReunion = hora + 1;
+		minsDespuesReunion -= 60;
+		horaDespuesReunion += 1;
 		minsAcabaReunion -= 60;
 	}
-	if (hora < horaInicioXornada) {
+	console.log("horaInicioXornada " + horaInicioXornada);
+	console.log("horaInicioXornada " + minsInicioXornada);
+	console.log("horaFinalXornada " + horaFinalXornada);
+	console.log("minsFinalXornada " + minsFinalXornada);
+	console.log("hora_InicioReunion " + hora_InicioReunion);
+	console.log("mins_InicioReunion " + mins_InicioReunion);
+	console.log("horaDespuesReunion " + horaDespuesReunion);
+	console.log("minsDespuesReunion " + minsDespuesReunion);
+	console.log("ACABA");
+	if (hora_InicioReunion < horaInicioXornada) {
 		dentroHorario = false;
-	} else if (hora == horaInicioXornada && mins < minsInicioXornada) {
+	}
+	if (
+		hora_InicioReunion == horaInicioXornada &&
+		mins_InicioReunion < minsInicioXornada
+	) {
 		dentroHorario = false;
-	} else if (
-		hora > horaInicioXornada &&
-		mins > minsInicioXornada &&
+	}
+	if (
+		hora_InicioReunion > horaInicioXornada &&
+		mins_InicioReunion > minsInicioXornada &&
 		horaDespuesReunion > horaFinalXornada
 	) {
 		dentroHorario = false;
-	} else if (
-		hora >= horaInicioXornada &&
-		mins >= minsInicioXornada &&
+	}
+	if (
+		hora_InicioReunion > horaInicioXornada &&
+		mins_InicioReunion > minsInicioXornada &&
 		horaDespuesReunion <= horaFinalXornada &&
 		minsDespuesReunion > minsFinalXornada
 	) {
@@ -379,7 +427,7 @@ console.assert(
 	'Fallo comprobando axendarReunión("7:30", 30) == false'
 );
 console.assert(
-	axendarReunion("11:30", 60) == true,
+	axendarReunion("17:45", 60) == true,
 	'Fallo comprobando axendarReunión("17:45", 60) == false'
 );
 console.assert(
