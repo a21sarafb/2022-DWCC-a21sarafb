@@ -301,48 +301,64 @@ const checkDni = (dni) => {
 };
 console.log(checkDni(dni));*/
 
-console.log(
+/*console.log(
 	"6. Crea unha función que reciba un array bidimensional de lonxitude variable que se corresponda cun escenario do xogo de Buscaminas. Este array almacenará un -1 nas posicións onde hai minas e un 0 en caso contrario. A función debe devolver un array bidimensional onde cada posición que non teña mina, debe ter a información do número de minas adxacentes (diagonal, horizontal e vertical). Exemplo: arrayEntrada = [[0, 0, -1, 0], [0, -1, -1, 0]]; arraySaida = [[1, 3, -1, 2], [1, -1, -1, 2]]; "
 );
+
 const buscaMinas = (arrayEntrada) => {
-	const arraySaida = [[]];
-	for (let i = 0; i < arrayEntrada.length; i++) {
-		for (let j = 0; j < arrayEntrada[i].length; j++) {
+	const numCols = arrayEntrada[0].length;
+	const numFilas = arrayEntrada.length;
+	console.log(numFilas, numCols);
+
+	const arraySaida = [];
+	for (let i = 0; i < numFilas; i++) {
+		arraySaida[i] = [];
+		for (let j = 0; j < numCols; j++) {
 			let contador = 0;
-			if (arrayEntrada[i][j] == 0) {
-				if (i - 1 > 0) {
-					if (arrayEntrada[i - 1][j] == -1) {
+			if (arrayEntrada[i][j] === 0) {
+				if (i - 1 >= 0) {
+					if (arrayEntrada[i - 1][j] === -1) {
 						contador++;
 					}
 				}
-				if (j - 1 > 0) {
-					if (arrayEntrada[i][j - 1] == -1) {
+				if (j - 1 >= 0) {
+					if (arrayEntrada[i][j - 1] === -1) {
 						contador++;
 					}
 				}
-				if (i - 1 > 0 && j - 1 > 0) {
-					if (arrayEntrada[i - 1][j - 1] == -1) {
+				if (i - 1 >= 0 && j - 1 >= 0) {
+					if (arrayEntrada[i - 1][j - 1] === -1) {
 						contador++;
 					}
 				}
-				if (i + 1 <= arrayEntrada[i].length) {
-					if (arrayEntrada[i + 1][j] == -1) {
+				if (i + 1 < numFilas) {
+					if (arrayEntrada[i + 1][j] === -1) {
 						contador++;
 					}
 				}
-				if (j + 1 <= arrayEntrada.length) {
-					if (arrayEntrada[i][j + 1] == -1) {
+				if (j + 1 < numCols) {
+					if (arrayEntrada[i][j + 1] === -1) {
 						contador++;
 					}
 				}
-				if (i + 1 <= arrayEntrada.length && j + 1 <= arrayEntrada.length) {
-					if (arrayEntrada[i + 1][j + 1] == -1) {
+				if (i + 1 < numFilas && j + 1 < numCols) {
+					if (arrayEntrada[i + 1][j + 1] === -1) {
 						contador++;
 					}
 				}
-				arraySaida.push(contador);
-			} else if (arrayEntrada[i][j] == -1) {
-				arraySaida.push(-1);
+				if (i - 1 >= 0 && j + 1 < numCols) {
+					if (arrayEntrada[i - 1][j + 1] === -1) {
+						contador++;
+					}
+				}
+				if (i + 1 < numFilas && j - 1 >= 0) {
+					if (arrayEntrada[i + 1][j - 1] === -1) {
+						contador++;
+					}
+				}
+				arraySaida[i][j] = contador;
+			} else if (arrayEntrada[i][j] === -1) {
+				arraySaida[i][j] = -1;
 			}
 		}
 	}
@@ -352,7 +368,7 @@ const arrayEntrada = [
 	[0, 0, -1, 0],
 	[0, -1, -1, 0],
 ];
-console.log(buscaMinas(arrayEntrada));
+console.log(buscaMinas(arrayEntrada));*/
 
 /*console.log(
 	"7. Crea unha función JavaScript que comprobe se é poxible axendar unha reunión dentro do horario laboral."
@@ -365,8 +381,9 @@ const horaInicioXornada = parseInt(inicioXornadaSeparada[0]);
 const minsInicioXornada = parseInt(inicioXornadaSeparada[1]);
 const horaFinalXornada = parseInt(finalXornadaSeparada[0]);
 const minsFinalXornada = parseInt(finalXornadaSeparada[1]);
-let dentroHorario = true;
+// let dentroHorario = true;
 const axendarReunion = (horaInicioReunion, duracionEnMinutos) => {
+	let dentroHorario = true;
 	const limpio = horaInicioReunion.split(":");
 	const hora_InicioReunion = parseInt(limpio[0]);
 	const mins_InicioReunion = parseInt(limpio[1]);
@@ -378,15 +395,6 @@ const axendarReunion = (horaInicioReunion, duracionEnMinutos) => {
 		horaDespuesReunion += 1;
 		minsAcabaReunion -= 60;
 	}
-	console.log("horaInicioXornada " + horaInicioXornada);
-	console.log("horaInicioXornada " + minsInicioXornada);
-	console.log("horaFinalXornada " + horaFinalXornada);
-	console.log("minsFinalXornada " + minsFinalXornada);
-	console.log("hora_InicioReunion " + hora_InicioReunion);
-	console.log("mins_InicioReunion " + mins_InicioReunion);
-	console.log("horaDespuesReunion " + horaDespuesReunion);
-	console.log("minsDespuesReunion " + minsDespuesReunion);
-	console.log("ACABA");
 	if (hora_InicioReunion < horaInicioXornada) {
 		dentroHorario = false;
 	}
@@ -398,7 +406,7 @@ const axendarReunion = (horaInicioReunion, duracionEnMinutos) => {
 	}
 	if (
 		hora_InicioReunion > horaInicioXornada &&
-		mins_InicioReunion > minsInicioXornada &&
+		mins_InicioReunion >= minsInicioXornada &&
 		horaDespuesReunion > horaFinalXornada
 	) {
 		dentroHorario = false;
@@ -427,7 +435,7 @@ console.assert(
 	'Fallo comprobando axendarReunión("7:30", 30) == false'
 );
 console.assert(
-	axendarReunion("17:45", 60) == true,
+	axendarReunion("11:30", 60) == true,
 	'Fallo comprobando axendarReunión("17:45", 60) == false'
 );
 console.assert(
@@ -439,14 +447,21 @@ console.assert(
 	'Fallo comprobando axendarReunión("17:30", 30) == false'
 );*/
 
-/*console.log(
+console.log(
 	"8. Crea unha función chamada buscarPatron(texto, patron) que reciba como parámetros un texto e un patrón. A función debe devolver como resultado o número de veces que aparece o patrón no texto. Hai que implementar a función de forma manual e non utilizar as funcións proporcionadas pola linguaxe JavaScript. Non se deben distinguir maiúsculas de minúsculas. Un carácter pode formar parte de máis dun patrón encontrado. Exemplo: buscarPatron(“000111101000ABCHO”, “00”) debe devolver 4."
 );
+
 const buscarPatron = (texto, patron) => {
-	
-}
-buscarPatron(“000111101000ABCHO”, “00”);
-};*/
+	let contador = 0;
+	for (let i = 1; i < texto.length; i++) {
+		if (i === patron) {
+			contador++;
+		}
+	}
+	return contador;
+};
+console.log(buscarPatron("000111101000ABCHO", "00"));
+
 /*console.log(
 	"9. Crea unha función que reciba como parámetro unha cantidade enteira e faga o desglose do número de billetes e moedas necesarios para obtela. Debe usarse o número mínimo de billetes e moedas."
 );
