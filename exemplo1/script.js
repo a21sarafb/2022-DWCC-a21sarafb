@@ -219,29 +219,29 @@ if (imc1 > imc2) {
 }*/
 
 /*segunda ronda de exercicios*/
-/*console.log(
+console.log(
 	"1. Crea unha función frecha que devolva o cubo dun número pasado como parámetro"
 );
 const numero = Number(prompt("Ingrese o numero que desexa elevar ao cubo"));
 const cubo = (numero) => numero * numero * numero;
-console.log(cubo(numero));*/
+console.log(cubo(numero));
 
-/*console.log(
+console.log(
 	"2. Crea unha función á que se lle pase un array e devolva como resultado un array cos elementos impares do array de entrada. Exemplo: arrayEntrada = [10, 2, 3, 5, 7, 8, 23, 50] arraySaida = [3, 5, 7, 23]"
 );
-const arrayEntrada = [10, 2, 3, 5, 7, 8, 23, 50];
+const arrayEntrada1 = [10, 2, 3, 5, 7, 8, 23, 50];
 const arraySaida = [];
-const arrayImpar = (arrayEntrada) => {
-	for (let i = 0; i < arrayEntrada.length; i++) {
-		if (arrayEntrada[i] % 2 != 0) {
-			arraySaida.push(arrayEntrada[i]);
+const arrayImpar = (arrayEntrada1) => {
+	for (let i = 0; i < arrayEntrada1.length; i++) {
+		if (arrayEntrada1[i] % 2 != 0) {
+			arraySaida.push(arrayEntrada1[i]);
 		}
 	}
 	return arraySaida;
 };
-console.log(arrayImpar(arrayEntrada));*/
+console.log(arrayImpar(arrayEntrada1));
 
-/*console.log(
+console.log(
 	"3. Crea unha función que sume todos os valores pasados como parámetros, sendo estes un número indeterminado."
 );
 const funcionSuma = (...theArgs) => {
@@ -253,9 +253,9 @@ const funcionSuma = (...theArgs) => {
 };
 console.log(funcionSuma(1, 2, 3));
 console.log(funcionSuma(1, 2, 3, 4, 5));
-console.log(funcionSuma(1, 2, 3, 6));*/
+console.log(funcionSuma(1, 2, 3, 6));
 
-/*console.log(
+console.log(
 	"4. Crea unha función á que se lle pasen varios números como parámetros (un número indeterminado de parámetros). Debe devolver a media dos números pasados. Proba a realizala con diferentes bucles for (con contador, for…in e for…of)."
 );
 const funcionMedia = (...theArgs) => {
@@ -270,19 +270,17 @@ const funcionMedia = (...theArgs) => {
 
 console.log(funcionMedia(2, 4, 6, 8));
 console.log(funcionMedia(4, 4));
-console.log(funcionMedia(4, 4, 6, 6, 8, 8));*/
+console.log(funcionMedia(4, 4, 6, 6, 8, 8));
 
-/*console.log(
+console.log(
 	"5. Fai unha función á que se lle pase un DNI (ex: 12345678w ou 87654321T) e devolva se é correcto ou non"
 );
 const dni = prompt("Introduza o seu dni");
 const checkDni = (dni) => {
-	var numero;
-	var letr;
-	var letra;
-	var expresion_regular_dni;
-
-	expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+	let numero;
+	let letr;
+	let letra;
+	const expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
 
 	if (expresion_regular_dni.test(dni) == true) {
 		numero = dni.substr(0, dni.length - 1);
@@ -299,66 +297,66 @@ const checkDni = (dni) => {
 		alert("DNI erroneo, formato non válido");
 	}
 };
-console.log(checkDni(dni));*/
+console.log(checkDni(dni));
 
-/*console.log(
+console.log(
 	"6. Crea unha función que reciba un array bidimensional de lonxitude variable que se corresponda cun escenario do xogo de Buscaminas. Este array almacenará un -1 nas posicións onde hai minas e un 0 en caso contrario. A función debe devolver un array bidimensional onde cada posición que non teña mina, debe ter a información do número de minas adxacentes (diagonal, horizontal e vertical). Exemplo: arrayEntrada = [[0, 0, -1, 0], [0, -1, -1, 0]]; arraySaida = [[1, 3, -1, 2], [1, -1, -1, 2]]; "
 );
 
 const buscaMinas = (arrayEntrada) => {
-	const numCols = arrayEntrada[0].length;
+	const numCols = arrayEntrada[numFilas].length;
 	const numFilas = arrayEntrada.length;
 	console.log(numFilas, numCols);
 
 	const arraySaida = [];
-	for (let i = 0; i < numFilas; i++) {
-		arraySaida[i] = [];
-		for (let j = 0; j < numCols; j++) {
+	for (let fila = 0; fila < numFilas; fila++) {
+		arraySaida[fila] = [];
+		for (let columna = 0; columna < numCols; columna++) {
 			let contador = 0;
-			if (arrayEntrada[i][j] === 0) {
-				if (i - 1 >= 0) {
-					if (arrayEntrada[i - 1][j] === -1) {
+			if (arrayEntrada[fila][columna] === 0) {
+				if (fila - 1 >= 0) {
+					if (arrayEntrada[fila - 1][columna] === -1) {
 						contador++;
 					}
 				}
-				if (j - 1 >= 0) {
-					if (arrayEntrada[i][j - 1] === -1) {
+				if (columna - 1 >= 0) {
+					if (arrayEntrada[fila][columna - 1] === -1) {
 						contador++;
 					}
 				}
-				if (i - 1 >= 0 && j - 1 >= 0) {
-					if (arrayEntrada[i - 1][j - 1] === -1) {
+				if (fila - 1 >= 0 && columna - 1 >= 0) {
+					if (arrayEntrada[fila - 1][columna - 1] === -1) {
 						contador++;
 					}
 				}
-				if (i + 1 < numFilas) {
-					if (arrayEntrada[i + 1][j] === -1) {
+				if (fila + 1 < numFilas) {
+					if (arrayEntrada[fila + 1][columna] === -1) {
 						contador++;
 					}
 				}
-				if (j + 1 < numCols) {
-					if (arrayEntrada[i][j + 1] === -1) {
+				if (columna + 1 < numCols) {
+					if (arrayEntrada[fila][columna + 1] === -1) {
 						contador++;
 					}
 				}
-				if (i + 1 < numFilas && j + 1 < numCols) {
-					if (arrayEntrada[i + 1][j + 1] === -1) {
+				if (fila + 1 < numFilas && columna + 1 < numCols) {
+					if (arrayEntrada[fila + 1][columna + 1] === -1) {
 						contador++;
 					}
 				}
-				if (i - 1 >= 0 && j + 1 < numCols) {
-					if (arrayEntrada[i - 1][j + 1] === -1) {
+				if (fila - 1 >= 0 && columna + 1 < numCols) {
+					if (arrayEntrada[fila - 1][columna + 1] === -1) {
 						contador++;
 					}
 				}
-				if (i + 1 < numFilas && j - 1 >= 0) {
-					if (arrayEntrada[i + 1][j - 1] === -1) {
+				if (fila + 1 < numFilas && columna - 1 >= 0) {
+					if (arrayEntrada[fila + 1][columna - 1] === -1) {
 						contador++;
 					}
 				}
-				arraySaida[i][j] = contador;
-			} else if (arrayEntrada[i][j] === -1) {
-				arraySaida[i][j] = -1;
+				arraySaida[fila][columna] = contador;
+			} else if (arrayEntrada[fila][columna] === -1) {
+				arraySaida[fila][columna] = -1;
 			}
 		}
 	}
@@ -368,9 +366,9 @@ const arrayEntrada = [
 	[0, 0, -1, 0],
 	[0, -1, -1, 0],
 ];
-console.log(buscaMinas(arrayEntrada));*/
+console.log(buscaMinas(arrayEntrada));
 
-/*console.log(
+console.log(
 	"7. Crea unha función JavaScript que comprobe se é poxible axendar unha reunión dentro do horario laboral."
 );
 const inicioXornada = "07:30";
@@ -381,7 +379,6 @@ const horaInicioXornada = parseInt(inicioXornadaSeparada[0]);
 const minsInicioXornada = parseInt(inicioXornadaSeparada[1]);
 const horaFinalXornada = parseInt(finalXornadaSeparada[0]);
 const minsFinalXornada = parseInt(finalXornadaSeparada[1]);
-// let dentroHorario = true;
 const axendarReunion = (horaInicioReunion, duracionEnMinutos) => {
 	let dentroHorario = true;
 	const limpio = horaInicioReunion.split(":");
@@ -445,7 +442,7 @@ console.assert(
 console.assert(
 	axendarReunion("17:30", 30) == false,
 	'Fallo comprobando axendarReunión("17:30", 30) == false'
-);*/
+);
 
 console.log(
 	"8. Crea unha función chamada buscarPatron(texto, patron) que reciba como parámetros un texto e un patrón. A función debe devolver como resultado o número de veces que aparece o patrón no texto. Hai que implementar a función de forma manual e non utilizar as funcións proporcionadas pola linguaxe JavaScript. Non se deben distinguir maiúsculas de minúsculas. Un carácter pode formar parte de máis dun patrón encontrado. Exemplo: buscarPatron(“000111101000ABCHO”, “00”) debe devolver 4."
@@ -453,16 +450,30 @@ console.log(
 
 const buscarPatron = (texto, patron) => {
 	let contador = 0;
-	for (let i = 1; i < texto.length; i++) {
-		if (i === patron) {
+	let coincide = true;
+	let indice = 0;
+	for (let i = 0; i < texto.length; i++) {
+		if (texto[i] === patron[0]) {
+			indice = i;
+			coincide = true;
 			contador++;
+			for (let x = 0; x < patron.length; x++) {
+				if (patron[x] !== texto[indice]) {
+					coincide = false;
+					break;
+				}
+				indice++;
+			}
+			if (coincide) {
+				contador++;
+			}
 		}
 	}
 	return contador;
 };
 console.log(buscarPatron("000111101000ABCHO", "00"));
 
-/*console.log(
+console.log(
 	"9. Crea unha función que reciba como parámetro unha cantidade enteira e faga o desglose do número de billetes e moedas necesarios para obtela. Debe usarse o número mínimo de billetes e moedas."
 );
 const cambio = (dinero) => {
@@ -609,4 +620,4 @@ console.log("56 = " + cambio(56));
 console.log("25 = " + cambio(25));
 console.log("37 = " + cambio(37));
 console.log("138 = " + cambio(138));
-console.log("1574 = " + cambio(1574));*/
+console.log("1574 = " + cambio(1574));
