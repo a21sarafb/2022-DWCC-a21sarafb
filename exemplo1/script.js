@@ -219,7 +219,7 @@ if (imc1 > imc2) {
 }*/
 
 /*segunda ronda de exercicios*/
-console.log(
+/*console.log(
 	"1. Crea unha función frecha que devolva o cubo dun número pasado como parámetro"
 );
 const numero = Number(prompt("Ingrese o numero que desexa elevar ao cubo"));
@@ -304,8 +304,8 @@ console.log(
 );
 
 const buscaMinas = (arrayEntrada) => {
-	const numCols = arrayEntrada[numFilas].length;
 	const numFilas = arrayEntrada.length;
+	const numCols = arrayEntrada[numFilas].length;
 	console.log(numFilas, numCols);
 
 	const arraySaida = [];
@@ -620,4 +620,111 @@ console.log("56 = " + cambio(56));
 console.log("25 = " + cambio(25));
 console.log("37 = " + cambio(37));
 console.log("138 = " + cambio(138));
-console.log("1574 = " + cambio(1574));
+console.log("1574 = " + cambio(1574));*/
+
+/*let data = new Date();
+console.log(`new Date() = ${data}`);
+console.log(`Tipo de dato de new Date() = ${typeof data}`);
+let data2 = Date();
+console.log(`Date() = ${data2}`);
+console.log(`Tipo de dato de Date() = ${typeof data2}`);*/
+
+/*RONDA 3 DE EJERCICIOS*/
+
+/*OBJETOS*/
+/*console.log("1. Mostra o día da semana (en letra) do 25 de xullo de 2000.");
+const exercicio1 = new Date("July 25, 2000");
+const diaDaSemana = exercicio1.getDay();
+let diaDaSemanaLetra = "";
+if (diaDaSemana === 0) {
+	diaDaSemanaLetra = "Domingo";
+} else if (diaDaSemana === 1) {
+	diaDaSemanaLetra = "Lunes";
+} else if (diaDaSemana === 2) {
+	diaDaSemanaLetra = "Martes";
+} else if (diaDaSemana === 3) {
+	diaDaSemanaLetra = "Miercoles";
+} else if (diaDaSemana === 4) {
+	diaDaSemanaLetra = "Jueves";
+} else if (diaDaSemana === 5) {
+	diaDaSemanaLetra = "Viernes";
+} else if (diaDaSemana === 6) {
+	diaDaSemanaLetra = "Sabado";
+}
+console.log(diaDaSemanaLetra);*/
+
+/*console.log("2. Mostra o día da semana (en letra) do 25 de xullo deste ano");
+const exercicio2 = new Date("July 25, 2022");
+const diaDaSemana2 = exercicio2.getDay();
+let diaDaSemanaLetra2 = "";
+if (diaDaSemana2 === 0) {
+	diaDaSemanaLetra2 = "Domingo";
+} else if (diaDaSemana2 === 1) {
+	diaDaSemanaLetra2 = "Lunes";
+} else if (diaDaSemana2 === 2) {
+	diaDaSemanaLetra2 = "Martes";
+} else if (diaDaSemana2 === 3) {
+	diaDaSemanaLetra2 = "Miercoles";
+} else if (diaDaSemana2 === 4) {
+	diaDaSemanaLetra2 = "Jueves";
+} else if (diaDaSemana2 === 5) {
+	diaDaSemanaLetra2 = "Viernes";
+} else if (diaDaSemana2 === 6) {
+	diaDaSemanaLetra2 = "Sabado";
+}
+console.log(diaDaSemanaLetra2);*/
+/*console.log(
+	"3. Calcula o número de días que pasaron dende o 25 de xullo de 2000 ata hoxe."
+);
+const dataDan = new Date("July 25, 2000");
+const dataHoy = new Date();
+const milisegundosDan = dataDan.valueOf();
+const milisegundosHoy = dataHoy.valueOf();
+let calculoMilisegundos = milisegundosHoy - milisegundosDan;
+calculoMilisegundos = calculoMilisegundos / 86400000;
+console.log(calculoMilisegundos);*/
+
+/*console.log(
+	"4. Crea unha función á que se lle pase un mes (1-12) e un ano e devolva o número de días dese mes."
+);*/
+
+/*console.log(
+	"5. Crea unha función á que se lle pase unha data e diga se é fin de semana."
+);*/
+
+/*console.log(
+	"6. Crea unha función que reciba unha data como parámetro e devolva o número de días que pasaron dende que comezou o ano."
+);*/
+/*console.log(
+	"1. Crea unha función á que se lle pase como parámero o número de minutos e devolva un string indicando a súa equivalencia en horas e minutos."
+);*/
+/*console.log(
+	"2. Crea unha función que dado o radio dun círculo, devolva a súa área. E fai outra función que reciba o radio e devolva o perímetro do círculo. Mostra por consola o resultado das funcións usando dúas cifras decimais."
+);*/
+/*console.log("1. Crea unha función á que se lle pase unha cadea e devolva unha cadea en sentido inverso.");
+console.log(reverseString("I am a string")) // gnirts a ma I*/
+/*console.log("2. Crea unha función á que se lle pase unha cadea e un array de caracteres e devolva a cadea orixinal eliminando os caracteres do array.");
+console.log(removeCharacters("I am an example string", ["a", "x"]));
+// // I m n emple string*/
+/*console.log(
+	"3. Crea unha función á que se lle pase unha cadea e devolva o carácter máis repetido."
+);
+console.log(caracterMaisRepetido("abcddefg")) // d*/
+/*console.log("1. Garda nun array a lista de froitas: peras, mazás, kiwis, plátanos e mandarinas. Fai os seguintes apartados con splice: a. Elimina as mazás. b. Engade detrás dos plátanos, laranxas e sandía. c. Quita os kiwis e pon no seu lugar cereixas e nésperas. Despois de realizar cada operación, mostra por pantalla o array coa lista de froitas, onde os elementos estean separados por unha coma e espazo. Por exemplo, inicialmente o array debe mostrarse como “peras, mazás, kiwis, plátanos, mandarinas");*/
+/*console.log("2. Fai unha función que ordene as notas dun array pasado como parámetro. Por exemplo, se se pasa o array [4,8,3,10,5] debe devolver [3,4,5,8,10]. Debes utilizar a función sort e pasarlle como parámetro unha función que ti definas que serva para realizar a comparación de elementos.");*/
+/*console.log("3. Dado un array cos días da semana, indica se algún comeza por ‘s’. Comproba tamén se todos acaban en ‘s’.");*/
+/*console.log(
+	"1. Dado un array cos días da semana, obtén un array cos días que empecen por “m”."
+);*/
+/*console.log(
+	"2. Dado un array cos días da semana, obtén o primeiro día que empeza por “m”."
+);*/
+/*console.log("3. Dado un array cos días da semana, obtén a posición no array do primeiro día que empeza por “m”");*/
+/*console.log(
+	"4. Dado un array cos días da semana, devolve outro array cos días en maiúsculas."
+);*/
+/*console.log("5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays).");*/
+/*console.log("1. Crea un obxecto chamado television coas propiedades marca, categoría (televisores), unidades (4), precio (354.99) e un método chamado importe que devolva o prezo total das unidades (unidades x precio).");*/
+/*console.log("1. Crea unha clase chamada Produtos coas propiedades marca, categoría, unidades, precio e un método chamado importe que devolva o prezo total das unidades (unidades x precio). Ademais terá un método getInfo que devolverá “Nome (categoría): unidades x precio = importe”. Crea tamén tres produtos diferentes.");*/
+/*console.log("2. Crea unha clase Televisor que herde de Produtos e teña unha nova propiedade chamada tamaño. O método getInfo mostrará o tamaño xunto ao nome.");*/
+/*console.log("3. Crea 5 produtos e gárdaos nun array. Crea as seguintes funcións (todas reciben o array como parámetro): a. prodsSortBayName: devolve un array cos produtos ordenados alfabeticamente. b. prodsSortByPrice: devolve un array cos produtos ordenados por importe c. prodsTotalPrice: devolve o importe total dos produtos do array, con 2 decimais. d. prodsWithLowUnits: ademais do array, recibe como segundo parámetro un nº e devolve un array con todos os produtos dos que quedan menos das unidades indicadas e. prodsList: devolve unha cadena que di ‘Listado de produtos:’ e en cada liña un guión e a información dun produto do array.");*/
