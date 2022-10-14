@@ -686,11 +686,32 @@ console.log(calculoMilisegundos);*/
 
 /*console.log(
 	"4. Crea unha función á que se lle pase un mes (1-12) e un ano e devolva o número de días dese mes."
-);*/
-
+);
+const diasMes = (mes, año) => new Date(año, mes, 0).getDate();
+console.log(diasMes(1, 2018));
+console.log(diasMes(12, 2017));
+console.log(diasMes(5, 2015));
+console.log(diasMes(11, 2022));
+console.log(diasMes(2, 2000));
+console.log(diasMes(2, 2001));*/
 /*console.log(
 	"5. Crea unha función á que se lle pase unha data e diga se é fin de semana."
-);*/
+);
+const diaQuePasan = prompt(
+	"Introduzca la fecha que desea en el formato: 'July 25, 2000'"
+);
+const finDeSemana = (diaQuePasan) => {
+	const fechaQuePasan = new Date(diaQuePasan);
+	const diaDaSemana = fechaQuePasan.getDay();
+	let diaDaSemanaLetra = "";
+	if (diaDaSemana === 0 || diaDaSemana === 6) {
+		diaDaSemanaLetra = "É fin de semana";
+	} else {
+		diaDaSemanaLetra = "Non é fin de semana";
+	}
+	console.log(diaDaSemanaLetra);
+};
+finDeSemana();*/
 
 /*console.log(
 	"6. Crea unha función que reciba unha data como parámetro e devolva o número de días que pasaron dende que comezou o ano."
@@ -728,3 +749,23 @@ console.log(caracterMaisRepetido("abcddefg")) // d*/
 /*console.log("1. Crea unha clase chamada Produtos coas propiedades marca, categoría, unidades, precio e un método chamado importe que devolva o prezo total das unidades (unidades x precio). Ademais terá un método getInfo que devolverá “Nome (categoría): unidades x precio = importe”. Crea tamén tres produtos diferentes.");*/
 /*console.log("2. Crea unha clase Televisor que herde de Produtos e teña unha nova propiedade chamada tamaño. O método getInfo mostrará o tamaño xunto ao nome.");*/
 /*console.log("3. Crea 5 produtos e gárdaos nun array. Crea as seguintes funcións (todas reciben o array como parámetro): a. prodsSortBayName: devolve un array cos produtos ordenados alfabeticamente. b. prodsSortByPrice: devolve un array cos produtos ordenados por importe c. prodsTotalPrice: devolve o importe total dos produtos do array, con 2 decimais. d. prodsWithLowUnits: ademais do array, recibe como segundo parámetro un nº e devolve un array con todos os produtos dos que quedan menos das unidades indicadas e. prodsList: devolve unha cadena que di ‘Listado de produtos:’ e en cada liña un guión e a información dun produto do array.");*/
+/*const array = [15, 16, 17, 18, 19];
+function reducer(previousValue, currentValue, index) {
+	const returns = previousValue + currentValue;
+	console.log(
+		`previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index},
+returns: ${returns}`
+	);
+	return returns;
+}
+let resultado = array.reduce(reducer);
+console.log(`Resultado = ${resultado}`);
+console.log("Usando un valor inicial");
+resultado = array.reduce(reducer, 0);
+console.log(`Resultado = ${resultado}`);
+console.log("Usando unha función frecha");
+resultado = array.reduce(
+	(previousValue, currentValue, index) => previousValue + currentValue,
+	0
+);
+console.log(`Resultado = ${resultado}`);*/
