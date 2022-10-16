@@ -716,30 +716,168 @@ finDeSemana();*/
 /*console.log(
 	"6. Crea unha función que reciba unha data como parámetro e devolva o número de días que pasaron dende que comezou o ano."
 );*/
+
 /*console.log(
 	"1. Crea unha función á que se lle pase como parámero o número de minutos e devolva un string indicando a súa equivalencia en horas e minutos."
 );*/
 /*console.log(
 	"2. Crea unha función que dado o radio dun círculo, devolva a súa área. E fai outra función que reciba o radio e devolva o perímetro do círculo. Mostra por consola o resultado das funcións usando dúas cifras decimais."
-);*/
-/*console.log("1. Crea unha función á que se lle pase unha cadea e devolva unha cadea en sentido inverso.");
-console.log(reverseString("I am a string")) // gnirts a ma I*/
-/*console.log("2. Crea unha función á que se lle pase unha cadea e un array de caracteres e devolva a cadea orixinal eliminando os caracteres do array.");
-console.log(removeCharacters("I am an example string", ["a", "x"]));
-// // I m n emple string*/
+);
+const areaCirculo = (radio) => {
+	let area = Math.PI * Math.pow(radio, 2);
+	area = area.toFixed(2);
+	return area;
+};
+const PerimetroCirculo = (radio) => {
+	let perimetro = 2 * Math.PI * radio;
+	perimetro = perimetro.toFixed(2);
+	return perimetro;
+};
+console.log("Areas del circulo");
+console.log(areaCirculo(5.34));
+console.log(areaCirculo(10.79));
+console.log(areaCirculo(5));
+console.log(areaCirculo(10));
+console.log("Perimetros del circulo");
+console.log(PerimetroCirculo(5.34));
+console.log(PerimetroCirculo(10.79));
+console.log(PerimetroCirculo(5));
+console.log(PerimetroCirculo(10));*/
+/*console.log(
+	"1. Crea unha función á que se lle pase unha cadea e devolva unha cadea en sentido inverso."
+);
+
+const reverseString = (cadea) => {
+	//devolve a cadea como un arreglo
+	cadea = cadea.split("");
+	//invirte o arreglo
+	cadea = cadea.reverse();
+	//une os elementos
+	cadea = cadea.join("");
+	return cadea;
+};
+console.log(reverseString("Hola"));
+console.log(reverseString("I am a string")); // gnirts a ma I*/
+/*console.log(
+	"2. Crea unha función á que se lle pase unha cadea e un array de caracteres e devolva a cadea orixinal eliminando os caracteres do array."
+);
+
+const removeCharacters = (cadea2, array) => {
+	for (let x = 0; x < array.length; x++) {
+		cadea2 = cadea2.replaceAll(array[x], "");
+	}
+	return cadea2;
+};
+console.log(removeCharacters("I am an example string", ["a", "x"])); // I m n emple string*/
 /*console.log(
 	"3. Crea unha función á que se lle pase unha cadea e devolva o carácter máis repetido."
 );
-console.log(caracterMaisRepetido("abcddefg")) // d*/
-/*console.log("1. Garda nun array a lista de froitas: peras, mazás, kiwis, plátanos e mandarinas. Fai os seguintes apartados con splice: a. Elimina as mazás. b. Engade detrás dos plátanos, laranxas e sandía. c. Quita os kiwis e pon no seu lugar cereixas e nésperas. Despois de realizar cada operación, mostra por pantalla o array coa lista de froitas, onde os elementos estean separados por unha coma e espazo. Por exemplo, inicialmente o array debe mostrarse como “peras, mazás, kiwis, plátanos, mandarinas");*/
-/*console.log("2. Fai unha función que ordene as notas dun array pasado como parámetro. Por exemplo, se se pasa o array [4,8,3,10,5] debe devolver [3,4,5,8,10]. Debes utilizar a función sort e pasarlle como parámetro unha función que ti definas que serva para realizar a comparación de elementos.");*/
-/*console.log("3. Dado un array cos días da semana, indica se algún comeza por ‘s’. Comproba tamén se todos acaban en ‘s’.");*/
+const caracterMaisRepetido = (cadea3) => {
+	for (let i = 0; i < cadea3.length; i++) {
+		let contador = [];
+		let pos = cadea3.matchAll(cadea3[i]);
+		if (pos) {
+		}
+		console.log(contador);
+	}
+};
+console.log(caracterMaisRepetido("abcddefg")); // d*/
+/*console.log(
+	"1. Garda nun array a lista de froitas: peras, mazás, kiwis, plátanos e mandarinas. Fai os seguintes apartados con splice: a. Elimina as mazás. b. Engade detrás dos plátanos, laranxas e sandía. c. Quita os kiwis e pon no seu lugar cereixas e nésperas. Despois de realizar cada operación, mostra por pantalla o array coa lista de froitas, onde os elementos estean separados por unha coma e espazo. Por exemplo, inicialmente o array debe mostrarse como “peras, mazás, kiwis, plátanos, mandarinas"
+);
+let listaDeFrutas = ["peras", "mazás", "kiwis", "plátanos", "mandarinas"];
+console.log(listaDeFrutas);
+//a. Elimina as mazás
+listaDeFrutas.splice(1, 1);
+console.log(listaDeFrutas);
+//b. Engade detrás dos plátanos, laranxas e sandía.
+listaDeFrutas.splice(3, 0, "laranxas");
+listaDeFrutas.splice(4, 0, "sandía");
+console.log(listaDeFrutas);
+//c. Quita os kiwis e pon no seu lugar cereixas e nésperas.
+
+//console.log(listaDeFrutas);*/
+/*console.log(
+	"2. Fai unha función que ordene as notas dun array pasado como parámetro. Por exemplo, se se pasa o array [4,8,3,10,5] debe devolver [3,4,5,8,10]. Debes utilizar a función sort e pasarlle como parámetro unha función que ti definas que serva para realizar a comparación de elementos."
+);
+const notas = [4, 8, 3, 10, 5];
+notas.sort();
+console.log(notas);*/
+/*console.log(
+	"3. Dado un array cos días da semana, indica se algún comeza por ‘s’. Comproba tamén se todos acaban en ‘s’."
+);
+const arraySemana = [
+	"lunes",
+	"martes",
+	"miercoles",
+	"jueves",
+	"viernes",
+	"sabado",
+	"domingo",
+];
+let todosEmpiezanPorS = true;
+for (let i = 0; i < arraySemana.length; i++) {
+	let primeraPosicion = arraySemana[i].charAt(arraySemana[0]);
+	let ultimaPosicion = arraySemana[i].charAt(arraySemana[i].length - 1);
+	if (ultimaPosicion !== "s") {
+		todosEmpiezanPorS = false;
+	}
+	if (primeraPosicion === "s") {
+		console.log(arraySemana[i] + " empieza en s");
+	}
+}
+if (todosEmpiezanPorS === false) {
+	console.log("No todos acaban en S");
+} else {
+	console.log("Todos acaban en S");
+}*/
+
 /*console.log(
 	"1. Dado un array cos días da semana, obtén un array cos días que empecen por “m”."
-);*/
-/*console.log(
+);
+const arraySemana = [
+	"lunes",
+	"martes",
+	"miercoles",
+	"jueves",
+	"viernes",
+	"sabado",
+	"domingo",
+];
+const arrayEmpiezanPorM = [];
+//let todosEmpiezanPorM = true;
+for (let i = 0; i < arraySemana.length; i++) {
+	let primeraPosicion = arraySemana[i].charAt(arraySemana[0]);
+	if (primeraPosicion === "m") {
+		arrayEmpiezanPorM.push(arraySemana[i]);
+	}
+}
+console.log(arrayEmpiezanPorM);*/
+
+console.log(
 	"2. Dado un array cos días da semana, obtén o primeiro día que empeza por “m”."
-);*/
+);
+const arraySemana = [
+	"lunes",
+	"martes",
+	"miercoles",
+	"jueves",
+	"viernes",
+	"sabado",
+	"domingo",
+];
+const arrayEmpiezanPorM = [];
+//let todosEmpiezanPorM = true;
+for (let i = 0; i < arraySemana.length; i++) {
+	let primeraPosicion = arraySemana[i].charAt(arraySemana[0]);
+	if (primeraPosicion === "m") {
+		arrayEmpiezanPorM.push(arraySemana[i]);
+	}
+}
+const soloPrimeroQueEmpiezaPorM = [];
+const primeroQueEmpiezaPorM = arrayEmpiezanPorM.at(0);
+soloPrimeroQueEmpiezaPorM.push(primeroQueEmpiezaPorM);
+console.log(soloPrimeroQueEmpiezaPorM);
 /*console.log("3. Dado un array cos días da semana, obtén a posición no array do primeiro día que empeza por “m”");*/
 /*console.log(
 	"4. Dado un array cos días da semana, devolve outro array cos días en maiúsculas."
