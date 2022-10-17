@@ -42,4 +42,17 @@ console.log(caracterMaisRepetido("abcddefg")); // d*/
 );
 const enmascarar = (cadea4) => {};
 console.log(enmascarar("1234123412347777")); // ************7777*/
-/*console.log("5. Escribe o código necesario para procesar unha cadea con información de voos como a do exemplo e mostrar a información por consola formateada como aparece na imaxe: const flightsInfo = '_Delayed_Departure scq93766109;bio2133758440;11:25+_Arrival;bio09433847 22;scq93766109;11:45+_Delayed_Arrival;svq7439299980 scq93766109;12:05+_ Departure;scq93766109;svq2323639855;12:30'; Fixarse que a información mostrada por consola está aliñada pola dereita.");*/
+console.log(
+	"5. Escribe o código necesario para procesar unha cadea con información de voos como a do exemplo e mostrar a información por consola formateada como aparece na imaxe: (variable flightsInfo). Fixarse que a información mostrada por consola está aliñada pola dereita."
+);
+const flightsInfo =
+	"_Delayed_Departure scq93766109;bio2133758440;11:25+_Arrival;bio09433847 22;scq93766109;11:45+_Delayed_Arrival;svq7439299980 scq93766109;12:05+_ Departure;scq93766109;svq2323639855;12:30";
+let separado = [];
+let departure = [];
+let sitio = [];
+let sitio2 = [];
+let hora = [];
+for (let i = 0; i < flightsInfo.length; i++) {
+	separado.push(flightsInfo.split("+"));
+}
+console.log(separado);

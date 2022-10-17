@@ -17,8 +17,11 @@ console.log(listaDeFrutas);
 	"2. Fai unha función que ordene as notas dun array pasado como parámetro. Por exemplo, se se pasa o array [4,8,3,10,5] debe devolver [3,4,5,8,10]. Debes utilizar a función sort e pasarlle como parámetro unha función que ti definas que serva para realizar a comparación de elementos."
 );
 const notas = [4, 8, 3, 10, 5];
-notas.sort();
+notas.sort(function (a, b) {
+	return a - b;
+});
 console.log(notas);*/
+
 /*console.log(
 	"3. Dado un array cos días da semana, indica se algún comeza por ‘s’. Comproba tamén se todos acaban en ‘s’."
 );

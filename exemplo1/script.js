@@ -91,3 +91,35 @@ resultado = array.reduce(
 	0
 );
 console.log(`Resultado = ${resultado}`);*/
+console.log(
+	"5. Escribe o código necesario para procesar unha cadea con información de voos como a do exemplo e mostrar a información por consola formateada como aparece na imaxe: (variable flightsInfo). Fixarse que a información mostrada por consola está aliñada pola dereita."
+);
+const flightsInfo =
+	"_Delayed_Departure scq93766109;bio2133758440;11:25+_Arrival;bio09433847 22;scq93766109;11:45+_Delayed_Arrival;svq7439299980 scq93766109;12:05+_ Departure;scq93766109;svq2323639855;12:30";
+let separado = [];
+let departure = [];
+let sitio = [];
+let sitio2 = [];
+let horas = [];
+separado = flightsInfo.split(";");
+horas.push(separado[2].substring(0, 5));
+horas.push(separado[5].substring(0, 5));
+horas.push(separado[7].substring(0, 5));
+horas.push(separado[10]);
+departure.push(separado[0].substring(1, 18).replace("_", " "));
+departure.push(separado[2].substring(7, 14));
+departure.push(separado[5].substring(7, 22).replace("_", " "));
+departure.push(separado[7].substring(8, 17));
+sitio.push(separado[0].substring(19, 22).toUpperCase());
+sitio.push(separado[3].substring(0, 3).toUpperCase());
+sitio.push(separado[6].substring(0, 3).toUpperCase());
+sitio.push(separado[8].substring(0, 3).toUpperCase());
+sitio2.push(separado[1].substring(0, 3).toUpperCase());
+sitio2.push(separado[4].substring(0, 3).toUpperCase());
+sitio2.push(separado[6].substring(14, 17).toUpperCase());
+sitio2.push(separado[9].substring(0, 3).toUpperCase());
+//console.log(separado);
+console.log(departure);
+console.log(horas);
+console.log(sitio);
+console.log(sitio2);
