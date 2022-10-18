@@ -40,9 +40,20 @@ console.log(caracterMaisRepetido("abcddefg")); // d*/
 /*console.log(
 	"4. Crea unha función á que se lle pase unha cadea der números e devolva unha cadea da mesma lonxitude formada por * e as últimas 4 cifras do parámetro de entrada."
 );
-const enmascarar = (cadea4) => {};
-console.log(enmascarar("1234123412347777")); // ************7777*/
-console.log(
+const enmascarar = (cadea4) => {
+	const final = cadea4.length;
+	const catroUltimos = cadea4.substring(final - 4, final);
+	const resto = final - 4;
+	let cadeaAsterisco = "";
+	for (let i = 0; i < resto; i++) {
+		cadeaAsterisco += "*";
+	}
+	return cadeaAsterisco.concat(catroUltimos);
+};
+console.log(enmascarar("1234123412347777")); // ************7777
+console.log(enmascarar("34521234"));
+console.log(enmascarar("123456789"));*/
+/*console.log(
 	"5. Escribe o código necesario para procesar unha cadea con información de voos como a do exemplo e mostrar a información por consola formateada como aparece na imaxe: (variable flightsInfo). Fixarse que a información mostrada por consola está aliñada pola dereita."
 );
 const flightsInfo =
@@ -51,8 +62,70 @@ let separado = [];
 let departure = [];
 let sitio = [];
 let sitio2 = [];
-let hora = [];
-for (let i = 0; i < flightsInfo.length; i++) {
-	separado.push(flightsInfo.split("+"));
-}
-console.log(separado);
+let horas = [];
+separado = flightsInfo.split(";");
+horas.push(separado[2].substring(0, 5));
+horas.push(separado[5].substring(0, 5));
+horas.push(separado[7].substring(0, 5));
+horas.push(separado[10]);
+departure.push(separado[0].substring(1, 18).replace("_", " "));
+departure.push(separado[2].substring(7, 14));
+departure.push(separado[5].substring(7, 22).replace("_", " "));
+departure.push(separado[7].substring(8, 17));
+sitio.push(separado[0].substring(19, 22).toUpperCase());
+sitio.push(separado[3].substring(0, 3).toUpperCase());
+sitio.push(separado[6].substring(0, 3).toUpperCase());
+sitio.push(separado[8].substring(0, 3).toUpperCase());
+sitio2.push(separado[1].substring(0, 3).toUpperCase());
+sitio2.push(separado[4].substring(0, 3).toUpperCase());
+sitio2.push(separado[6].substring(14, 17).toUpperCase());
+sitio2.push(separado[9].substring(0, 3).toUpperCase());
+//console.log(separado);
+console.log(
+	departure[0] +
+		" " +
+		sitio[0] +
+		" " +
+		sitio2[0] +
+		" (" +
+		horas[0].substring(0, 2) +
+		"h" +
+		horas[0].substring(3, 5) +
+		")"
+);
+console.log(
+	departure[1] +
+		" " +
+		sitio[1] +
+		" " +
+		sitio2[1] +
+		" (" +
+		horas[1].substring(0, 2) +
+		"h" +
+		horas[1].substring(3, 5) +
+		")"
+);
+console.log(
+	departure[2] +
+		" " +
+		sitio[2] +
+		" " +
+		sitio2[2] +
+		" (" +
+		horas[2].substring(0, 2) +
+		"h" +
+		horas[2].substring(3, 5) +
+		")"
+);
+console.log(
+	departure[3] +
+		" " +
+		sitio[3] +
+		" " +
+		sitio2[3] +
+		" (" +
+		horas[3].substring(0, 2) +
+		"h" +
+		horas[3].substring(3, 5) +
+		")"
+);*/

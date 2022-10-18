@@ -50,4 +50,19 @@ if (todosEmpiezanPorS === false) {
 } else {
 	console.log("Todos acaban en S");
 }*/
-/*console.log("4. Crea unha función á que se lle pase un texto e devolva o mesmo texto coa primeira letra de cada palabra en maiúsculas e o resto en minúsculas.");*/
+/*console.log(
+	"4. Crea unha función á que se lle pase un texto e devolva o mesmo texto coa primeira letra de cada palabra en maiúsculas e o resto en minúsculas."
+);
+const cambioTamaño = (texto) => {
+	const arrayTexto = texto.split("");
+	for (let i = 0; i < arrayTexto.length; i++) {
+		if (i === 0) {
+			arrayTexto[i] = arrayTexto[i].toUpperCase();
+		} else {
+			arrayTexto[i] = arrayTexto[i].toLowerCase();
+		}
+	}
+	return arrayTexto.join("");
+};
+console.log(cambioTamaño("AFTskfdJDBdSaW"));
+console.log(cambioTamaño("hOLa BueNOS diAS"));*/
