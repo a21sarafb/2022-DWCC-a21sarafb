@@ -2,14 +2,12 @@
 console.log("Mensaxe por consola");
 
 /*window.confirm("Mensaxe");
-
 let text = "Press a button!\nEither OK or Cancel.";
 if (confirm(text) == true) {
 	text = "You pressed OK!";
 } else {
 	text = "You canceled!";
 }
-
 let variable; // declaro variable. Ao non asignar un valor, valerá undefined
 variable = "Ola"; // agora o seu valor é 'Ola', por tanto contén unha cadena de texto
 console.log(variable);
@@ -19,7 +17,6 @@ variable = [3, 45, 2]; // agora un array
 console.log(variable);
 variable = undefined; // vólvese a asignar o valor especial undefined
 console.log(variable);
-
 console.log("probando var");*/
 //probando var
 /*var y = 3;
@@ -36,7 +33,6 @@ function foo() {
 	console.log(y);
 }
 foo();
-
 console.log("probando let");*/
 //probando let
 /*var a = 1;
@@ -49,7 +45,6 @@ if (a === 1) {
 }
 console.log(a); // 11
 console.log(b); // 2
-
 console.log("probar conversión de tipos");*/
 //probar conversión de tipos
 /*console.log("Ana is " + 18 + " years old");
@@ -91,3 +86,25 @@ resultado = array.reduce(
 	0
 );
 console.log(`Resultado = ${resultado}`);*/
+console.log(
+	"2. Dado un array con nomes de variables formados por dúas palabras separadas por “_”, mostra por consola os nomes das variables en formato camelCase. Por exemplo, se o array de entrada é [“first_name”, “ last_NAME”], deberase mostrar por consola “firtsName” e “lastName”."
+);
+const arrayEntrada = ["first_name", "last_NAME", "SaRA_fACal"];
+const camelCase = (arrayEntrada) => {
+	let final = "";
+	for (let i = 0; i < arrayEntrada.length; i++) {
+		let separado = arrayEntrada[i].split("_");
+		final = "";
+		for (let x = 0; x < separado.length; x++) {
+			let todoMinusculas = separado[x].toLowerCase();
+			let primeraLetra = todoMinusculas.substring(0, 1).toUpperCase();
+			todoMinusculas =
+				primeraLetra + todoMinusculas.substring(1, separado[x].length);
+			//console.log(todoMinusculas);
+			console.log(final.concat(todoMinusculas, todoMinusculas));
+			//console.log(final);
+		}
+		//return final;
+	}
+};
+camelCase(arrayEntrada);

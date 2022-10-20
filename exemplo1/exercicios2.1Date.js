@@ -1,3 +1,4 @@
+"use strict";
 /*console.log("1. Mostra o día da semana (en letra) do 25 de xullo de 2000.");
 const exercicio1 = new Date("July 25, 2000");
 const diaDaSemana = exercicio1.getDay();
@@ -81,4 +82,5 @@ finDeSemana();*/
 
 /*console.log(
 	"6. Crea unha función que reciba unha data como parámetro e devolva o número de días que pasaron dende que comezou o ano."
-);*/
+);
+*/

@@ -1,6 +1,16 @@
+"use strict";
 /*console.log(
 	"1. Crea unha función á que se lle pase como parámero o número de minutos e devolva un string indicando a súa equivalencia en horas e minutos."
-);*/
+);
+const dataDan = new Date("July 25, 2000");
+const dataHoy = new Date();
+const milisegundosDan = dataDan.valueOf();
+const milisegundosHoy = dataHoy.valueOf();
+let calculoMilisegundos = milisegundosHoy - milisegundosDan;
+calculoHoras = (calculoMilisegundos / (1000 * 60 * 60)).toFixed(1);;
+calculoMinutos = (calculoMilisegundos / (1000 * 60)).toFixed(1);;
+console.log(calculoHoras);
+console.log(calculoMinutos);*/
 /*console.log(
 	"2. Crea unha función que dado o radio dun círculo, devolva a súa área. E fai outra función que reciba o radio e devolva o perímetro do círculo. Mostra por consola o resultado das funcións usando dúas cifras decimais."
 );

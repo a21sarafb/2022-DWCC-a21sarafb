@@ -1,7 +1,7 @@
+"use strict";
 /*console.log(
 	"1. Crea unha función á que se lle pase unha cadea e devolva unha cadea en sentido inverso."
 );
-
 const reverseString = (cadea) => {
 	//devolve a cadea como un arreglo
 	cadea = cadea.split("");
@@ -16,7 +16,6 @@ console.log(reverseString("I am a string")); // gnirts a ma I*/
 /*console.log(
 	"2. Crea unha función á que se lle pase unha cadea e un array de caracteres e devolva a cadea orixinal eliminando os caracteres do array."
 );
-
 const removeCharacters = (cadea2, array) => {
 	for (let x = 0; x < array.length; x++) {
 		cadea2 = cadea2.replaceAll(array[x], "");
