@@ -106,9 +106,10 @@ const camelCase = (arrayEntrada) => {
 			todoMinusculas =
 				primeraLetra + todoMinusculas.substring(1, separado[x].length);
 			//console.log(todoMinusculas);
-			final.concat(todoMinusculas);
+			console.log(final.concat(todoMinusculas, todoMinusculas));
+			//console.log(final);
 		}
-		return final;
+		//return final;
 	}
 };
 camelCase(arrayEntrada);
