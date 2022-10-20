@@ -1,3 +1,4 @@
+"use strict";
 /*console.log(
 	"1. Pide por teclado o día da semana (luns - domingo) e mostra unha mensaxe indicando se é laborable ou non."
 );

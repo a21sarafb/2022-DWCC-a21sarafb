@@ -1,3 +1,4 @@
+"use strict";
 /*console.log(
 	"1. Crea unha función frecha que devolva o cubo dun número pasado como parámetro"
 );

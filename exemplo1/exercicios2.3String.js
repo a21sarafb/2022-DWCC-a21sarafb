@@ -1,3 +1,4 @@
+"use strict";
 /*console.log(
 	"1. Crea unha función á que se lle pase unha cadea e devolva unha cadea en sentido inverso."
 );

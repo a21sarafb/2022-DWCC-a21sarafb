@@ -1,3 +1,4 @@
+"use strict";
 /*console.log(
 	"1. Dado un array cos días da semana, obtén un array cos días que empecen por “m”."
 );
