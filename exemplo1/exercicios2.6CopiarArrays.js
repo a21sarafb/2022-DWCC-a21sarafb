@@ -57,6 +57,35 @@ console.log(
 const playersSubstitutos = ["Thiago", "Coutinho", "Periscic"];
 const players1Final = [...playersSubstitutos, ...players[0]];
 console.log("Array de players1Final: " + players1Final);*/
-console.log(
+/*console.log(
 	"2. Dado un array con nomes de variables formados por dúas palabras separadas por “_”, mostra por consola os nomes das variables en formato camelCase. Por exemplo, se o array de entrada é [“first_name”, “ last_NAME”], deberase mostrar por consola “firtsName” e “lastName”."
 );
+const arrayEntrada = [
+	"first_name",
+	"last_NAME",
+	"SaRA_fACal",
+	"saRa_fACAl_bOuLLosA",
+];
+const camelCase = (arrayEntrada) => {
+	let final = "";
+	let todoMinusculas;
+	let mensaxeDeRetorno = "";
+	for (let i = 0; i < arrayEntrada.length; i++) {
+		let separado = arrayEntrada[i].split("_");
+		final = "";
+		todoMinusculas = "";
+		for (let x = 0; x < separado.length; x++) {
+			let todoMinusculas = separado[x].toLowerCase();
+			let primeraLetra = todoMinusculas.substring(0, 1).toUpperCase();
+			todoMinusculas =
+				primeraLetra + todoMinusculas.substring(1, separado[x].length);
+			final += todoMinusculas;
+		}
+		let primeraLetraFinal = final.substring(0, 1).toLowerCase();
+		mensaxeDeRetorno = primeraLetraFinal + final.substring(1, final.length);
+		console.log(mensaxeDeRetorno);
+		//return mensaxeDeRetorno;
+	}
+	return mensaxeDeRetorno;
+};
+camelCase(arrayEntrada);*/

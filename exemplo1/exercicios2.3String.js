@@ -27,13 +27,15 @@ console.log(removeCharacters("I am an example string", ["a", "x"])); // I m n em
 	"3. Crea unha función á que se lle pase unha cadea e devolva o carácter máis repetido."
 );
 const caracterMaisRepetido = (cadea3) => {
-	for (let i = 0; i < cadea3.length; i++) {
-		let contador = [];
-		let pos = cadea3.matchAll(cadea3[i]);
-		if (pos) {
+	let max = 0,
+		maxChar = "";
+	cadea3.split("").forEach(function (char) {
+		if (cadea3.split(char).length > max) {
+			max = cadea3.split(char).length;
+			maxChar = char;
 		}
-		console.log(contador);
-	}
+	});
+	return maxChar;
 };
 console.log(caracterMaisRepetido("abcddefg")); // d*/
 /*console.log(

@@ -68,7 +68,21 @@ console.log(arraySemana.findIndex(primeroM));*/
 
 /*console.log(
 	"4. Dado un array cos días da semana, devolve outro array cos días en maiúsculas."
-);*/
+);
+const arraySemana = [
+	"lunes",
+	"martes",
+	"miercoles",
+	"jueves",
+	"viernes",
+	"sabado",
+	"domingo",
+];
+const arraySemanaMaiusculas = [];
+for (let i = 0; i < arraySemana.length; i++) {
+	arraySemanaMaiusculas.push(arraySemana[i].toUpperCase());
+}
+console.log(arraySemanaMaiusculas);*/
 /*console.log(
 	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
 );
