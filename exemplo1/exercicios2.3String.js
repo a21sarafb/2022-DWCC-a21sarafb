@@ -50,6 +50,7 @@ const enmascarar = (cadea4) => {
 		cadeaAsterisco += "*";
 	}
 	return cadeaAsterisco.concat(catroUltimos);
+	//tamen se pode usar o padStart
 };
 console.log(enmascarar("1234123412347777")); // ************7777
 console.log(enmascarar("34521234"));
@@ -81,52 +82,51 @@ sitio2.push(separado[1].substring(0, 3).toUpperCase());
 sitio2.push(separado[4].substring(0, 3).toUpperCase());
 sitio2.push(separado[6].substring(14, 17).toUpperCase());
 sitio2.push(separado[9].substring(0, 3).toUpperCase());
-//console.log(separado);
-console.log(
+const cadea1 =
 	departure[0] +
-		" " +
-		sitio[0] +
-		" " +
-		sitio2[0] +
-		" (" +
-		horas[0].substring(0, 2) +
-		"h" +
-		horas[0].substring(3, 5) +
-		")"
-);
-console.log(
+	" " +
+	sitio[0] +
+	" " +
+	sitio2[0] +
+	" (" +
+	horas[0].substring(0, 2) +
+	"h" +
+	horas[0].substring(3, 5) +
+	")";
+const cadea2 =
 	departure[1] +
-		" " +
-		sitio[1] +
-		" " +
-		sitio2[1] +
-		" (" +
-		horas[1].substring(0, 2) +
-		"h" +
-		horas[1].substring(3, 5) +
-		")"
-);
-console.log(
+	" " +
+	sitio[1] +
+	" " +
+	sitio2[1] +
+	" (" +
+	horas[1].substring(0, 2) +
+	"h" +
+	horas[1].substring(3, 5) +
+	")";
+const cadea3 =
 	departure[2] +
-		" " +
-		sitio[2] +
-		" " +
-		sitio2[2] +
-		" (" +
-		horas[2].substring(0, 2) +
-		"h" +
-		horas[2].substring(3, 5) +
-		")"
-);
-console.log(
+	" " +
+	sitio[2] +
+	" " +
+	sitio2[2] +
+	" (" +
+	horas[2].substring(0, 2) +
+	"h" +
+	horas[2].substring(3, 5) +
+	")";
+const cadea4 =
 	departure[3] +
-		" " +
-		sitio[3] +
-		" " +
-		sitio2[3] +
-		" (" +
-		horas[3].substring(0, 2) +
-		"h" +
-		horas[3].substring(3, 5) +
-		")"
-);*/
+	" " +
+	sitio[3] +
+	" " +
+	sitio2[3] +
+	" (" +
+	horas[3].substring(0, 2) +
+	"h" +
+	horas[3].substring(3, 5) +
+	")";
+console.log(cadea1.padStart(36));
+console.log(cadea2.padStart(36));
+console.log(cadea3.padStart(36));
+console.log(cadea4.padStart(36));*/
