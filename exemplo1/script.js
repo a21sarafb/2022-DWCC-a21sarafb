@@ -93,7 +93,23 @@ const mayorQue = (num) => {
 	if (mayor < num) mayor = num;
 	return mayor;
 };
-const arrayNums = [1, 4, 7, 2, 9, 1];
+const arrayNums = [1, 0, 27, 2, 93, -1];
 let mayor = arrayNums[0];
 const result = arrayNums.filter(mayorQue);
-console.log(mayorQue(result));
+console.log(mayorQue(arrayNums));
+//PROBAR CON REDUCE()
+console.log("3. Dado o seguinte obxecto:");
+const game = {
+	scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+};
+console.log(
+	"a. Recorre o array game.scored e mostra por pantalla información do xogador que marcou e o número de gol. Exemplo: 'Gol 1: Lewandowski'."
+);
+console.log(
+	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
+);
+for (const arrayXogadores in game) {
+	for (let i = 0; i < game[arrayXogadores].length; i++) {
+		console.log("Gol " + (i + 1) + ": " + game[arrayXogadores][i]);
+	}
+}
