@@ -101,11 +101,10 @@ console.log(mayorQue(arrayNums));
 console.log(
 	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
 );
-const mayorQue = (num) => {
-	if (mayor < num) mayor = num;
-	return mayor;
-};
-const arrayNums = [1, 4, 7, 2, 9, 1];
+const arrayNums = [1, 0, 27, 2, 93, -1];
 let mayor = arrayNums[0];
-const result = arrayNums.filter(mayorQue);
-console.log(mayorQue(result));*/
+const result = arrayNums.reduce(function (a, b) {
+	return Math.max(a, b);
+});
+console.log(result);
+*/

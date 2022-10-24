@@ -32,21 +32,31 @@ const {
 console.log("Variable team1 = " + team1);
 console.log("Variable draw = " + draw);
 console.log("Variable team2 = " + team2);*/
-/*cconsole.log("3. Dado o seguinte obxecto:");
+/*console.log("3. Dado o seguinte obxecto:");
 const game = {
 	scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
 };
 console.log(
 	"a. Recorre o array game.scored e mostra por pantalla información do xogador que marcou e o número de gol. Exemplo: 'Gol 1: Lewandowski'."
 );
-console.log(
-	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
-);
 for (const arrayXogadores in game) {
 	for (let i = 0; i < game[arrayXogadores].length; i++) {
 		console.log("Gol " + (i + 1) + ": " + game[arrayXogadores][i]);
 	}
-}*/
+}
+console.log(
+	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
+);
+
+const arrayJugadores = Object.values(game);
+let scorers = { arrayJugadores };
+console.log(arrayJugadores);
+let contador = 1;
+for (let x = 0; x < arrayJugadores.length; x++) {
+	scorers[arrayJugadores] = contador;
+	contador++;
+}
+console.log(scorers);*/
 /*console.log("4. Dada a seguinte información: ");*/
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },

@@ -86,30 +86,62 @@ resultado = array.reduce(
 	0
 );
 console.log(`Resultado = ${resultado}`);*/
+/*console.log("4. Dada a seguinte información: ");*/
+const inventors = [
+	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
+	{ first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
+	{ first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
+	{ first: "Marie", last: "Curie", year: 1867, passed: 1934 },
+	{ first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+	{ first: "Nicolaus", last: "Copernicus", year: 1473, passed: 1543 },
+	{ first: "Max", last: "Planck", year: 1858, passed: 1947 },
+	{ first: "Katherine", last: "Blodgett", year: 1898, passed: 1979 },
+	{ first: "Ada", last: "Lovelace", year: 1815, passed: 1852 },
+	{ first: "Sarah E.", last: "Goode", year: 1855, passed: 1905 },
+	{ first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
+	{ first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
+];
 console.log(
-	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
+	"a. Filtra o array de inventores e crea un array só cos inventores que naceron no século XVI."
 );
-const mayorQue = (num) => {
-	if (mayor < num) mayor = num;
-	return mayor;
-};
-const arrayNums = [1, 0, 27, 2, 93, -1];
-let mayor = arrayNums[0];
-const result = arrayNums.filter(mayorQue);
-console.log(mayorQue(arrayNums));
-//PROBAR CON REDUCE()
-console.log("3. Dado o seguinte obxecto:");
-const game = {
-	scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-};
-console.log(
-	"a. Recorre o array game.scored e mostra por pantalla información do xogador que marcou e o número de gol. Exemplo: 'Gol 1: Lewandowski'."
-);
-console.log(
-	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
-);
-for (const arrayXogadores in game) {
-	for (let i = 0; i < game[arrayXogadores].length; i++) {
-		console.log("Gol " + (i + 1) + ": " + game[arrayXogadores][i]);
+const arrayInventoresSeculoXVI = [];
+for (let i = 0; i < inventors.length; i++) {
+	if (inventors[i].year >= 1501 && inventors[i].year <= 1600) {
+		arrayInventoresSeculoXVI.push(inventors[i]);
 	}
 }
+console.log(arrayInventoresSeculoXVI);
+console.log(
+	"b. Crea un array co nome completo dos inventores. Por exemplo: ['Albert Einstein', 'Isaac Newton', ...]"
+);
+const nombreCompleto = [];
+let cadenaNombre = "";
+for (let x = 0; x < inventors.length; x++) {
+	cadenaNombre = inventors[x].first + " " + inventors[x].last;
+	nombreCompleto.push(cadenaNombre);
+}
+console.log(nombreCompleto);
+console.log(
+	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
+);
+let nombreCompletoOrdenado = [];
+let apellidos = [];
+let apellidosOrdenados = [];
+let cadenaNombreOrdenado = "";
+for (let y = 0; y < inventors.length; y++) {
+	apellidos.push(inventors[y].last);
+}
+apellidosOrdenados = apellidos.sort();
+let indice = 0;
+for (let z = 0; z < apellidosOrdenados.length; z++) {
+	indice = nombreCompleto.indexOf(apellidosOrdenados[z]);
+	console.log(indice);
+}
+console.log(inventors[0].last);
+console.log(apellidosOrdenados);
+console.log("d. Ordena o array de inventores alfabeticamente polo apelido");
+console.log("e. Ordena o array de inventores pola data de nacemento");
+console.log("f. Calcula a suma dos anos que viviron todos os inventores.");
+console.log(
+	"g. Ordena os inventores polos anos que viviron, primeiro o máis lonxevo"
+);
