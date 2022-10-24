@@ -96,4 +96,16 @@ const mayorQue = (arrayNums) => {
 	return mayor;
 };
 const arrayNums = [1, 4, 7, 2, 9, 1];
-console.log(mayorQue(arrayNums));*/
+console.log(mayorQue(arrayNums));
+//OTRA SOLUCION
+console.log(
+	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
+);
+const mayorQue = (num) => {
+	if (mayor < num) mayor = num;
+	return mayor;
+};
+const arrayNums = [1, 4, 7, 2, 9, 1];
+let mayor = arrayNums[0];
+const result = arrayNums.filter(mayorQue);
+console.log(mayorQue(result));*/

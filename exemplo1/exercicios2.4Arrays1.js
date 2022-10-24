@@ -12,7 +12,8 @@ listaDeFrutas.splice(3, 0, "laranxas");
 listaDeFrutas.splice(4, 0, "sandía");
 console.log(listaDeFrutas);
 //c. Quita os kiwis e pon no seu lugar cereixas e nésperas.
-//console.log(listaDeFrutas);*/
+listaDeFrutas.splice(1, 1, "plátanos", "mandarinas");
+console.log(listaDeFrutas);*/
 /*console.log(
 	"2. Fai unha función que ordene as notas dun array pasado como parámetro. Por exemplo, se se pasa o array [4,8,3,10,5] debe devolver [3,4,5,8,10]. Debes utilizar a función sort e pasarlle como parámetro unha función que ti definas que serva para realizar a comparación de elementos."
 );

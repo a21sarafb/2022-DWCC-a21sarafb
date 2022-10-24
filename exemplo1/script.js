@@ -86,3 +86,14 @@ resultado = array.reduce(
 	0
 );
 console.log(`Resultado = ${resultado}`);*/
+console.log(
+	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
+);
+const mayorQue = (num) => {
+	if (mayor < num) mayor = num;
+	return mayor;
+};
+const arrayNums = [1, 4, 7, 2, 9, 1];
+let mayor = arrayNums[0];
+const result = arrayNums.filter(mayorQue);
+console.log(mayorQue(result));
