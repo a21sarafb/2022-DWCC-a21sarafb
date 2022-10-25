@@ -75,17 +75,77 @@ const inventors = [
 console.log(
 	"a. Filtra o array de inventores e crea un array só cos inventores que naceron no século XVI."
 );
+const arrayInventoresSeculoXVI = [];
+for (const propiedade in inventors) {
+	if (
+		inventors[propiedade].year >= 1501 &&
+		inventors[propiedade].year <= 1600
+	) {
+		arrayInventoresSeculoXVI.push(inventors[propiedade]);
+	}
+}
+console.log(arrayInventoresSeculoXVI);
 console.log(
 	"b. Crea un array co nome completo dos inventores. Por exemplo: ['Albert Einstein', 'Isaac Newton', ...]"
 );
+const nombreCompleto = [];
+let cadenaNombre = "";
+for (const propiedade in inventors) {
+	cadenaNombre = inventors[propiedade].first + " " + inventors[propiedade].last;
+	nombreCompleto.push(cadenaNombre);
+}
+console.log(nombreCompleto);
 console.log(
 	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
 );
+
+const nombreCompletoOrdenado = nombreCompleto.sort();
+console.log(nombreCompletoOrdenado);
 console.log("d. Ordena o array de inventores alfabeticamente polo apelido");
+console.log(
+	inventors.sort((a, b) => {
+		const apelidoA = a.last.toUpperCase();
+		const apelidoB = b.last.toUpperCase();
+		if (apelidoA < apelidoB) return -1;
+		if (apelidoA > apelidoB) return 1;
+		return 0;
+	})
+);
 console.log("e. Ordena o array de inventores pola data de nacemento");
+console.log(inventors.sort((a, b) => a.year - b.year));
 console.log("f. Calcula a suma dos anos que viviron todos os inventores.");
+let años = 0;
+let suma = 0;
+for (const propiedade in inventors) {
+	años = inventors[propiedade].passed - inventors[propiedade].year;
+	suma += años;
+}
+console.log(suma);
+let anos = 0;
+let sumaT = 0;
+const sumaTotal = inventors.reduce(function (a, b) {
+	const nace = b.year;
+	const morre = b.passed;
+	anos = morre - nace;
+	sumaT += anos;
+	return sumaT;
+}, sumaT);
+console.log(sumaTotal);
 console.log(
 	"g. Ordena os inventores polos anos que viviron, primeiro o máis lonxevo"
+);
+console.log(
+	inventors.sort((a, b) => {
+		let anosP,
+			anosS = 0;
+		const anoNacePrimeiro = b.year;
+		const anoMorrePrimeiro = b.passed;
+		const anoNaceSegundo = a.year;
+		const anoMorreSegundo = a.passed;
+		anosP = anoMorrePrimeiro - anoNacePrimeiro;
+		anosS = anoMorreSegundo - anoNaceSegundo;
+		return anosP - anosS;
+	})
 );
 console.log(
 	"5. Dada a seguinte información, obtén un obxecto con unha propiedade para cada medio de transporte, indicando o número de veces que se repite no array. É dicir, o resultado debería ser {car: 5, truck: 3, bike: 2, walk: 2, van: 2, pogostick: 1}"

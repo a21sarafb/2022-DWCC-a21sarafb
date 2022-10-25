@@ -86,7 +86,7 @@ resultado = array.reduce(
 	0
 );
 console.log(`Resultado = ${resultado}`);*/
-/*console.log("4. Dada a seguinte información: ");*/
+console.log("4. Dada a seguinte información: ");
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
 	{ first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
@@ -105,9 +105,12 @@ console.log(
 	"a. Filtra o array de inventores e crea un array só cos inventores que naceron no século XVI."
 );
 const arrayInventoresSeculoXVI = [];
-for (let i = 0; i < inventors.length; i++) {
-	if (inventors[i].year >= 1501 && inventors[i].year <= 1600) {
-		arrayInventoresSeculoXVI.push(inventors[i]);
+for (const propiedade in inventors) {
+	if (
+		inventors[propiedade].year >= 1501 &&
+		inventors[propiedade].year <= 1600
+	) {
+		arrayInventoresSeculoXVI.push(inventors[propiedade]);
 	}
 }
 console.log(arrayInventoresSeculoXVI);
@@ -116,32 +119,60 @@ console.log(
 );
 const nombreCompleto = [];
 let cadenaNombre = "";
-for (let x = 0; x < inventors.length; x++) {
-	cadenaNombre = inventors[x].first + " " + inventors[x].last;
+for (const propiedade in inventors) {
+	cadenaNombre = inventors[propiedade].first + " " + inventors[propiedade].last;
 	nombreCompleto.push(cadenaNombre);
 }
 console.log(nombreCompleto);
 console.log(
 	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
 );
-let nombreCompletoOrdenado = [];
-let apellidos = [];
-let apellidosOrdenados = [];
-let cadenaNombreOrdenado = "";
-for (let y = 0; y < inventors.length; y++) {
-	apellidos.push(inventors[y].last);
-}
-apellidosOrdenados = apellidos.sort();
-let indice = 0;
-for (let z = 0; z < apellidosOrdenados.length; z++) {
-	indice = nombreCompleto.indexOf(apellidosOrdenados[z]);
-	console.log(indice);
-}
-console.log(inventors[0].last);
-console.log(apellidosOrdenados);
+
+const nombreCompletoOrdenado = nombreCompleto.sort();
+console.log(nombreCompletoOrdenado);
 console.log("d. Ordena o array de inventores alfabeticamente polo apelido");
+console.log(
+	inventors.sort((a, b) => {
+		const apelidoA = a.last.toUpperCase();
+		const apelidoB = b.last.toUpperCase();
+		if (apelidoA < apelidoB) return -1;
+		if (apelidoA > apelidoB) return 1;
+		return 0;
+	})
+);
 console.log("e. Ordena o array de inventores pola data de nacemento");
+console.log(inventors.sort((a, b) => a.year - b.year));
 console.log("f. Calcula a suma dos anos que viviron todos os inventores.");
+let años = 0;
+let suma = 0;
+for (const propiedade in inventors) {
+	años = inventors[propiedade].passed - inventors[propiedade].year;
+	suma += años;
+}
+console.log(suma);
+let anos = 0;
+let sumaT = 0;
+const sumaTotal = inventors.reduce(function (a, b) {
+	const nace = b.year;
+	const morre = b.passed;
+	anos = morre - nace;
+	sumaT += anos;
+	return sumaT;
+}, sumaT);
+console.log(sumaTotal);
 console.log(
 	"g. Ordena os inventores polos anos que viviron, primeiro o máis lonxevo"
+);
+console.log(
+	inventors.sort((a, b) => {
+		let anosP,
+			anosS = 0;
+		const anoNacePrimeiro = b.year;
+		const anoMorrePrimeiro = b.passed;
+		const anoNaceSegundo = a.year;
+		const anoMorreSegundo = a.passed;
+		anosP = anoMorrePrimeiro - anoNacePrimeiro;
+		anosS = anoMorreSegundo - anoNaceSegundo;
+		return anosP - anosS;
+	})
 );
