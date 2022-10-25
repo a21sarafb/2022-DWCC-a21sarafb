@@ -48,13 +48,18 @@ console.log(
 	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
 );
 
-const arrayJugadores = Object.values(game);
-let scorers = { arrayJugadores };
-console.log(arrayJugadores);
+const xogadoresOrdenado = game.scored.sort();
+let scorers = {};
 let contador = 1;
-for (let x = 0; x < arrayJugadores.length; x++) {
-	scorers[arrayJugadores] = contador;
-	contador++;
+for (let i = 0; i < xogadoresOrdenado.length; i++) {
+	if (xogadoresOrdenado[i] === xogadoresOrdenado[i + 1]) {
+		contador++;
+	} else {
+		Object.defineProperty(scorers, xogadoresOrdenado[i], {
+			value: contador,
+		});
+		contador = 1;
+	}
 }
 console.log(scorers);*/
 /*console.log("4. Dada a seguinte información: ");*/
@@ -98,9 +103,20 @@ console.log(nombreCompleto);
 console.log(
 	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
 );
-
-const nombreCompletoOrdenado = nombreCompleto.sort();
-console.log(nombreCompletoOrdenado);
+const ordenado = nombreCompleto.sort(function (a, b) {
+	let apellidoA = a.split(" ");
+	apellidoA = apellidoA[1];
+	let apellidoB = b.split(" ");
+	apellidoB = apellidoB[1];
+	if (apellidoA < apellidoB) {
+		return -1;
+	}
+	if (apellidoA > apellidoB) {
+		return 1;
+	}
+	return 0;
+});
+console.log(ordenado);
 console.log("d. Ordena o array de inventores alfabeticamente polo apelido");
 console.log(
 	inventors.sort((a, b) => {
@@ -147,6 +163,7 @@ console.log(
 		return anosP - anosS;
 	})
 );
+
 console.log(
 	"5. Dada a seguinte información, obtén un obxecto con unha propiedade para cada medio de transporte, indicando o número de veces que se repite no array. É dicir, o resultado debería ser {car: 5, truck: 3, bike: 2, walk: 2, van: 2, pogostick: 1}"
 );
@@ -167,3 +184,17 @@ const data = [
 	"truck",
 	"pogostick",
 ];
+const dataOrdenado = data.sort();
+let obxectoVehiculo = {};
+let contador = 1;
+for (let i = 0; i < dataOrdenado.length; i++) {
+	if (dataOrdenado[i] === dataOrdenado[i + 1]) {
+		contador++;
+	} else {
+		Object.defineProperty(scorers, dataOrdenado[i], {
+			value: contador,
+		});
+		contador = 1;
+	}
+}
+console.log(scorers);

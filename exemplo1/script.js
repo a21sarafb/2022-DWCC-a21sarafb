@@ -86,7 +86,6 @@ resultado = array.reduce(
 	0
 );
 console.log(`Resultado = ${resultado}`);*/
-console.log("4. Dada a seguinte información: ");
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
 	{ first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
@@ -127,9 +126,20 @@ console.log(nombreCompleto);
 console.log(
 	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
 );
-
-const nombreCompletoOrdenado = nombreCompleto.sort();
-console.log(nombreCompletoOrdenado);
+const ordenado = nombreCompleto.sort(function (a, b) {
+	let apellidoA = a.split(" ");
+	apellidoA = apellidoA[1];
+	let apellidoB = b.split(" ");
+	apellidoB = apellidoB[1];
+	if (apellidoA < apellidoB) {
+		return -1;
+	}
+	if (apellidoA > apellidoB) {
+		return 1;
+	}
+	return 0;
+});
+console.log(ordenado);
 console.log("d. Ordena o array de inventores alfabeticamente polo apelido");
 console.log(
 	inventors.sort((a, b) => {
