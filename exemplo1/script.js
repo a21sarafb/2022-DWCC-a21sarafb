@@ -107,25 +107,16 @@ console.log(xogadoresOrdenado);
 let scorers = {};
 let contador = 1;
 for (let i = 0; i < xogadoresOrdenado.length; i++) {
-	console.log(scorers);
-
-	console.log(scorers[xogadoresOrdenado[i]]);
 	if (xogadoresOrdenado[i] === xogadoresOrdenado[i + 1]) {
 		contador++;
 	} else {
-		// Object.defineProperty(scorers, xogadoresOrdenado[i], {
-		// 	value: contador,
-		// });
-		//
 		scorers[xogadoresOrdenado[i]] = contador;
-		//		console.log(scorers[xogadoresOrdenado[i]]);
 		contador = 1;
 	}
 }
+console.log(scorers);
 let scorers1 = {};
 for (const xogador of xogadoresOrdenado) {
-	console.log(scorers1[xogador]);
-
-	scorers1[xogador] = 1;
+	scorers1[xogador] ? scorers1[xogador]++ : (scorers1[xogador] = 1);
 }
 console.log(scorers1);
