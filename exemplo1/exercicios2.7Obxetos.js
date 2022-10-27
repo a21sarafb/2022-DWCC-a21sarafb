@@ -32,7 +32,7 @@ const {
 console.log("Variable team1 = " + team1);
 console.log("Variable draw = " + draw);
 console.log("Variable team2 = " + team2);*/
-/*console.log("3. Dado o seguinte obxecto:");
+console.log("3. Dado o seguinte obxecto:");
 const game = {
 	scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
 };
