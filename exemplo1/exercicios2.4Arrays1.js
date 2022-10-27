@@ -50,7 +50,10 @@ if (todosEmpiezanPorS === false) {
 	console.log("No todos acaban en S");
 } else {
 	console.log("Todos acaban en S");
-}*/
+}
+//LA MEJOR OPCION
+console.log(arraySemana.some((dia) => dia.toLowerCase().startsWith("s")));
+console.log(arraySemana.every((dia) => dia.toLowerCase().endsWith("s")));*/
 /*console.log(
 	"4. Crea unha función á que se lle pase un texto e devolva o mesmo texto coa primeira letra de cada palabra en maiúsculas e o resto en minúsculas."
 );

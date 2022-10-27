@@ -35,6 +35,8 @@ console.log(
 );
 const players1 = [...players[0]];
 let players2 = [...players[1]];
+//OTRA OPCION
+// const [players1, players2] = players;
 console.log("Array de players1: " + players1);
 console.log("Array de players2: " + players2);
 console.log(

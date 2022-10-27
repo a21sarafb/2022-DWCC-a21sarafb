@@ -11,16 +11,12 @@ const arraySemana = [
 	"sabado",
 	"domingo",
 ];
-const primeroM = (arraySemana) => {
-	for (let i = 0; i < arraySemana.length; i++) {
-		let primeraPosicion = arraySemana[i].charAt(arraySemana[0]);
-		if (primeraPosicion === "m") {
-			return true;
-		}
-		break;
-	}
+const primeroM = function (dia) {
+	return dia.charAt(0) === "m";
 };
-console.log(arraySemana.filter(primeroM));*/
+console.log(arraySemana.filter(primeroM));
+//OTRA OPCION
+console.log(arraySemana.filter((dia) => dia.charAt(0) === "m"));*/
 
 /*console.log(
 	"2. Dado un array cos días da semana, obtén o primeiro día que empeza por “m”."
@@ -34,16 +30,12 @@ const arraySemana = [
 	"sabado",
 	"domingo",
 ];
-const primeroM = (arraySemana) => {
-	for (let i = 0; i < arraySemana.length; i++) {
-		let primeraPosicion = arraySemana[i].charAt(arraySemana[0]);
-		if (primeraPosicion === "m") {
-			return true;
-		}
-		break;
-	}
+const primeroM = function (dia) {
+	return dia.charAt(0) === "m";
 };
-console.log(arraySemana.find(primeroM));*/
+console.log(arraySemana.find(primeroM));
+//OTRA OPCION
+console.log(arraySemana.find((dia) => dia.charAt(0) === "m"));*/
 /*console.log(
 	"3. Dado un array cos días da semana, obtén a posición no array do primeiro día que empeza por “m”"
 );
@@ -56,15 +48,12 @@ const arraySemana = [
 	"sabado",
 	"domingo",
 ];
-const primeroM = (arraySemana) => {
-	for (let i = 0; i < arraySemana.length; i++) {
-		let primeraPosicion = arraySemana[i].charAt(arraySemana[0]);
-		if (primeraPosicion === "m") {
-			return true;
-		}
-	}
+const primeroM = function (dia) {
+	return dia.charAt(0) === "m";
 };
-console.log(arraySemana.findIndex(primeroM));*/
+console.log(arraySemana.findIndex(primeroM));
+//OTRA OPCION
+console.log(arraySemana.findIndex((dia) => dia.charAt(0) === "m"));*/
 
 /*console.log(
 	"4. Dado un array cos días da semana, devolve outro array cos días en maiúsculas."
@@ -82,7 +71,9 @@ const arraySemanaMaiusculas = [];
 for (let i = 0; i < arraySemana.length; i++) {
 	arraySemanaMaiusculas.push(arraySemana[i].toUpperCase());
 }
-console.log(arraySemanaMaiusculas);*/
+console.log(arraySemanaMaiusculas);
+//MEJOR OPCION
+console.log(arraySemana.map((dia) => dia.toLocaleUpperCase()));*/
 /*console.log(
 	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
 );
@@ -97,14 +88,9 @@ const mayorQue = (arrayNums) => {
 };
 const arrayNums = [1, 4, 7, 2, 9, 1];
 console.log(mayorQue(arrayNums));
-//OTRA SOLUCION
-console.log(
-	"5. Dado un array de números, obtén o valor máis alto. (Usa algunha das funcións para traballar con arrays)."
-);
-const arrayNums = [1, 0, 27, 2, 93, -1];
-let mayor = arrayNums[0];
-const result = arrayNums.reduce(function (a, b) {
+//MEJOR SOLUCION
+const arrayNums1 = [1, 0, 27, 2, 93, -1];
+const result = arrayNums1.reduce(function (a, b) {
 	return Math.max(a, b);
 });
-console.log(result);
-*/
+console.log(result);*/
