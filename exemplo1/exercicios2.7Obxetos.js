@@ -27,12 +27,12 @@ const game = {
 	},
 };
 const {
-	odds: { team1: team1, x: draw, team2: team2 },
+	odds: { team1, x: draw, team2 },
 } = game;
 console.log("Variable team1 = " + team1);
 console.log("Variable draw = " + draw);
 console.log("Variable team2 = " + team2);*/
-console.log("3. Dado o seguinte obxecto:");
+/*console.log("3. Dado o seguinte obxecto:");
 const game = {
 	scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
 };
@@ -44,24 +44,31 @@ for (const arrayXogadores in game) {
 		console.log("Gol " + (i + 1) + ": " + game[arrayXogadores][i]);
 	}
 }
+// MELLOR OPCION
+for (const [index, player] of game.scored.entries())
+	console.log("Gol " + (index + 1) + ": " + player);
 console.log(
 	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
 );
 
 const xogadoresOrdenado = game.scored.sort();
+console.log(xogadoresOrdenado);
 let scorers = {};
 let contador = 1;
 for (let i = 0; i < xogadoresOrdenado.length; i++) {
 	if (xogadoresOrdenado[i] === xogadoresOrdenado[i + 1]) {
 		contador++;
 	} else {
-		Object.defineProperty(scorers, xogadoresOrdenado[i], {
-			value: contador,
-		});
+		scorers[xogadoresOrdenado[i]] = contador;
 		contador = 1;
 	}
 }
-console.log(scorers);*/
+console.log(scorers);
+let scorers1 = {};
+for (const xogador of xogadoresOrdenado) {
+	scorers1[xogador] ? scorers1[xogador]++ : (scorers1[xogador] = 1);
+}
+console.log(scorers1);*/
 /*console.log("4. Dada a seguinte información: ");*/
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
@@ -90,6 +97,11 @@ for (const propiedade in inventors) {
 	}
 }
 console.log(arrayInventoresSeculoXVI);
+//OUTRA OPCION
+const inventoresSeculoXVI = inventors.filter(
+	(inventor) => inventor.year >= 1500 && inventor.year < 1600
+);
+console.log(inventoresSeculoXVI);
 console.log(
 	"b. Crea un array co nome completo dos inventores. Por exemplo: ['Albert Einstein', 'Isaac Newton', ...]"
 );
@@ -100,6 +112,7 @@ for (const propiedade in inventors) {
 	nombreCompleto.push(cadenaNombre);
 }
 console.log(nombreCompleto);
+//OUTRA MANERA con map
 console.log(
 	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
 );
@@ -187,14 +200,9 @@ const data = [
 const dataOrdenado = data.sort();
 let obxectoVehiculo = {};
 let contador = 1;
-for (let i = 0; i < dataOrdenado.length; i++) {
-	if (dataOrdenado[i] === dataOrdenado[i + 1]) {
-		contador++;
-	} else {
-		Object.defineProperty(scorers, dataOrdenado[i], {
-			value: contador,
-		});
-		contador = 1;
-	}
+for (const vehiculo of dataOrdenado) {
+	obxectoVehiculo[vehiculo]
+		? obxectoVehiculo[vehiculo]++
+		: (obxectoVehiculo[vehiculo] = 1);
 }
-console.log(scorers);
+console.log(obxectoVehiculo);
