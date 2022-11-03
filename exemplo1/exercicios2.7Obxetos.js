@@ -89,14 +89,11 @@ console.log(
 );
 const arrayInventoresSeculoXVI = [];
 for (const propiedade in inventors) {
-	if (
-		inventors[propiedade].year >= 1501 &&
-		inventors[propiedade].year <= 1600
-	) {
+	if (inventors[propiedade].year >= 1501 && inventors[propiedade].year < 1600) {
 		arrayInventoresSeculoXVI.push(inventors[propiedade]);
 	}
 }
-console.log(arrayInventoresSeculoXVI);
+console.table(arrayInventoresSeculoXVI);
 //OUTRA OPCION
 const inventoresSeculoXVI = inventors.filter(
 	(inventor) => inventor.year >= 1500 && inventor.year < 1600
@@ -132,11 +129,11 @@ const ordenado = nombreCompleto.sort(function (a, b) {
 console.log(ordenado);
 console.log("d. Ordena o array de inventores alfabeticamente polo apelido");
 console.log(
-	inventors.sort((a, b) => {
-		const apelidoA = a.last.toUpperCase();
-		const apelidoB = b.last.toUpperCase();
-		if (apelidoA < apelidoB) return -1;
-		if (apelidoA > apelidoB) return 1;
+	inventors.sort((primeiro, segundo) => {
+		const apelidoPrimeiro = primeiro.last.toUpperCase();
+		const apelidoSegundo = segundo.last.toUpperCase();
+		if (apelidoPrimeiro < apelidoSegundo) return -1;
+		if (apelidoPrimeiro > apelidoSegundo) return 1;
 		return 0;
 	})
 );
@@ -152,9 +149,9 @@ for (const propiedade in inventors) {
 console.log(suma);
 let anos = 0;
 let sumaT = 0;
-const sumaTotal = inventors.reduce(function (a, b) {
-	const nace = b.year;
-	const morre = b.passed;
+const sumaTotal = inventors.reduce(function (total, inventor) {
+	const nace = inventor.year;
+	const morre = inventor.passed;
 	anos = morre - nace;
 	sumaT += anos;
 	return sumaT;
@@ -164,13 +161,13 @@ console.log(
 	"g. Ordena os inventores polos anos que viviron, primeiro o máis lonxevo"
 );
 console.log(
-	inventors.sort((a, b) => {
+	inventors.sort((segundo, primeiro) => {
 		let anosP,
 			anosS = 0;
-		const anoNacePrimeiro = b.year;
-		const anoMorrePrimeiro = b.passed;
-		const anoNaceSegundo = a.year;
-		const anoMorreSegundo = a.passed;
+		const anoNacePrimeiro = primeiro.year;
+		const anoMorrePrimeiro = primeiro.passed;
+		const anoNaceSegundo = segundo.year;
+		const anoMorreSegundo = segundo.passed;
 		anosP = anoMorrePrimeiro - anoNacePrimeiro;
 		anosS = anoMorreSegundo - anoNaceSegundo;
 		return anosP - anosS;
@@ -199,7 +196,6 @@ const data = [
 ];
 const dataOrdenado = data.sort();
 let obxectoVehiculo = {};
-let contador = 1;
 for (const vehiculo of dataOrdenado) {
 	obxectoVehiculo[vehiculo]
 		? obxectoVehiculo[vehiculo]++

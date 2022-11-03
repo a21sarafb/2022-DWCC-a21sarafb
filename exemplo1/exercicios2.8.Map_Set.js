@@ -21,7 +21,10 @@ const eventos = new Set();
 for (const value of gameEvents.values()) {
 	eventos.add(value);
 }
-console.log(eventos);
+console.log(Array.from(eventos));
+//outra opcion
+const eventos2 = new Set(gameEvents.values());
+console.log(Array.from(eventos2));
 console.log(
 	"b. Recorre con un bucle os gameEvents e mostra información de cada evento, indicando se ocorreu na primeira metade ou na segunda metade do partido, por exemplo: [PRIMEIRA PARTE] 17: GOAL."
 );
