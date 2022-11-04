@@ -108,16 +108,16 @@ verify(
 console.log(
 	"e. Un espazo seguido de punto, como, dous puntos ou punto e coma."
 );
-verify(/.../, ["bad punctuation ."], ["escape the period"]);
+verify(/ [\.,;:]/, ["bad punctuation ."], ["escape the period"]);
 console.log("f. Unha palabra con máis de 6 letras.");
 verify(
-	/.../,
+	/\w{6,}/,
 	["Siebentausenddreihundertzweiundzwanzig"],
 	["no", "three small words"]
 );
 console.log("g. Unha palabra sen a letra e (ou E).");
 verify(
-	/[^e]/i,
+	/\w+[^e]\w?/i,
 	["red platypus", "wobbling nest"],
 	["earth bed", "learning ape", "BEET"]
 );
@@ -133,3 +133,12 @@ function verify(regexp, yes, no) {
 			console.log(`Unexpected match for '${str}'`);
 		}
 }
+console.log(
+	"5. Crea unha función que comprobe se un contrasinal é válido, é dicir, cumpre as seguintes condicións: a. Mínimo 8 caracteres. b. Sen espazos en branco. c. Que teña, polo menos, 3 das seguintes tipos de caracteres: i. maiúsculas ii. minúsculas iii. números iv. caracteres especiais: ¡!$?%&#@/()=¿?*[];,:._<>+-"
+);
+let contrasinal = "SaR1Afa2cal1!$;";
+let regContrasinal =
+	/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/;
+regContrasinal.test(contrasinal)
+	? console.log("Contrasinal correcto")
+	: console.log("Contrasinal incorrecto");
