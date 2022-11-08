@@ -87,58 +87,35 @@ resultado = array.reduce(
 );
 console.log(`Resultado = ${resultado}`);*/
 console.log(
-	"1. Escribe unha expresión regular para comprobar que cada un dos seguintes elementos aparece nunha cadea. Unha vez teñas a expresión regular creada, comproba se se pode facer máis pequena. Utiliza o seguinte código para comprobar o resultado:"
+	"7. Dado o seguinte array de insultos, fai un script tal que cada vez que apareza un deles nun texto o substitúa pola primeira letra do insulto e un número de asteriscos igual á lonxitude do insulto - 1."
 );
-console.log("a. car e cat");
-verify(/ca[rt]/, ["my car", "bad cats"], ["camper", "high art"]);
-console.log("b. pop e prop");
-verify(/pr?op/, ["pop culture", "mad props"], ["plop", "prrrop"]);
-console.log("c. ferret, ferry e ferrari");
-verify(
-	/ferr[etyari]/,
-	["ferret", "ferry", "ferrari"],
-	["ferrum", "transfer A"]
-);
-console.log("d. Calquera palabra rematada en ious");
-verify(
-	/ious\b/,
-	["how delicious", "spacious room"],
-	["ruinous", "consciousness"]
-);
+let insultos = [
+	"testán",
+	"langrán",
+	"fervellasverzas",
+	"baldreu",
+	"lacazán",
+	"pillabán",
+];
 console.log(
-	"e. Un espazo seguido de punto, como, dous puntos ou punto e coma."
+	'Así, por exemplo, cada vez que apareza testán nun texto, debe substituírse por "t*****"'
 );
-verify(/ [\.,;:]/, ["bad punctuation ."], ["escape the period"]);
-console.log("f. Unha palabra con máis de 6 letras.");
-verify(
-	/\w{6,}/,
-	["Siebentausenddreihundertzweiundzwanzig"],
-	["no", "three small words"]
-);
-console.log("g. Unha palabra sen a letra e (ou E).");
-verify(
-	/\w+[^e]\w?/i,
-	["red platypus", "wobbling nest"],
-	["earth bed", "learning ape", "BEET"]
-);
-function verify(regexp, yes, no) {
-	// Ignore unfinished exercises
-	if (regexp.source == "...") return;
-	for (let str of yes)
-		if (!regexp.test(str)) {
-			console.log(`Failure to match '${str}'`);
+let textoConInsultos = "Jose é un testán e seu pai é un lacazán";
+let arrayConInsultos = textoConInsultos.split(" ");
+let cadenaSinInsultos = "";
+console.log(arrayConInsultos);
+for (let palabra of arrayConInsultos) {
+	let insultoAsterisco = "";
+	for (let insulto of insultos) {
+		if (palabra === insulto) {
+			let primeraLetraInsulto = palabra.charAt[0];
+			console.log(primeraLetraInsulto);
+			insultoAsterisco += primeraLetraInsulto;
+			for (let i = 0; i < palabra.length - 1; i++) {
+				insultoAsterisco += "*";
+			}
+			cadenaSinInsultos = textoConInsultos.replace(insulto, insultoAsterisco);
 		}
-	for (let str of no)
-		if (regexp.test(str)) {
-			console.log(`Unexpected match for '${str}'`);
-		}
+	}
 }
-console.log(
-	"5. Crea unha función que comprobe se un contrasinal é válido, é dicir, cumpre as seguintes condicións: a. Mínimo 8 caracteres. b. Sen espazos en branco. c. Que teña, polo menos, 3 das seguintes tipos de caracteres: i. maiúsculas ii. minúsculas iii. números iv. caracteres especiais: ¡!$?%&#@/()=¿?*[];,:._<>+-"
-);
-let contrasinal = "SaR1Afa2cal1!$;";
-let regContrasinal =
-	/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/;
-regContrasinal.test(contrasinal)
-	? console.log("Contrasinal correcto")
-	: console.log("Contrasinal incorrecto");
+console.log(cadenaSinInsultos);
