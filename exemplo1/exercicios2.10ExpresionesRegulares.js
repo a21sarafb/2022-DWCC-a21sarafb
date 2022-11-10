@@ -46,7 +46,7 @@ function verify(regexp, yes, no) {
 			console.log(`Unexpected match for '${str}'`);
 		}
 }
-/*console.log(
+console.log(
 	"2. Unha dirección de rede MAC está composta por 6 grupos de dous números hexadecimais separados por “:”. Por exemplo '01:32:54:67:89:AB'. Escribe unha expresión regular que comprobe se unha dirección MAC é correcta."
 );
 let MAC = "01:32:54:67:89:AB";
@@ -69,7 +69,7 @@ regMAC.test(MAC4)
 	: console.log("Dirección MAC incorrecta");
 regMAC.test(MAC5)
 	? console.log("Dirección MAC correcta")
-	: console.log("Dirección MAC incorrecta");*/
+	: console.log("Dirección MAC incorrecta");
 console.log(
 	"3. Crea unha expresión regular para buscar códigos de cores no formato #RGB ou #RRGGBB nun texto. Un código de color é unha cadea formada polo carácter “#” seguido de 3 ou 6 cifras hexadecimais."
 );
@@ -79,8 +79,9 @@ let RGB3 = "#111";
 let RGB4 = "#FFF";
 let RGB5 = "#111F11";
 let RGB6 = "#1A1";
-let RGB7 = "#1F2F3F";
-let regRGB = /^#(\d?[A-F]?){3,6}$/;
+let RGB7 = "#1J2F3F";
+let RGB8 = "#1A2F3FK";
+let regRGB = /[#]([0-9A-F]{3})|[#]([0-9A-F]{6})/i;
 regRGB.test(RGB)
 	? console.log("Código de cores (#111111) 1 correcta")
 	: console.log("Código de cores (#111111) 1 incorrecto");
@@ -102,17 +103,20 @@ regRGB.test(RGB6)
 regRGB.test(RGB7)
 	? console.log("Código de cores (#1F2F3F) 7 correcta")
 	: console.log("Código de cores (#1F2F3F) 7 incorrecto");
+regRGB.test(RGB8)
+	? console.log("Código de cores (#1A2F3FK) 8 correcta")
+	: console.log("Código de cores (#1A2F3FK) 8 incorrecto");
 /*console.log(
 	'4. Escribe unha expresión regular para números. Debe incluír números enteiros, decimais e números negativos. Así, na cadea "-1.2 4 0 -123.5." debe encontrar 4 números'
 );
 let nums = "-1.2 4 0 -123.5 3.";
-let regNums = /^([-])?(\d)+([\.]\d)?$/g;
+let regNums = /([-])?(\d)+([\.]\d)?/g;
 console.log(regNums.exec(nums));
 console.log(regNums.exec(nums));
 console.log(regNums.exec(nums));
 console.log(regNums.exec(nums));
 console.log(regNums.exec(nums));*/
-console.log(
+/*console.log(
 	"5. Crea unha función que comprobe se un contrasinal é válido, é dicir, cumpre as seguintes condicións: a. Mínimo 8 caracteres. b. Sen espazos en branco. c. Que teña, polo menos, 3 das seguintes tipos de caracteres: i. maiúsculas ii. minúsculas iii. números iv. caracteres especiais: ¡!$?%&#@/()=¿?*[];,:._<>+-"
 );
 let contrasinal = "SaR1Afa2cal1!$;";
@@ -122,7 +126,7 @@ let contrasinal4 = "sarafacal2";
 let contrasinal5 = "sara facal2";
 //por separado
 let regContrasinal =
-	/^(?=.*[a-z])?(?=.*[A-Z])?(?=.*\d)?(?=.*[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~])?([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/;
+	/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/;
 regContrasinal.test(contrasinal)
 	? console.log("Contrasinal ('SaR1Afa2cal1!$;') correcto")
 	: console.log("Contrasinal ('SaR1Afa2cal1!$;') incorrecto");
@@ -137,8 +141,8 @@ regContrasinal.test(contrasinal4)
 	: console.log("Contrasinal ('sarafacal2') incorrecto");
 regContrasinal.test(contrasinal5)
 	? console.log("Contrasinal ('sara facal2') correcto")
-	: console.log("Contrasinal ('sara facal2') incorrecto");
-console.log(
+	: console.log("Contrasinal ('sara facal2') incorrecto");*/
+/*console.log(
 	"6. Ás veces é útil eliminar as etiquetas HTML dun texto para evitar que se inclúa código mal intencionado nunha páxina web.Crea unha función á que se lle pase un texto e devolva o mesmo texto coas etiquetas HTML eliminadas."
 );
 let conEtiquetas =
@@ -151,8 +155,8 @@ function eliminaEtiquetas(conEtiquetas) {
 	return conEtiquetas;
 }
 console.log(eliminaEtiquetas(conEtiquetas));
-console.log(eliminaEtiquetas(conEtiquetas2));
-console.log(
+console.log(eliminaEtiquetas(conEtiquetas2));*/
+/*console.log(
 	"7. Dado o seguinte array de insultos, fai un script tal que cada vez que apareza un deles nun texto o substitúa pola primeira letra do insulto e un número de asteriscos igual á lonxitude do insulto - 1."
 );
 let insultos = [
@@ -166,3 +170,12 @@ let insultos = [
 console.log(
 	'Así, por exemplo, cada vez que apareza testán nun texto, debe substituírse por "t*****"'
 );
+function asterisco(match) {
+	return match.substring(0, 1) + "*".repeat(match.length - 1);
+}
+let textoConInsultos = "Jose é un testán e seu pai é un lacazán";
+let strPatronInsultos = insultos.join("|");
+let patronInsultos = new RegExp(strPatronInsultos, "gi");
+let textoSinInsultos = textoConInsultos.replace(patronInsultos, asterisco);
+console.log(textoConInsultos);
+console.log(textoSinInsultos);*/
