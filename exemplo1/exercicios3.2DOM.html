@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <p style="color: red;"><strong>¿É certo que elemento.lastChild.nextSibling é sempre null?</strong></p>
+    <p>Sí, verdadero. El elemento elem.lastChild siempre es el último, no tiene nextSibling.</p>
+    <p style="color: red;"><strong>¿É certo que elemento.children[0].previousSibling é sempre null?</strong></p>
+    <p>No, falso. elem.children[0] es el primer hijo entre elementos, pero pueden existir nodos que no son elementos
+        antes que él. previousSibling puede ser un nodo texto.</p>
+    <p><strong>PARA AMBOS CASOS SI NO HAY HIJOS HABRÁ UN ERROR</strong></p>
+    <p>Si no hay hijos, elem.lastChild es null, entonces no podemos acceder a elem.lastChild.nextSibling. Y la colección
+        elem.children es vacía (como un array vacío []).</p>
+</body>
+
+</html>
