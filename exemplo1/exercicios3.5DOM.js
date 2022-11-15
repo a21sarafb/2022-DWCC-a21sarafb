@@ -1,3 +1,4 @@
+"use strict";
 /*● O elemento con id “input2”.*/
 console.log("O elemento con id “input2”");
 let input2 = document.getElementById("input2");
@@ -26,9 +27,6 @@ console.log("Só os inputs con nome “sexo”.");
 let sexo = document.getElementsByName("sexo");
 console.log(sexo[0]);
 console.log(sexo[1]);
-/*● Os items da lista con clase “important”.*/
+/*● Os items da lista con clase “important”.*/ //le falta un toque
 console.log("Os items da lista con clase “important”.");
-let importante = document.getElementsByClassName("important");
-for (const important of importante) {
-	console.log(important);
-}
+console.log(document.querySelectorAll("ul important"));

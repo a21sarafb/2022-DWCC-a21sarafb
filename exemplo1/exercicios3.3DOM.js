@@ -1,21 +1,10 @@
-/*const proba = document.getElementById("primera");
-let primeiro = proba.firstElementChild;
-primeiro.style.backgroundColor = "red";*/
-
+"use strict";
 const proba2 = document.getElementsByTagName("td");
+const largo = document.getElementsByTagName("tr");
+let x = 0;
 for (let a = 0; a < proba2.length; a++) {
-	if (a == 0 || a == 6 || a == 12 || a == 18 || a == 24) {
+	if (a === x) {
+		x += largo.length + 1;
 		proba2[a].style.backgroundColor = "red";
 	}
 }
-/*let segundo = proba2[6];
-segundo.style.backgroundColor = "red";
-
-let tercero = proba2[12];
-tercero.style.backgroundColor = "red";
-
-let cuarto = proba2[18];
-cuarto.style.backgroundColor = "red";
-
-let quinto = proba2[24];
-quinto.style.backgroundColor = "red";*/

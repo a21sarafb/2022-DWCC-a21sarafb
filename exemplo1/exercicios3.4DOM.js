@@ -1,3 +1,4 @@
+"use strict";
 /*A táboa con id="age-table".*/
 let table = document.getElementById("age-table");
 console.log(table);
@@ -8,10 +9,12 @@ console.log(label);
 const td = table.getElementsByTagName("td");
 console.log(td[0]);
 /*O form con name="search".*/
-let search = document.getElementsByName("search");
-console.log(search[0]);
+let search = document.getElementsByName("search")[0];
+console.log(search);
 /*O primeiro input do formulario anterior formulario*/
 let primeiro = document.getElementsByTagName("input");
 console.log(primeiro[0]);
+//OUTRA FORMA q non vai ben ainda
+console.log(search.children[0]);
 /*O último input do formulario anterior formulario.*/
 console.log(primeiro[1]);

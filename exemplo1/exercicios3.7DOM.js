@@ -1,3 +1,4 @@
+"use strict";
 /*● O número de ligazóns da páxina.*/
 console.log("O número de ligazóns da páxina");
 console.log("O número de ligazóns é " + document.links.length);
@@ -6,8 +7,8 @@ console.log("A dirección da penúltima ligazón");
 console.log(document.links[document.links.length - 1].href);
 /*● O número de ligazóns que apuntan a http://proba*/
 console.log("O número de ligazóns que apuntan a http://proba");
-linksProba = document.links;
-contador = 0;
+let linksProba = document.links;
+let contador = 0;
 for (const links of linksProba) {
 	console.log(links.href);
 	if (links.href === "http://proba/") {

@@ -1,10 +1,11 @@
+"use strict";
 /*● O innerHTML da etiqueta “Escolle sexo”:*/
 console.log("O innerHTML da etiqueta “Escolle sexo");
 let escolle = document.getElementsByTagName("label");
 console.log(escolle[3].innerHTML);
 /*● O textContent da etiqueta anterior*/
 console.log("O textContent da etiqueta anterior");
-console.log(escolle[2].textContent);
+console.log(escolle[3].textContent);
 /*● O valor do primeiro input de sexo*/
 console.log("O valor do primeiro input de sexo");
 let sexo = document.getElementsByName("sexo");
@@ -26,3 +27,11 @@ for (const lis of li) {
 /*● Indica cantos elementos <li> hai. */
 console.log("Indica cantos elementos <li> hai");
 console.log("Hay " + li.length + " elementos <li>");
+/*Indica o valor do atributo data-widget-name*/
+console.log(document.querySelector("div[data-widget-name]").dataset.widgetName);
+//OUTRA FORMA
+console.log(
+	document
+		.querySelector("div[data-widget-name]")
+		.getAttribute("data-widget-name")
+);
