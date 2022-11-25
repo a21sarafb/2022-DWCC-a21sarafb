@@ -4,8 +4,8 @@ console.log(nodoPai);
 nodoPai.addEventListener("click", mostrar);
 
 function mostrar(e) {
-	let pulsar = e.target.closest("li");
-	let div = e.target.closest("ul");
+	let pulsar = e.target.closest("ul");
+	let div = e.target.closest("li");
 	console.log(pulsar);
 	console.log(div);
 	if (pulsar === null) {
