@@ -18,19 +18,14 @@
 
         .dropdown {
             border: 0.1em solid black;
-            width: 10em;
+            width: 20em;
+            height: 10em;
             margin-bottom: 1em;
         }
 
         .dropdown .title {
             margin: .3em .3em .3em .3em;
             width: 100%;
-        }
-
-        .dropdown .title .fa-angle-right {
-            float: right;
-            margin-right: .7em;
-            transition: transform .3s;
         }
 
         .dropdown .menu {
@@ -48,12 +43,8 @@
             background: rgba(0, 0, 0, 0.2);
         }
 
-        .pointerCursor:hover {
+        span:hover {
             cursor: pointer;
-        }
-
-        .rotate-90 {
-            transform: rotate(90deg);
         }
     </style>
 </head>
@@ -61,7 +52,9 @@
 
 <body>
     <div class='dropdown'>
-        <div class='title pointerCursor'>Sweeties (click me)! <i class="fa fa-angle-right"></i></div>
+        <div class='title pointerCursor'>
+            <span class="texto">Sweeties (click me)!</span>
+        </div>
 
         <div class='menu pointerCursor hide'>
             <div class='option' id='option1'>Cake</div>
