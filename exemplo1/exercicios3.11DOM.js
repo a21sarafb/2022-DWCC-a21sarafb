@@ -1,1 +1,15 @@
 "use strict";
+let ul = document.getElementsByClassName("ul");
+console.log(ul);
+let liAdd1 = document.createElement("li");
+liAdd1.innerHTML = "1";
+let liAdd2 = document.createElement("li");
+liAdd2.innerHTML = "2";
+let liAdd3 = document.createElement("li");
+liAdd3.innerHTML = "3";
+let liAdd4 = document.createElement("li");
+liAdd4.innerHTML = "4";
+ul[0].append(liAdd1);
+liAdd1.append(liAdd2);
+liAdd2.append(liAdd3);
+liAdd3.append(liAdd4);
