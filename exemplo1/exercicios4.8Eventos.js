@@ -8,22 +8,47 @@ function ordenar(e) {
 	let tbody = document.getElementsByTagName("tbody");
 	let tr = tbody[0].getElementsByTagName("tr");
 	const array = [];
+	console.log("tr en 0");
+	console.log(tr[0]);
+	array.push(tr);
 	if (atributo === "number") {
 		// Bucle para recorrer todas las filas
-		for (i = 0; i < tr.length; i++) {
+		/*for (i = 0; i < tr.length; i++) {
 			console.log(tr[i]);
 			x = tr[i].getElementsByTagName("TD")[0];
-			array.push(x.innerHTML);
-		}
+		}*/
 		array.sort(function (a, b) {
-			return a - b;
+			//x = a.getElementsByTagName("TD")[0].innerHTML;
+			//y = b.getElementsByTagName("TD")[0].innerHTML;
+			return (
+				a.getElementsByTagName("TD")[0].innerHTML -
+				b.getElementsByTagName("TD")[0].innerHTML
+			);
 		});
-		for (i = 0; i < tr.length; i++) {
+		for (const arr of array) {
+			console.log("for of");
+			console.log(arr);
+			let f = 0;
+			for (const arr2 of arr) {
+				console.log("for of 2");
+				console.log(arr2);
+				console.log("tr en [f].getElementsByTagName('TD')[0]");
+				console.log(tr[f].getElementsByTagName("TD")[0].innerHTML);
+				tr[f]
+					.getElementsByTagName("TD")[0]
+					.append(arr2.getElementsByTagName("TD")[0].innerHTML);
+				f++;
+			}
+		}
+		/*for (i = 0; i < array[0].length; i++) {
 			let td = tr[i].getElementsByTagName("TD")[0];
 			console.log(td);
 			console.log(array[i]);
 			td.append(array[i]);
-		}
+			console.log("array en [i][i].getElementsByTagName('TD')[0].innerHTML");
+			console.log(array[i][i].getElementsByTagName("TD")[0].innerHTML);
+			tr[0].append(array[i][i].getElementsByTagName("TD")[0].innerHTML);
+		}*/
 	} else {
 		// Bucle para recorrer todas las filas
 		for (i = 0; i < tr.length; i++) {
@@ -46,6 +71,8 @@ function ordenar(e) {
 			td.replaceWith(array[i]);
 		}
 	}
+	console.log("array");
+	console.log(array);
 }
 
 /*let table = document.getElementById("grid");
