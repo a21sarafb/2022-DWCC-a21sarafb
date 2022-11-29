@@ -18,11 +18,12 @@ function ordenar(e) {
 			x = tr[i].getElementsByTagName("TD")[0];
 		}*/
 		array.sort(function (a, b) {
-			//x = a.getElementsByTagName("TD")[0].innerHTML;
-			//y = b.getElementsByTagName("TD")[0].innerHTML;
+			x = a.getElementsByTagName("TD")[0].innerHTML;
+			y = b.getElementsByTagName("TD")[0].innerHTML;
 			return (
-				a.getElementsByTagName("TD")[0].innerHTML -
-				b.getElementsByTagName("TD")[0].innerHTML
+				//a.getElementsByTagName("TD")[0].innerHTML -
+				//b.getElementsByTagName("TD")[0].innerHTML
+				x - y
 			);
 		});
 		for (const arr of array) {
@@ -34,6 +35,7 @@ function ordenar(e) {
 				console.log(arr2);
 				console.log("tr en [f].getElementsByTagName('TD')[0]");
 				console.log(tr[f].getElementsByTagName("TD")[0].innerHTML);
+				//tr[f].getElementsByTagName("TD")[0].innerHTML.remove();
 				tr[f]
 					.getElementsByTagName("TD")[0]
 					.append(arr2.getElementsByTagName("TD")[0].innerHTML);
