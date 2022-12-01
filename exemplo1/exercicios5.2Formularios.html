@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="exercicios5.2Formularios.js" defer></script>
 </head>
+<!-- pattern="^\d{3}[-]\d{2}[-]\d{3}$|\d{8}$" -->
 
 <body>
-    <form>
+    <form id="form">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" />
         <label for="nums">NUMS: </label>
-        <input type="text" name="nums" />
+        <input type="text" name="nums" id="nums" pattern="^\d{3}[-]\d{2}[-]\d{3}$|\d{8}$" />
+        <input type="submit" value="Enviar" id="boton">
     </form>
 </body>
 
