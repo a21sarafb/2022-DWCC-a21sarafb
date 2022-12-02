@@ -9,19 +9,21 @@
     <style>
         div {
             background-color: lightblue;
-            width: 100px;
-            height: 100px;
+            /*width: 100px;
+            height: 100px;*/
         }
     </style>
 </head>
 
 <body>
-    <div></div>
+    <form id="form">
+        <label for="alto">Alto: </label>
+        <input type="number" min=0 max=1000 name="alto" value="100" id="alto" required />
+        <label for="ancho">Ancho: </label>
+        <input type="number" min=0 max=1000 name="ancho" value="100" id="ancho" required />
+    </form>
     <br>
-    <label for="alto">Alto: </label>
-    <input type="number" minlength="0" maxlength="1000" name="alto" value="0" />
-    <label for="ancho">Ancho: </label>
-    <input type="number" minlength="0" maxlength="1000" name="ancho" value="0" />
+    <div style="width:100px;height:100px" id="div"></div>
 </body>
 
 </html>
