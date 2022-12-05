@@ -11,13 +11,14 @@ function modificar(e) {
 	areaTexto.innerHTML = textoDiv;
 	div2.append(areaTexto);
 	div.setAttribute("style", "display:none");
-	areaTexto.addEventListener("change", cambio);
-	function cambio(evt) {
-		evt.preventDefault();
-		div.setAttribute("style", "width:425px;height:160px");
-		console.log(areaTexto.value);
-		let textoArea = areaTexto.value;
-		div.innerHTML = textoArea;
-		areaTexto.setAttribute("style", "display:none");
-	}
+	document.addEventListener("keyup", function (event) {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			div.setAttribute("style", "width:425px;height:160px");
+			console.log(areaTexto.value);
+			let textoArea = areaTexto.value;
+			div.innerHTML = textoArea;
+			areaTexto.setAttribute("style", "display:none");
+		}
+	});
 }
