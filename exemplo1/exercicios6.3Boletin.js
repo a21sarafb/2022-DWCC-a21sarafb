@@ -1,6 +1,7 @@
 "use strict";
 let tbody = document.getElementById("tbody");
-tbody.addEventListener.one("click", function (e) {
+tbody.addEventListener("click", modificar);
+function modificar(e) {
 	let areaTexto = document.createElement("textarea");
 	let textoCelda = e.target.innerHTML;
 	let celda2 = e.target.closest("td").nextElementSibling;
@@ -12,7 +13,7 @@ tbody.addEventListener.one("click", function (e) {
 	celda2.replaceWith(areaTexto);
 	e.target.setAttribute("style", "display:none");
 	document.addEventListener("keyup", function (event) {
-		if (event.keyCode === 13) {
+		if (event.key === "Enter") {
 			event.preventDefault();
 			e.target.setAttribute("style", "width:70px;height:45px");
 			let textoArea = areaTexto.value;
@@ -20,4 +21,4 @@ tbody.addEventListener.one("click", function (e) {
 			areaTexto.setAttribute("style", "display:none");
 		}
 	});
-});
+}

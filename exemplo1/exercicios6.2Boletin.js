@@ -12,7 +12,7 @@ function modificar(e) {
 	div2.append(areaTexto);
 	div.setAttribute("style", "display:none");
 	document.addEventListener("keyup", function (event) {
-		if (event.keyCode === 13) {
+		if (event.key === "Enter") {
 			event.preventDefault();
 			div.setAttribute("style", "width:425px;height:160px");
 			console.log(areaTexto.value);
