@@ -1,5 +1,5 @@
 "use strict";
-/*console.log("1. Mostra o día da semana (en letra) do 25 de xullo de 2000.");
+console.log("1. Mostra o día da semana (en letra) do 25 de xullo de 2000.");
 const exercicio1 = new Date("July 25, 2000");
 const diaDaSemana = exercicio1.getDay();
 let diaDaSemanaLetra = "";
@@ -18,9 +18,9 @@ if (diaDaSemana === 0) {
 } else if (diaDaSemana === 6) {
 	diaDaSemanaLetra = "Sabado";
 }
-console.log(diaDaSemanaLetra);*/
+console.log(diaDaSemanaLetra);
 
-/*console.log("2. Mostra o día da semana (en letra) do 25 de xullo deste ano");
+console.log("2. Mostra o día da semana (en letra) do 25 de xullo deste ano");
 const exercicio2 = new Date("July 25, 2022");
 const diaDaSemana2 = exercicio2.getDay();
 let diaDaSemanaLetra2 = "";
@@ -39,8 +39,8 @@ if (diaDaSemana2 === 0) {
 } else if (diaDaSemana2 === 6) {
 	diaDaSemanaLetra2 = "Sabado";
 }
-console.log(diaDaSemanaLetra2);*/
-/*console.log(
+console.log(diaDaSemanaLetra2);
+console.log(
 	"3. Calcula o número de días que pasaron dende o 25 de xullo de 2000 ata hoxe."
 );
 const dataDan = new Date("July 25, 2000");
@@ -49,9 +49,9 @@ const milisegundosDan = dataDan.valueOf();
 const milisegundosHoy = dataHoy.valueOf();
 let calculoMilisegundos = milisegundosHoy - milisegundosDan;
 calculoMilisegundos = calculoMilisegundos / 86400000;
-console.log(calculoMilisegundos);*/
+console.log(calculoMilisegundos);
 
-/*console.log(
+console.log(
 	"4. Crea unha función á que se lle pase un mes (1-12) e un ano e devolva o número de días dese mes."
 );
 const diasMes = (mes, año) => new Date(año, mes, 0).getDate();
@@ -60,8 +60,9 @@ console.log(diasMes(12, 2017));
 console.log(diasMes(5, 2015));
 console.log(diasMes(11, 2022));
 console.log(diasMes(2, 2000));
-console.log(diasMes(2, 2001));*/
-/*console.log(
+console.log(diasMes(2, 2001));
+
+console.log(
 	"5. Crea unha función á que se lle pase unha data e diga se é fin de semana."
 );
 const diaQuePasan = prompt(
@@ -78,9 +79,8 @@ const finDeSemana = (diaQuePasan) => {
 	}
 	console.log(diaDaSemanaLetra);
 };
-finDeSemana();*/
+finDeSemana();
 
-/*console.log(
+console.log(
 	"6. Crea unha función que reciba unha data como parámetro e devolva o número de días que pasaron dende que comezou o ano."
 );
-*/

@@ -1,5 +1,5 @@
 "use strict";
-/*console.log(
+console.log(
 	"1. Crea unha función frecha que devolva o cubo dun número pasado como parámetro"
 );
 const numero = Number(prompt("Ingrese o numero que desexa elevar ao cubo"));
@@ -386,4 +386,4 @@ console.log("56 = " + cambio(56));
 console.log("25 = " + cambio(25));
 console.log("37 = " + cambio(37));
 console.log("138 = " + cambio(138));
-console.log("1574 = " + cambio(1574));*/
+console.log("1574 = " + cambio(1574));

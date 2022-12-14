@@ -1,5 +1,5 @@
 "use strict";
-/*console.log(
+console.log(
 	"1. Garda nun array a lista de froitas: peras, mazás, kiwis, plátanos e mandarinas. Fai os seguintes apartados con splice: a. Elimina as mazás. b. Engade detrás dos plátanos, laranxas e sandía. c. Quita os kiwis e pon no seu lugar cereixas e nésperas. Despois de realizar cada operación, mostra por pantalla o array coa lista de froitas, onde os elementos estean separados por unha coma e espazo. Por exemplo, inicialmente o array debe mostrarse como “peras, mazás, kiwis, plátanos, mandarinas"
 );
 let listaDeFrutas = ["peras", "mazás", "kiwis", "plátanos", "mandarinas"];
@@ -13,17 +13,18 @@ listaDeFrutas.splice(4, 0, "sandía");
 console.log(listaDeFrutas);
 //c. Quita os kiwis e pon no seu lugar cereixas e nésperas.
 listaDeFrutas.splice(1, 1, "plátanos", "mandarinas");
-console.log(listaDeFrutas);*/
-/*console.log(
+console.log(listaDeFrutas);
+
+console.log(
 	"2. Fai unha función que ordene as notas dun array pasado como parámetro. Por exemplo, se se pasa o array [4,8,3,10,5] debe devolver [3,4,5,8,10]. Debes utilizar a función sort e pasarlle como parámetro unha función que ti definas que serva para realizar a comparación de elementos."
 );
 const notas = [4, 8, 3, 10, 5];
 notas.sort(function (a, b) {
 	return a - b;
 });
-console.log(notas);*/
+console.log(notas);
 
-/*console.log(
+console.log(
 	"3. Dado un array cos días da semana, indica se algún comeza por ‘s’. Comproba tamén se todos acaban en ‘s’."
 );
 const arraySemana = [
@@ -53,8 +54,9 @@ if (todosEmpiezanPorS === false) {
 }
 //LA MEJOR OPCION
 console.log(arraySemana.some((dia) => dia.toLowerCase().startsWith("s")));
-console.log(arraySemana.every((dia) => dia.toLowerCase().endsWith("s")));*/
-/*console.log(
+console.log(arraySemana.every((dia) => dia.toLowerCase().endsWith("s")));
+
+console.log(
 	"4. Crea unha función á que se lle pase un texto e devolva o mesmo texto coa primeira letra de cada palabra en maiúsculas e o resto en minúsculas."
 );
 const cambioTamaño = (texto) => {
@@ -69,4 +71,4 @@ const cambioTamaño = (texto) => {
 	return arrayTexto.join("");
 };
 console.log(cambioTamaño("AFTskfdJDBdSaW"));
-console.log(cambioTamaño("hOLa BueNOS diAS"));*/
+console.log(cambioTamaño("hOLa BueNOS diAS"));

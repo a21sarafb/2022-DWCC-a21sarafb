@@ -1,5 +1,5 @@
 "use strict";
-/*console.log(
+console.log(
 	"1. Pide por teclado o día da semana (luns - domingo) e mostra unha mensaxe indicando se é laborable ou non."
 );
 const dia = prompt("Ingrese un día da semana(luns - domingo): ");
@@ -145,4 +145,4 @@ if (imc1 > imc2) {
 	);
 } else {
 	console.log("Os dous IMC son iguais (" + imc1.toFixed(2) + ")");
-}*/
+}

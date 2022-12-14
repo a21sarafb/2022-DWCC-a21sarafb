@@ -1,5 +1,5 @@
 "use strict";
-/*console.log(
+console.log(
 	"1. Imaxinar que se recolle a seguinte información relativa a un xogo dun servidor: Utilizando o contido aprendido sobre arrays crea unha única sentencia para cada unha das seguintes instrucións:"
 );
 const players = [
@@ -58,8 +58,9 @@ console.log(
 );
 const playersSubstitutos = ["Thiago", "Coutinho", "Periscic"];
 const players1Final = [...playersSubstitutos, ...players[0]];
-console.log("Array de players1Final: " + players1Final);*/
-/*console.log(
+console.log("Array de players1Final: " + players1Final);
+
+console.log(
 	"2. Dado un array con nomes de variables formados por dúas palabras separadas por “_”, mostra por consola os nomes das variables en formato camelCase. Por exemplo, se o array de entrada é [“first_name”, “ last_NAME”], deberase mostrar por consola “firtsName” e “lastName”."
 );
 const arrayEntrada = [
@@ -90,4 +91,4 @@ const camelCase = (arrayEntrada) => {
 	}
 	return mensaxeDeRetorno;
 };
-camelCase(arrayEntrada);*/
+camelCase(arrayEntrada);

@@ -1,5 +1,5 @@
 "use strict";
-/*console.log(
+console.log(
 	"1. Crea unha función á que se lle pase unha cadea e devolva unha cadea en sentido inverso."
 );
 const reverseString = (cadea) => {
@@ -12,8 +12,8 @@ const reverseString = (cadea) => {
 	return cadea;
 };
 console.log(reverseString("Hola"));
-console.log(reverseString("I am a string")); // gnirts a ma I*/
-/*console.log(
+console.log(reverseString("I am a string")); // gnirts a ma I
+console.log(
 	"2. Crea unha función á que se lle pase unha cadea e un array de caracteres e devolva a cadea orixinal eliminando os caracteres do array."
 );
 const removeCharacters = (cadea2, array) => {
@@ -22,8 +22,8 @@ const removeCharacters = (cadea2, array) => {
 	}
 	return cadea2;
 };
-console.log(removeCharacters("I am an example string", ["a", "x"])); // I m n emple string*/
-/*console.log(
+console.log(removeCharacters("I am an example string", ["a", "x"])); // I m n emple string
+console.log(
 	"3. Crea unha función á que se lle pase unha cadea e devolva o carácter máis repetido."
 );
 const caracterMaisRepetido = (cadea3) => {
@@ -37,8 +37,8 @@ const caracterMaisRepetido = (cadea3) => {
 	});
 	return maxChar;
 };
-console.log(caracterMaisRepetido("abcddefg")); // d*/
-/*console.log(
+console.log(caracterMaisRepetido("abcddefg")); // d
+console.log(
 	"4. Crea unha función á que se lle pase unha cadea der números e devolva unha cadea da mesma lonxitude formada por * e as últimas 4 cifras do parámetro de entrada."
 );
 const enmascarar = (cadea4) => {
@@ -54,8 +54,8 @@ const enmascarar = (cadea4) => {
 };
 console.log(enmascarar("1234123412347777")); // ************7777
 console.log(enmascarar("34521234"));
-console.log(enmascarar("123456789"));*/
-/*console.log(
+console.log(enmascarar("123456789"));
+console.log(
 	"5. Escribe o código necesario para procesar unha cadea con información de voos como a do exemplo e mostrar a información por consola formateada como aparece na imaxe: (variable flightsInfo). Fixarse que a información mostrada por consola está aliñada pola dereita."
 );
 const flightsInfo =
@@ -129,4 +129,4 @@ const cadea4 =
 console.log(cadea1.padStart(36));
 console.log(cadea2.padStart(36));
 console.log(cadea3.padStart(36));
-console.log(cadea4.padStart(36));*/
+console.log(cadea4.padStart(36));

@@ -1,5 +1,5 @@
 "use strict";
-/*console.log(
+console.log(
 	"1. Crea un obxecto chamado television coas propiedades marca, categoría (televisores), unidades (4), precio (354.99) e un método chamado importe que devolva o prezo total das unidades (unidades x precio)."
 );
 const television = {
@@ -12,14 +12,15 @@ const television = {
 	},
 };
 console.log(television);
-console.log(television.importe());*/
-/*console.log(
+console.log(television.importe());
+
+console.log(
 	"2. Imaxinar que se recolle a seguinte información relativa a un xogo dun servidor:"
 );
 console.log(
 	"Utilizando a desestruturación de obxectos crea unha variable para cada unha das propiedades do obxecto odds. Estas variables deben levar os nomes 'team1', 'draw' e 'team2'."
 );
-const game = {
+const game1 = {
 	odds: {
 		team1: 1.33,
 		x: 3.25,
@@ -28,11 +29,12 @@ const game = {
 };
 const {
 	odds: { team1, x: draw, team2 },
-} = game;
+} = game1;
 console.log("Variable team1 = " + team1);
 console.log("Variable draw = " + draw);
-console.log("Variable team2 = " + team2);*/
-/*console.log("3. Dado o seguinte obxecto:");
+console.log("Variable team2 = " + team2);
+
+console.log("3. Dado o seguinte obxecto:");
 const game = {
 	scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
 };
@@ -47,6 +49,7 @@ for (const arrayXogadores in game) {
 // MELLOR OPCION
 for (const [index, player] of game.scored.entries())
 	console.log("Gol " + (index + 1) + ": " + player);
+
 console.log(
 	"b. Crea un novo obxecto chamado scorers que conteña o nome dos xogadores que marcaron e o número de goles que marcaron como valor. Neste exemplo sería algo así: {Lewandowski: 2, Gnarby: 1, Hummels: 1}"
 );
@@ -68,8 +71,10 @@ let scorers1 = {};
 for (const xogador of xogadoresOrdenado) {
 	scorers1[xogador] ? scorers1[xogador]++ : (scorers1[xogador] = 1);
 }
-console.log(scorers1);*/
-/*console.log("4. Dada a seguinte información: ");*/
+console.log(scorers1);
+
+console.log("4. Dada a seguinte información: ");
+
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
 	{ first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
@@ -110,6 +115,7 @@ for (const propiedade in inventors) {
 }
 console.log(nombreCompleto);
 //OUTRA MANERA con map
+
 console.log(
 	"c. Unha vez obtido o array co nome completo dos inventores do exercicio anterior, ordénao alfabeticamente polo apelido"
 );
