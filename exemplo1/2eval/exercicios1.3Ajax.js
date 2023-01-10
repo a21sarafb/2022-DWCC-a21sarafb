@@ -15,7 +15,7 @@ document.querySelector("#xhr").addEventListener("click", () => {
 	});
 	xhr.open(
 		"GET",
-		"https://github.com/mdn/learning-area/blob/main/javascript/oojs/tasks/json/sample.json"
+		"https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json"
 	);
 	// send request
 	xhr.send();
