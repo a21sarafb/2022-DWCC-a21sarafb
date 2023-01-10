@@ -14,8 +14,5 @@ request.open(
 request.responseType = "json";
 // send request
 request.send();
-//let gatitos1 = JSON.parse(request.response);
 const gatitos = request.response;
-let nome = gatitos;
-console.log(nome);
-//console.log(gatitos1);
+console.log(gatitos);
