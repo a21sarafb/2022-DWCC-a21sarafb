@@ -20,7 +20,9 @@ document.querySelector("#xhr").addEventListener("click", () => {
 	// send request
 	xhr.send();
 	log.textContent = `${log.textContent}Started XHR request\n`;
-	const gatitos = JSON.parse(request.response);
+	request.responseType = "json";
+	//const gatitos = JSON.parse(request.response);
+	const gatitos = request.response;
 	console.log(gatitos);
 });
 document.querySelector("#reload").addEventListener("click", () => {
