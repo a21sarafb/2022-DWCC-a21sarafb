@@ -2,7 +2,8 @@
 /* Implementa unha función escribirNumeros(desde, ata) que xere un número cada
 segundo, comezando en “desde” e rematando en “ata”. Fai dúas variantes da
 función: unha usando setInterval e outra usando setTimeout. */
-/*function escribirNumeros(desde, ata) {
+escribirNumeros(1, 10);
+function escribirNumeros(desde, ata) {
 	let index = 1000;
 	for (let i = desde; i <= ata; i++) {
 		setTimeout(() => {
@@ -11,13 +12,23 @@ función: unha usando setInterval e outra usando setTimeout. */
 		index += 1000;
 	}
 }
-console.log(escribirNumeros(5, 10));*/
-
-const intervalID = setInterval(escribirNumeros2, 1000, 3, 8);
-function escribirNumeros2(desde2, ata2) {
-	for (let i = desde2; i <= ata2; i++) {
-		console.log(i);
-	}
-	clearTimeout(intervalID);
+//opción de cristina
+function escribirNumeros3(desde3, ata3) {
+	let numero = desde3;
+	setTimeout(function imprimir() {
+		console.log(numero);
+		if (numero < ata3) setTimeout(imprimir, 1000);
+		numero++;
+	}, 1000);
 }
-console.log(intervalID);
+escribirNumeros3(1, 10);
+function escribirNumeros2(desde2, ata2) {
+	const intervalo = setInterval(() => {
+		console.log(desde2);
+		desde2++;
+		if (desde2 > ata2) {
+			clearTimeout(intervalo);
+		}
+	}, 1000);
+}
+escribirNumeros2(1, 10);
