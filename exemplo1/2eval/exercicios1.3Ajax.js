@@ -6,26 +6,16 @@ conxunción “e” e ao final un punto. O texto debe quedar así: “Os nomes d
 son Lindy, Mina e Antonia.”. Ademais, debes mostrar información do número de
 gatiños, indicando cantes deles son femias e cantos machos: “Hai 8 gatiños: 5
 femias e 3 machos.”*/
-const log = document.querySelector(".event-log");
-document.querySelector("#xhr").addEventListener("click", () => {
-	log.textContent = "";
-	const xhr = new XMLHttpRequest();
-	xhr.addEventListener("loadend", () => {
-		log.textContent = `${log.textContent}Finished with status: ${xhr.status}`;
-	});
-	xhr.open(
-		"GET",
-		"https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json"
-	);
-	// send request
-	xhr.send();
-	log.textContent = `${log.textContent}Started XHR request\n`;
-	request.responseType = "json";
-	//const gatitos = JSON.parse(request.response);
-	const gatitos = request.response;
-	console.log(gatitos);
-});
-document.querySelector("#reload").addEventListener("click", () => {
-	log.textContent = "";
-	document.location.reload();
-});
+const request = new XMLHttpRequest();
+request.open(
+	"GET",
+	"https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json"
+);
+request.responseType = "json";
+// send request
+request.send();
+//let gatitos1 = JSON.parse(request.response);
+const gatitos = request.response;
+let nome = gatitos;
+console.log(nome);
+//console.log(gatitos1);
