@@ -14,5 +14,7 @@ request.open(
 request.responseType = "json";
 // send request
 request.send();
-const gatitos = request.response;
-console.log(gatitos);
+request.addEventListener("load", function () {
+	const gatitos = request.response;
+	console.log(gatitos);
+});

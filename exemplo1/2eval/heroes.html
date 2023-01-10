@@ -29,8 +29,11 @@
         request.responseType = "json";
         // send request
         request.send();
-        const superHeroes = request.response;
-        console.log(request.response);
+        request.addEventListener("load", function () {
+            const superHeroes = request.response;
+            console.log(request.response);
+        });
+
     </script>
 </body>
 
