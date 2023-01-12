@@ -31,6 +31,7 @@ document.querySelector("#xhr").addEventListener("click", () => {
 			let newLink = document.createElement("a");
 			let br = document.createElement("br");
 			newLink.innerHTML = "Enlace a receta";
+			newLink.setAttribute("target", "_blank");
 			newLink.setAttribute("href", self.url);
 			body.append(newLink);
 			body.append(br);
