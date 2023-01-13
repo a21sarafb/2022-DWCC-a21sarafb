@@ -1,3 +1,4 @@
+"use strict";
 const request = new XMLHttpRequest();
 const log = document.querySelector(".event-log");
 document.querySelector("#xhr").addEventListener("click", () => {
