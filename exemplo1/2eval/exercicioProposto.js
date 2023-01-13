@@ -9,16 +9,8 @@ document.querySelector("#xhr").addEventListener("click", () => {
 		"&app_id=3ec28d79&app_key=fcd09282a9404523092a4a1d33ad13f3&ingr=6-8&field=url";
 	let cadenaFinal = urlInicio + inputText.value + urlFinal;
 	console.log(cadenaFinal);
-	request.open(
-		"GET",
-		cadenaFinal
-
-		/*https://world.openfoodfacts.org/api/v0/product/737628064502.json*/
-		/*https://poetrydb.org/title/all/author,title,lines,linecount.json*/
-		/*https://api.agify.io?name=michael&country_id=US*/
-	);
+	request.open("GET", cadenaFinal);
 	request.responseType = "json";
-	// send request
 	request.send();
 	request.addEventListener("loadend", function () {
 		let body = document.querySelector("body");
