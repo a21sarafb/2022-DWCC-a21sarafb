@@ -3,4 +3,4 @@
 promise.then(f1).catch(f2);
 promise.then(f1, f2); */
 
-//non poderá captarse
+//si hai un erro en f1 no primeiro caso capturase e no segundo non
