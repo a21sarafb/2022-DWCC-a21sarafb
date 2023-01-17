@@ -15,3 +15,28 @@ engadir unha ligazón para consultala na API. Así por exemplo, o Pokémon con i
 ten a habilidade denominada overgrow.
 Na ligazón de consulta da habilidade aparece o seu nome en diferentes idiomas.
 Busca o nome en español e móstrao tamén na páxina web. */
+const log = document.querySelector(".event-log");
+document.querySelector("#xhr").addEventListener("click", () => {
+	const comezoUrl = "https://pokeapi.co/api/v2/pokemon/";
+	const numId = Math.floor(Math.random() * (1000 - 1) + 1);
+	console.log(numId);
+	let numIdString = numId.toString();
+	const urlFinal = comezoUrl.concat(numIdString);
+	console.log(urlFinal);
+	fetch(urlFinal)
+		.then((response) => {
+			if (response.ok) return response.json();
+			return Promise.reject(response);
+		})
+		.then((data) => {
+			console.log(data);
+		})
+
+		.catch(function (error) {
+			console.warn("Something went wrong.", error.message);
+		});
+});
+document.querySelector("#reload").addEventListener("click", () => {
+	log.textContent = "";
+	document.location.reload();
+});
