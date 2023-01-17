@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Our data</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <section>
+
+    </section>
+
+    <script>
+        "use strict";
+        fetch(
+            "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
+        )
+            .then((response) => {
+                if (response.ok) return response.json();
+                return Promise.reject(response);
+            })
+            .then((data) => {
+                //modificando o header
+                const header = document.querySelector("header");
+                const squadName = data.squadName;
+                const homeTown = data.homeTown;
+                const formed = data.formed;
+                const newH1 = document.createElement("h1");
+                newH1.innerHTML = squadName;
+                const newP = document.createElement("p");
+                newP.innerHTML = "Hometown: " + homeTown + " // Formed: " + formed;
+                header.append(newH1);
+                header.append(newP);
+
+                //modificando o body
+                const members = data.members;
+                console.log(members);
+                const section = document.querySelector("section");
+                for (let i = 0; i < members.length; i++) {
+                    const newArticle = document.createElement("article");
+
+                    const newH2 = document.createElement("h2");
+                    newH2.innerHTML = members[i].name;
+                    newArticle.append(newH2);
+                    const newP = document.createElement("p");
+                    newP.innerHTML = "Secret identity " + members[i].secretIdentity;
+                    newArticle.append(newP);
+                    const newP2 = document.createElement("p");
+                    newP2.innerHTML = "Age: " + members[i].age;
+                    newArticle.append(newP2);
+                    const newP3 = document.createElement("p");
+                    newP3.innerHTML = "Superpowers:";
+                    newArticle.append(newP3);
+
+                    const newUl = document.createElement("ul");
+                    for (let x = 0; x < members[i].powers.length; x++) {
+                        let newLi1 = document.createElement("li");
+                        newLi1.innerHTML = members[i].powers[x];
+                        newUl.append(newLi1);
+                    }
+                    newArticle.append(newUl);
+                    section.append(newArticle);
+                }
+            })
+            .catch(function (error) {
+                console.warn("Something went wrong.", error.message);
+            });
+
+    </script>
+</body>
+
+</html>
