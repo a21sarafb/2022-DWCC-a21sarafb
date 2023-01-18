@@ -7,17 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="exercicios1.15Ajax.js" defer></script>
     <style>
-        .fill:hover,
-        .fill:focus {
-            box-shadow: inset 0 0 0 2em var(--hover);
-        }
-
-        .pulse:hover,
-        .pulse:focus {
-            -webkit-animation: pulse 1s;
-            animation: pulse 1s;
-            box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
         @-webkit-keyframes pulse {
             0% {
@@ -31,11 +21,6 @@
             }
         }
 
-        .close:hover,
-        .close:focus {
-            box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
-        }
-
         .raise:hover,
         .raise:focus {
             box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
@@ -43,58 +28,9 @@
             transform: translateY(-0.25em);
         }
 
-        .up:hover,
-        .up:focus {
-            box-shadow: inset 0 -3.25em 0 0 var(--hover);
-        }
-
-        .slide:hover,
-        .slide:focus {
-            box-shadow: inset 6.5em 0 0 0 var(--hover);
-        }
-
-        .offset {
-            box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
-        }
-
-        .offset:hover,
-        .offset:focus {
-            box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
-        }
-
-        .fill {
-            --color: #a972cb;
-            --hover: #cb72aa;
-        }
-
-        .pulse {
-            --color: #ef6eae;
-            --hover: #ef8f6e;
-        }
-
-        .close {
-            --color: #ff7f82;
-            --hover: #ffdc7f;
-        }
-
         .raise {
             --color: #ffa260;
             --hover: #e5ff60;
-        }
-
-        .up {
-            --color: #e4cb58;
-            --hover: #94e458;
-        }
-
-        .slide {
-            --color: #8fc866;
-            --hover: #66c887;
-        }
-
-        .offset {
-            --color: #19bc8b;
-            --hover: #1973bc;
         }
 
         button {
@@ -115,13 +51,12 @@
             font: 300 1em 'Fira Sans', sans-serif;
             -webkit-box-pack: center;
             justify-content: center;
-            align-content: center;
             -webkit-box-align: center;
-            align-items: center;
             text-align: center;
             min-height: 100vh;
             display: -webkit-box;
             display: flex;
+            font-family: 'Orbitron', sans-serif;
         }
 
         button {
@@ -141,15 +76,66 @@
             color: #e4cb58;
             font: inherit;
         }
+
+        .hidden {
+            display: none;
+        }
+
+        .imaxe {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nome {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /*margin-left: 200px;*/
+        }
+
+        .habilidades {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: #fff;
+            border: 3px solid green;
+        }
+
+        a:active {
+            color: red
+        }
     </style>
 </head>
 
 
 <body>
-    <form>
-        <button id="xhr" type="button" class="raise">Click to start request</button>
-        <button id="reload" type="button" class="raise">Reload</button>
-    </form>
+
+    <div>
+        <form>
+            <button id="xhr" type="button" class="raise">Click to start request</button>
+            <button id="reload" type="button" class="raise hidden">Reload</button>
+        </form>
+        <div class="nome"></div>
+        <div class="habilidades"></div>
+        <div class="imaxe"></div>
+        <div class="tipo"></div>
+    </div>
+
+
+
 
     <pre readonly class="event-log"></pre>
 </body>
