@@ -81,7 +81,7 @@ document.querySelector("#xhr").addEventListener("click", () => {
 
 			//imaxe
 			let bodyImaxe = document.querySelector(".imaxe");
-			let urlImaxe = data.sprites.other.home.front_default;
+			let urlImaxe = data.sprites.other.home.front_shiny;
 			let imaxe = document.createElement("img");
 			imaxe.setAttribute("src", urlImaxe);
 			imaxe.setAttribute("width", 300);
