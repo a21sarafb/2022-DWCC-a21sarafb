@@ -8,5 +8,6 @@ async function wait() {
 async function f() {
 	// Recorda, aquí non se pode usar "await"
 	// ¿que escribir aquí?
+	wait().catch(console.log);
 }
 f();

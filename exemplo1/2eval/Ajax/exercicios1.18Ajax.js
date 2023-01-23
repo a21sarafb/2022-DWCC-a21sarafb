@@ -6,16 +6,22 @@ Debe realizarse unha petición fetch para cada login e non hai que esperar a que
 Se unha petición falla, por exemplo porque o usuario non existe, devolverase null nesa posición do array resultado.
 A función obterUsuarios devolverá a resposta cando todas as peticións fetch remataran. */
 async function obterUsuarios(listaNomes) {
+	let arrayDevol = [];
 	let principioUrl = "https://api.github.com/users/";
 	listaNomes.forEach(async function (nome) {
-		let urlFinal = principioUrl + nome;
-        const response = await fetch(urlFinal,
-            accept application/vnd.github+json, 
-            Authorization: Bearer "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");
-		let datos = await response.json();
-		console.log(datos);
+		try {
+			let urlFinal = principioUrl + nome;
+			/*let auth = "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";*/
+			const response = await fetch(urlFinal);
+			let datos = await response.json();
+			console.log(datos);
+			arrayDevol.push(datos);
+			if (!response.ok) throw new Error("null");
+		} catch (err) {
+			console.log(err);
+		}
 	});
 }
 
-let arrayLogin = ["a21sarafb", "a21ezequielss", "a21andresdc1"];
+let arrayLogin = ["a21sarafb", "a21ezequielss", "a21andresdc1", "a21andresdc"];
 obterUsuarios(arrayLogin);
