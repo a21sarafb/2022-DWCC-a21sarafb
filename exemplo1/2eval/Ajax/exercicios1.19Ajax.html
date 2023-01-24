@@ -103,16 +103,26 @@
 
 
 <body>
-    <textarea class="textArea"></textarea>
+    <form>
+        <label for="id">Buscar: </label>
+        <input name="id" type="text" class="id" value="">
+        <button id="xhr" type="button">Click to start request</button>
+        <button id="reload" type="button">Reload</button>
+        <pre readonly class="event-log"></pre>
+    </form>
+
     <h1>Datos de Coruña</h1>
     <table class="table responstable">
-        <tr>
-            <th>Nome</th>
-            <th data-th="Driver details">Número de habitantes</th>
-            <th>Superficie m2</th>
-            <th>Capitalidad</th>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th data-th="Driver details">Número de habitantes</th>
+                <th>Superficie m2</th>
+                <th>Capitalidad</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
 
-        </tr>
     </table>
 </body>
 

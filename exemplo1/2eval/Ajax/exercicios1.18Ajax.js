@@ -7,7 +7,7 @@ Se unha petición falla, por exemplo porque o usuario non existe, devolverase nu
 A función obterUsuarios devolverá a resposta cando todas as peticións fetch remataran. */
 async function obterUsuarios(listaNomes) {
 	let arrayDevol = [];
-	let principioUrl = "https://api.github.com/users/";
+	let principioUrl = "https://api.github.com/users/${element}";
 	listaNomes.forEach(async function (nome) {
 		try {
 			let urlFinal = principioUrl + nome;
