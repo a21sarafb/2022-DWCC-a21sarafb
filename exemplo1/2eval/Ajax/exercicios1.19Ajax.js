@@ -10,7 +10,27 @@ información dese municipio que hai no ficheiro JSON. */
 const body = document.querySelector("body");
 body.addEventListener("click", (event) => {
 	event.preventDefault();
-	console.log(event.path[1]);
+	let fila = event.path[1];
+	console.log(fila);
+	let textoFila = fila.querySelector("td");
+	console.log(textoFila.textContent);
+	async function municipiosMasInfo(nombre) {
+		let response = await fetch("municipiosCoruna.json");
+		let datos = await response.json();
+		console.log(datos);
+		datos.forEach((dato) => {
+			if (nombre == dato.Denominación) {
+				let newWin = window.open(
+					"about:blank",
+					"hello",
+					"width=200,height=200"
+				);
+
+				newWin.document.write("s");
+			}
+		});
+	}
+	municipiosMasInfo(textoFila.textContent);
 });
 
 const log = document.querySelector(".event-log");
