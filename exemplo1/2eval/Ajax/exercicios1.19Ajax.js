@@ -7,31 +7,6 @@ escriba unha letra se mostren na táboa só os municipios que teñan un nome que
 comece polo texto escrito.
 Configura tamén a táboa para que ao pulsar sobre unha fila se mostre toda a
 información dese municipio que hai no ficheiro JSON. */
-const body = document.querySelector("body");
-body.addEventListener("click", (event) => {
-	event.preventDefault();
-	let fila = event.path[1];
-	console.log(fila);
-	let textoFila = fila.querySelector("td");
-	console.log(textoFila.textContent);
-	async function municipiosMasInfo(nombre) {
-		let response = await fetch("municipiosCoruna.json");
-		let datos = await response.json();
-		console.log(datos);
-		datos.forEach((dato) => {
-			if (nombre == dato.Denominación) {
-				let newWin = window.open(
-					"about:blank",
-					"hello",
-					"width=200,height=200"
-				);
-
-				newWin.document.write("s");
-			}
-		});
-	}
-	municipiosMasInfo(textoFila.textContent);
-});
 
 const log = document.querySelector(".event-log");
 let form = document.querySelector("form");
@@ -111,3 +86,52 @@ async function municipios() {
 	});
 }
 municipios();
+
+const body = document.querySelector("body");
+body.addEventListener("click", (event) => {
+	event.target;
+	let fila = event.target;
+	console.log(fila);
+	console.log(fila.textContent);
+	async function municipiosMasInfo(nombre) {
+		let response = await fetch("municipiosCoruna.json");
+		let datos = await response.json();
+		console.log(datos);
+		datos.forEach((dato) => {
+			if (nombre == dato.Denominación) {
+				let newWin = window.open(
+					"about:blank",
+					"hello",
+					"width=200,height=200"
+				);
+				let texto =
+					"<strong>Capitalidad</strong> ->" +
+					dato.Capitalidad +
+					" <br/><strong>Código municipio</strong> -> " +
+					dato["Codigo Municipio"] +
+					" <br/><strong>Código provincia</strong> -> " +
+					dato["Codigo Provincia"] +
+					" <br/><strong>Comunidad Autónoma</strong> -> " +
+					dato["Comunidad Autónoma"] +
+					" <br/><strong>Código de CA</strong> -> " +
+					dato["Código de CA"] +
+					" <br/><strong>Denominación</strong> -> " +
+					dato["Denominación"] +
+					" <br/><strong>Densidad</strong> -> " +
+					dato.Densidad +
+					" <br/><strong>Fecha de inscripción</strong> -> " +
+					dato["Fecha de inscripción"] +
+					" <br/><strong>Habitantes</strong> -> " +
+					dato.Habitantes +
+					" <br/><strong>Número de inscripción</strong> -> " +
+					dato["Número de inscripción"] +
+					" <br/><strong>Provincia</strong> -> " +
+					dato.Provincia +
+					" <br/><strong>Superficie</strong> -> " +
+					dato.Superficie;
+				newWin.document.write(texto);
+			}
+		});
+	}
+	municipiosMasInfo(fila.textContent);
+});
