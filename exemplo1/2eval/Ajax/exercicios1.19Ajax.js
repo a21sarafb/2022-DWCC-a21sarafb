@@ -98,7 +98,12 @@ body.addEventListener("click", (event) => {
 		let datos = await response.json();
 		console.log(datos);
 		datos.forEach((dato) => {
-			if (nombre == dato.Denominación) {
+			if (
+				nombre == dato.Denominación ||
+				nombre == dato.Habitantes ||
+				nombre == dato.Superficie ||
+				nombre == dato.Capitalidad
+			) {
 				let newWin = window.open(
 					"about:blank",
 					"hello",
