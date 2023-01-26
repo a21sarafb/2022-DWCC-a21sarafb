@@ -102,7 +102,7 @@ body.addEventListener("click", (event) => {
 				let newWin = window.open(
 					"about:blank",
 					"hello",
-					"width=200,height=200"
+					"width=500,height=300"
 				);
 				let texto =
 					"<strong>Capitalidad</strong> ->" +
