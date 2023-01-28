@@ -104,39 +104,90 @@ body.addEventListener("click", (event) => {
 				nombre == dato.Superficie ||
 				nombre == dato.Capitalidad
 			) {
+				let modal = document.querySelector("#mostrar-modal");
+				modal.click();
+				let parrafo = document.querySelector("#modalP");
+				let texto =
+					"Capitalidad ->" +
+					dato.Capitalidad +
+					" Código municipio -> " +
+					dato["Codigo Municipio"] +
+					" Código provincia -> " +
+					dato["Codigo Provincia"] +
+					" Comunidad Autónoma -> " +
+					dato["Comunidad Autónoma"] +
+					" Código de CA -> " +
+					dato["Código de CA"] +
+					" Denominación -> " +
+					dato["Denominación"] +
+					" Densidad -> " +
+					dato.Densidad +
+					" Fecha de inscripción -> " +
+					dato["Fecha de inscripción"] +
+					" Habitantes -> " +
+					dato.Habitantes +
+					" Número de inscripción -> " +
+					dato["Número de inscripción"] +
+					" Provincia -> " +
+					dato.Provincia +
+					" Superficie -> " +
+					dato.Superficie;
+				parrafo.append(texto);
+			}
+		});
+	}
+	municipiosMasInfo(fila.textContent);
+});
+/* const body = document.querySelector("body");
+body.addEventListener("click", (event) => {
+	event.target;
+	let fila = event.target;
+	console.log(fila);
+	console.log(fila.textContent);
+	async function municipiosMasInfo(nombre) {
+		let response = await fetch("municipiosCoruna.json");
+		let datos = await response.json();
+		console.log(datos);
+		datos.forEach((dato) => {
+			if (
+				nombre == dato.Denominación ||
+				nombre == dato.Habitantes ||
+				nombre == dato.Superficie ||
+				nombre == dato.Capitalidad
+			) {
 				let newWin = window.open(
 					"about:blank",
 					"hello",
 					"width=510,height=300"
 				);
 				let texto =
-					"<strong>Capitalidad</strong> ->" +
+					"Capitalidad ->" +
 					dato.Capitalidad +
-					" <br/><strong>Código municipio</strong> -> " +
+					" Código municipio -> " +
 					dato["Codigo Municipio"] +
-					" <br/><strong>Código provincia</strong> -> " +
+					" Código provincia -> " +
 					dato["Codigo Provincia"] +
-					" <br/><strong>Comunidad Autónoma</strong> -> " +
+					" Comunidad Autónoma -> " +
 					dato["Comunidad Autónoma"] +
-					" <br/><strong>Código de CA</strong> -> " +
+					" Código de CA -> " +
 					dato["Código de CA"] +
-					" <br/><strong>Denominación</strong> -> " +
+					" Denominación -> " +
 					dato["Denominación"] +
-					" <br/><strong>Densidad</strong> -> " +
+					" Densidad -> " +
 					dato.Densidad +
-					" <br/><strong>Fecha de inscripción</strong> -> " +
+					" Fecha de inscripción -> " +
 					dato["Fecha de inscripción"] +
-					" <br/><strong>Habitantes</strong> -> " +
+					" Habitantes -> " +
 					dato.Habitantes +
-					" <br/><strong>Número de inscripción</strong> -> " +
+					" Número de inscripción -> " +
 					dato["Número de inscripción"] +
-					" <br/><strong>Provincia</strong> -> " +
+					" Provincia -> " +
 					dato.Provincia +
-					" <br/><strong>Superficie</strong> -> " +
+					" Superficie -> " +
 					dato.Superficie;
 				newWin.document.write(texto);
 			}
 		});
 	}
 	municipiosMasInfo(fila.textContent);
-});
+}); */
