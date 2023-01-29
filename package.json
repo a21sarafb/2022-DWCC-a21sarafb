@@ -19,6 +19,11 @@
       "telefono": "123456789",
       "descripcion": "mandarina",
       "id": 4
+    },
+    {
+      "telefono": "987654321",
+      "descripcion": "piña",
+      "id": 5
     }
   ],
   "clientes": [
