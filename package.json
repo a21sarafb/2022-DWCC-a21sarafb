@@ -14,6 +14,11 @@
       "telefono": "123456789",
       "descripcion": "piña",
       "id": 3
+    },
+    {
+      "telefono": "123456789",
+      "descripcion": "mandarina",
+      "id": 4
     }
   ],
   "clientes": [

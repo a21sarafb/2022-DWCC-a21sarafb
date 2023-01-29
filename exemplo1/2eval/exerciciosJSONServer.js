@@ -20,21 +20,30 @@ document.querySelector("#xhr").addEventListener("click", () => {
 			let response = await fetch(`http://localhost:3000/clientes/?num=` + num);
 			let data = await response.json();
 			console.log(data);
-			let parrafo = document.querySelector(".parr");
-			data.forEach((cliente) => {
-				let texto =
-					"Enderezo: " +
-					cliente.enderezo +
-					" Pedido Típico: " +
-					cliente.pedidoTipico;
-				parrafo.append(texto);
-			});
 			let div = document.querySelector(".div");
+			data.forEach((cliente) => {
+				let parrEnderezo = document.createElement("p");
+				let parrPedTip = document.createElement("p");
+				parrPedTip.setAttribute("class", "esto");
+				let texto = "Enderezo: " + cliente.enderezo;
+				let texto2 = "Pedido Típico: " + cliente.pedidoTipico;
+				parrEnderezo.append(texto);
+				parrPedTip.append(texto2);
+				div.append(parrEnderezo);
+				div.append(parrPedTip);
+			});
+			//let div = document.querySelector(".div");
+			let valueInput = document.querySelector(".esto");
+			let esto = valueInput.textContent;
+			console.log(esto); //15 - 14
+			console.log(esto.substring(14));
+			let ponerInput = esto.substring(14);
 			let newForm = document.createElement("form");
 			let newInput = document.createElement("input");
 			newInput.setAttribute("type", "text");
 			newInput.setAttribute("id", "ped");
 			newInput.setAttribute("name", "ped");
+			newInput.setAttribute("value", ponerInput);
 			let newLabel = document.createElement("label");
 			newLabel.setAttribute("for", "ped");
 			let newBoton = document.createElement("button");
