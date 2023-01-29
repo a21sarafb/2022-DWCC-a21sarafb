@@ -23,14 +23,54 @@ document.querySelector("#xhr").addEventListener("click", () => {
 			let parrafo = document.querySelector(".parr");
 			data.forEach((cliente) => {
 				let texto =
-					"Enderezo " +
+					"Enderezo: " +
 					cliente.enderezo +
-					" Pedido Típico " +
+					" Pedido Típico: " +
 					cliente.pedidoTipico;
 				parrafo.append(texto);
 			});
-			newForm = document.createElement("form");
-			parrafo.append(newForm);
+			let div = document.querySelector(".div");
+			let newForm = document.createElement("form");
+			let newInput = document.createElement("input");
+			newInput.setAttribute("type", "text");
+			newInput.setAttribute("id", "ped");
+			newInput.setAttribute("name", "ped");
+			let newLabel = document.createElement("label");
+			newLabel.setAttribute("for", "ped");
+			let newBoton = document.createElement("button");
+			newBoton.setAttribute("id", "hacerPedido");
+			newBoton.setAttribute("type", "button");
+			newBoton.setAttribute("name", "Realizar Pedido");
+			newBoton.value = "Realizar Pedido";
+			newBoton.textContent = "Realizar Pedido";
+			newForm.append(newLabel);
+			newForm.append(newInput);
+			newForm.append(newBoton);
+			console.log(newForm);
+			div.append(newForm);
+			document.querySelector("#hacerPedido").addEventListener("click", () => {
+				let textoInput = document.querySelector("#ped");
+				const pedido = {
+					telefono: num,
+					descripcion: textoInput.value,
+				};
+				hacerPedido();
+				async function hacerPedido() {
+					try {
+						let response = await fetch("http://localhost:3000/pedidos", {
+							method: "POST",
+							headers: {
+								"Content-type": "application/json;charset=utf-8",
+							},
+							body: JSON.stringify(pedido),
+						});
+						let data = await response.json();
+						console.log(data);
+					} catch (error) {
+						return error;
+					}
+				}
+			});
 		} catch (error) {
 			return error;
 		}
