@@ -89,6 +89,7 @@ municipios();
 
 const body = document.querySelector("body");
 body.addEventListener("click", (event) => {
+	let texto = " ";
 	event.target;
 	let fila = event.target;
 	console.log(fila);
@@ -104,7 +105,7 @@ body.addEventListener("click", (event) => {
 				nombre == dato.Superficie ||
 				nombre == dato.Capitalidad
 			) {
-				let texto = " ";
+				//let texto = " ";
 				let modal = document.querySelector("#mostrar-modal");
 				modal.click();
 				let parrafo = document.querySelector("#modalP");
