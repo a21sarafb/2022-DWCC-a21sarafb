@@ -134,7 +134,7 @@ body.addEventListener("click", (event) => {
 					dato.Provincia +
 					" Superficie -> " +
 					dato.Superficie;
-				parrafo.append(texto);
+				parrafo.textContent = texto;
 			}
 		});
 	}

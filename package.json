@@ -24,6 +24,11 @@
       "telefono": "987654321",
       "descripcion": "piña",
       "id": 5
+    },
+    {
+      "telefono": "123456789",
+      "descripcion": " manzana",
+      "id": 6
     }
   ],
   "clientes": [

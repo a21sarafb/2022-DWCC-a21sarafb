@@ -32,18 +32,17 @@ document.querySelector("#xhr").addEventListener("click", () => {
 				div.append(parrEnderezo);
 				div.append(parrPedTip);
 			});
-			//let div = document.querySelector(".div");
 			let valueInput = document.querySelector(".esto");
 			let esto = valueInput.textContent;
 			console.log(esto); //15 - 14
 			console.log(esto.substring(14));
 			let ponerInput = esto.substring(14);
 			let newForm = document.createElement("form");
-			let newInput = document.createElement("input");
+			let newInput = document.createElement("textarea");
 			newInput.setAttribute("type", "text");
 			newInput.setAttribute("id", "ped");
 			newInput.setAttribute("name", "ped");
-			newInput.setAttribute("value", ponerInput);
+			newInput.textContent = ponerInput;
 			let newLabel = document.createElement("label");
 			newLabel.setAttribute("for", "ped");
 			let newBoton = document.createElement("button");
