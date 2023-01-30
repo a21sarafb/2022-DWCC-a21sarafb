@@ -104,10 +104,11 @@ body.addEventListener("click", (event) => {
 				nombre == dato.Superficie ||
 				nombre == dato.Capitalidad
 			) {
+				let texto = " ";
 				let modal = document.querySelector("#mostrar-modal");
 				modal.click();
 				let parrafo = document.querySelector("#modalP");
-				let texto =
+				texto =
 					"Capitalidad ->" +
 					dato.Capitalidad +
 					" Código municipio -> " +
