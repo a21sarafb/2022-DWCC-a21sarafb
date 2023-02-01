@@ -6,30 +6,39 @@ automática e transparente para a persoa usuaria. Isto permitirá que se a páxi
 pecha accidentalmente e se volve a abrir, o formulario aparecerá cuberto cos últimos
 valores introducidos. */
 
-const log = document.querySelector(".event-log");
-let form = document.querySelector("form");
-document.querySelector("#xhr").addEventListener("click", () => {
-	let nome = document.querySelector("#nome");
-	localStorage.setItem("nome", nome.value);
-	let nomeForm = localStorage.getItem("nome");
-	console.log(nomeForm);
-	nome.setAttribute("value", nomeForm);
-	let tel = document.querySelector("#tel");
-	localStorage.setItem(tel, tel.value);
-	let telForm = localStorage.getItem(tel);
-	console.log(telForm);
-	tel.setAttribute("value", telForm);
+//nome
+let nome = document.getElementById("nome");
+nome.addEventListener("blur", guardar);
+nome.value = localStorage.getItem("nome");
+nome.setAttribute("value", nome.value);
 
-	/*let empleo = document.querySelector(".empleoactual");
-	let inputEmpleo = empleo.getElementsByTagName("input");
-	console.log(empleo);
-	console.log(inputEmpleo);
-	for (let input in inputEmpleo) {
-		if (input.isSelected) {
-			console.log(input);
-		}
+//num
+let tel = document.getElementById("tel");
+tel.addEventListener("blur", guardar);
+tel.value = localStorage.getItem("tel");
+tel.setAttribute("value", tel.value);
+
+//select
+let select = document.getElementById("select");
+select.addEventListener("blur", guardar);
+select.value = localStorage.getItem("select");
+//select.setAttribute("checked", true);
+
+//check
+let checkbox = document.getElementById("check");
+checkbox.addEventListener("click", guardar);
+checkbox.checked = localStorage.getItem("check");
+//checkbox.setAttribute("checked", true);
+
+function guardar(e) {
+	console.log(e.target.id);
+	if (e.target.id == "nome") {
+		localStorage.setItem("nome", nome.value);
+	} else if (e.target.id == "tel") {
+		localStorage.setItem("tel", tel.value);
+	} else if (e.target.id == "select") {
+		localStorage.setItem("select", select.value);
+	} else if (e.target.id == "check") {
+		localStorage.setItem("check", checkbox.checked);
 	}
-
-	let intereses = document.querySelector(".intereses");
-	console.log(intereses);*/
-});
+}
