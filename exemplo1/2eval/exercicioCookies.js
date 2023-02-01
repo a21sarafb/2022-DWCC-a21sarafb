@@ -21,21 +21,21 @@ tel.setAttribute("value", tel.value);
 //select 1
 let select = document.getElementById("select");
 console.log(select);
-select.addEventListener("blur", setItemFuncion);
+select.addEventListener("click", setItemFuncion);
 select.value = localStorage.getItem("select");
 select.setAttribute("checked", true);
 
 //select 2
 let select2 = document.getElementById("select2");
 console.log(select2);
-select2.addEventListener("blur", setItemFuncion);
+select2.addEventListener("click", setItemFuncion);
 select2.value = localStorage.getItem("select2");
 select2.setAttribute("checked", true);
 
 //select 3
 let select3 = document.getElementById("select3");
 console.log(select3);
-select3.addEventListener("blur", setItemFuncion);
+select3.addEventListener("click", setItemFuncion);
 select3.value = localStorage.getItem("select3");
 select3.setAttribute("checked", true);
 
