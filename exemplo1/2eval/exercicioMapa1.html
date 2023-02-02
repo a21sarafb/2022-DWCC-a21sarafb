@@ -9,6 +9,22 @@
         #map {
             height: 500px;
         }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(500px, auto);
+            grid-gap: 10px;
+        }
+
+        #map {
+            grid-column: 2;
+        }
+
+        .form {
+            grid-column: 1;
+            display: none;
+        }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -17,10 +33,16 @@
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 </head>
 
-
 <body>
-    <div id="map"></div>
-    <script src="exercicioMapa1.js" defer></script>
+    <div class="container">
+        <div class="form">
+            <form id="mapForm">
+                <textarea name="mapTextarea" autofocus></textarea>
+            </form>
+        </div>
+        <div id="map"></div>
+        <script src="exercicioMapa1.js" defer></script>
+    </div>
 </body>
 
 </html>

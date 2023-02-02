@@ -14,7 +14,7 @@ e. Cando se pulsa sobre un punto da lista especificada no apartado anterior, o m
 f. Deben poder eliminarse marcadores.
 
 g. Os puntos gardados na aplicación deben permanecer aínda que se cerre o navegador. */
-const map = L.map("map").setView([42.88052, -8.54569], 11);
+const map = L.map("map").setView([42.88052, -8.54569], 13);
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution:
@@ -24,6 +24,8 @@ let marker = L.marker([42.88052, -8.54569]).addTo(map);
 
 let popup = L.popup();
 function onMapClick(e) {
+	let form = document.querySelector(".form");
+	form.setAttribute("display", "block");
 	popup
 		.setLatLng(e.latlng)
 		.setContent("You clicked the map at " + e.latlng.toString())
@@ -32,11 +34,3 @@ function onMapClick(e) {
 	let markerer = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
 }
 map.on("click", onMapClick);
-let USGS_USImagery = L.tileLayer(
-	"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}",
-	{
-		maxZoom: 20,
-		attribution:
-			'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>',
-	}
-).addTo(map);
