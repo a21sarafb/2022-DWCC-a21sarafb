@@ -16,14 +16,14 @@ function funcionCambios(e) {
 		localStorage.setItem("tel", tel.value);
 	} else if (e.target.id == "select") {
 		localStorage.setItem("select", select.value);
-		console.log(localStorage.getItem("select"));
+		//console.log(localStorage.getItem("select"));
 		/*if (localStorage.getItem("select2")) {
 			select.setAttribute("checked", true);
 			localStorage.removeItem("select2");
 		}*/
 	} else if (e.target.id == "select2") {
 		localStorage.setItem("select2", select2.value);
-		console.log(localStorage.getItem("select2"));
+		//console.log(localStorage.getItem("select2"));
 		/*if (localStorage.getItem("select")) {
 			select2.setAttribute("checked", true);
 			localStorage.removeItem("select");
@@ -75,7 +75,7 @@ function recargaPaxina() {
 		} else if (localStorage.key(i) == "select2") {
 			console.log("hola select 2");
 			console.log(localStorage.getItem("select2"));
-			//select2.setAttribute("checked", true);
+			select2.setAttribute("checked", true);
 		} else if (localStorage.key(i) == "check") {
 			console.log(localStorage.getItem("check"));
 			if (localStorage.getItem("check")) {
