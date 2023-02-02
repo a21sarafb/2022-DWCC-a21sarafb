@@ -5,9 +5,27 @@ almacenar en local os valores de todos os campos do formulario de forma
 automática e transparente para a persoa usuaria. Isto permitirá que se a páxina se
 pecha accidentalmente e se volve a abrir, o formulario aparecerá cuberto cos últimos
 valores introducidos. */
+
 let formulario = document.getElementById("myForm");
 formulario.addEventListener("change", funcionCambios);
-
+function funcionCambios(e) {
+	console.log(e.target.id);
+	if (e.target.id == "nome") {
+		localStorage.setItem("nome", nome.value);
+	} else if (e.target.id == "tel") {
+		localStorage.setItem("tel", tel.value);
+	} else if (e.target.id == "select") {
+		localStorage.setItem("select", select.value);
+	} else if (e.target.id == "select2") {
+		localStorage.setItem("select2", select2.value);
+	} else if (e.target.id == "check") {
+		localStorage.setItem("check", checkbox.checked);
+	} else if (e.target.id == "check2") {
+		localStorage.setItem("check2", checkbox2.checked);
+	} else if (e.target.id == "check3") {
+		localStorage.setItem("check3", checkbox3.checked);
+	}
+}
 //nome
 let nome = document.getElementById("nome");
 nome.value = localStorage.getItem("nome");
@@ -36,27 +54,10 @@ checkbox2.checked = localStorage.getItem("check2");
 let checkbox3 = document.getElementById("check3");
 checkbox3.checked = localStorage.getItem("check3");
 
-function funcionCambios(e) {
-	console.log(e.target.id);
-	if (e.target.id == "nome") {
-		localStorage.setItem("nome", nome.value);
-	} else if (e.target.id == "tel") {
-		localStorage.setItem("tel", tel.value);
-	} else if (e.target.id == "select") {
-		localStorage.setItem("select", select.value);
-	} else if (e.target.id == "select2") {
-		localStorage.setItem("select2", select2.value);
-	} else if (e.target.id == "check") {
-		localStorage.setItem("check", checkbox.checked);
-	} else if (e.target.id == "check2") {
-		localStorage.setItem("check2", checkbox2.checked);
-	} else if (e.target.id == "check3") {
-		localStorage.setItem("check3", checkbox3.checked);
-	}
-}
 function recargaPaxina() {
 	for (let i = 0; i < localStorage.length; i++) {
-		console.log(localStorage[i]);
+		console.log(localStorage.key(i));
+		localStorage.removeItem(localStorage.key(i));
 	}
 	nome.setAttribute("value", nome.value);
 	tel.setAttribute("value", tel.value);
