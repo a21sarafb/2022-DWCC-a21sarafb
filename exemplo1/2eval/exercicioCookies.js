@@ -9,15 +9,25 @@ valores introducidos. */
 let formulario = document.getElementById("myForm");
 formulario.addEventListener("change", funcionCambios);
 function funcionCambios(e) {
-	console.log(e.target.id);
+	console.log("funcion cambios " + e.target.id);
 	if (e.target.id == "nome") {
 		localStorage.setItem("nome", nome.value);
 	} else if (e.target.id == "tel") {
 		localStorage.setItem("tel", tel.value);
 	} else if (e.target.id == "select") {
 		localStorage.setItem("select", select.value);
+		console.log(localStorage.getItem("select"));
+		/*if (localStorage.getItem("select2")) {
+			select.setAttribute("checked", true);
+			localStorage.removeItem("select2");
+		}*/
 	} else if (e.target.id == "select2") {
 		localStorage.setItem("select2", select2.value);
+		console.log(localStorage.getItem("select2"));
+		/*if (localStorage.getItem("select")) {
+			select2.setAttribute("checked", true);
+			localStorage.removeItem("select");
+		}*/
 	} else if (e.target.id == "check") {
 		localStorage.setItem("check", checkbox.checked);
 	} else if (e.target.id == "check2") {
@@ -56,15 +66,45 @@ checkbox3.checked = localStorage.getItem("check3");
 
 function recargaPaxina() {
 	for (let i = 0; i < localStorage.length; i++) {
-		console.log(localStorage.key(i));
-		localStorage.removeItem(localStorage.key(i));
+		//localStorage.removeItem(localStorage.key(i));
+		//console.log(localStorage.key(i));
+		if (localStorage.key(i) == "select") {
+			console.log("hola select");
+			console.log(localStorage.getItem("select"));
+			//select.setAttribute("checked", true);
+		} else if (localStorage.key(i) == "select2") {
+			console.log("hola select 2");
+			console.log(localStorage.getItem("select2"));
+			//select2.setAttribute("checked", true);
+		} else if (localStorage.key(i) == "check") {
+			console.log(localStorage.getItem("check"));
+			if (localStorage.getItem("check")) {
+				console.log("entro1");
+				checkbox.setAttribute("checked", true);
+			} else {
+				localStorage.removeItem(localStorage.key(i));
+				checkbox3.setAttribute("checked", false);
+			}
+		} else if (localStorage.key(i) == "check2") {
+			console.log(localStorage.getItem("check2"));
+			if (localStorage.getItem("check2")) {
+				console.log("entro2");
+				checkbox2.setAttribute("checked", true);
+			} else {
+				localStorage.removeItem(localStorage.key(i));
+				checkbox2.setAttribute("checked", false);
+			}
+		} else if (localStorage.key(i) == "check3") {
+			console.log(localStorage.getItem("check3"));
+			if (localStorage.getItem("check3")) {
+				console.log("entro3");
+				checkbox3.setAttribute("checked", true);
+			} else {
+				localStorage.removeItem(localStorage.key(i));
+			}
+		}
 	}
 	nome.setAttribute("value", nome.value);
 	tel.setAttribute("value", tel.value);
-	select.setAttribute("checked", true);
-	select2.setAttribute("checked", true);
-	checkbox.setAttribute("checked", true);
-	checkbox2.setAttribute("checked", true);
-	checkbox3.setAttribute("checked", true);
 }
 recargaPaxina();
