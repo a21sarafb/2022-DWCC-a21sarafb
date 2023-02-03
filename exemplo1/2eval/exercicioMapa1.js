@@ -24,8 +24,27 @@ let marker = L.marker([42.88052, -8.54569]).addTo(map);
 
 let popup = L.popup();
 function onMapClick(e) {
-	let form = document.querySelector(".form");
-	form.setAttribute("display", "block");
+	let divForm = document.querySelector(".form");
+	let form = document.createElement("form");
+	let text = document.createElement("textarea");
+	let autofocus = document.createAttribute("autofocus");
+	text.setAttributeNode(autofocus);
+	text.setAttribute("id", "mapTextarea");
+	let lista = document.createElement("ul");
+	form.append(text);
+	divForm.append(form);
+	divForm.append(lista);
+	document.addEventListener("keyup", function (event) {
+		if (event.code === "Enter") {
+			let textArea = document.querySelector("#mapTextarea");
+			console.log(textArea);
+			console.log(textArea.value);
+			let nuevaDescripcion = document.createElement("li");
+			nuevaDescripcion.innerHTML = textArea.value;
+			lista.append(nuevaDescripcion);
+		}
+	});
+
 	popup
 		.setLatLng(e.latlng)
 		.setContent("You clicked the map at " + e.latlng.toString())

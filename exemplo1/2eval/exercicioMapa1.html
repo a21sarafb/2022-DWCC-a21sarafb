@@ -6,25 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        #map {
-            height: 500px;
-        }
-
-        .container {
+        /*.container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: minmax(500px, auto);
             grid-gap: 10px;
-        }
+        }*/
 
         #map {
-            grid-column: 2;
+            height: 500px;
+            /*grid-column: 2;*/
         }
 
-        .form {
+        /*.form {
             grid-column: 1;
-            display: none;
-        }
+            display: none !important;
+        }*/
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -36,9 +33,9 @@
 <body>
     <div class="container">
         <div class="form">
-            <form id="mapForm">
-                <textarea name="mapTextarea" autofocus></textarea>
-            </form>
+            <!--<form id="mapForm">
+                <textarea name="mapTextarea" id="mapTextarea" autofocus></textarea>
+            </form> -->
         </div>
         <div id="map"></div>
         <script src="exercicioMapa1.js" defer></script>
