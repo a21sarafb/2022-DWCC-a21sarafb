@@ -75,7 +75,7 @@ function recargaPaxina() {
 			console.log(localStorage.getItem("check"));
 			if (localStorage.getItem("check") === "true") {
 				console.log("entro1");
-				checkbox.setAttribute("checked", true);
+				//checkbox.setAttribute("checked", true);
 			} else if (localStorage.getItem("check") === "false") {
 				console.log("entro else1");
 				localStorage.removeItem("check");
@@ -84,7 +84,7 @@ function recargaPaxina() {
 			console.log(localStorage.getItem("check2"));
 			if (localStorage.getItem("check2") === "true") {
 				console.log("entro2");
-				checkbox2.setAttribute("checked", true);
+				//checkbox2.setAttribute("checked", true);
 			} else if (localStorage.getItem("check2") === "false") {
 				console.log("entro else2");
 				localStorage.removeItem("check2");
