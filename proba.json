@@ -1,0 +1,48 @@
+{
+	"pedidos": [
+		{
+			"telefono": 987654321,
+			"descripcion": "piñas",
+			"id": 1
+		},
+		{
+			"telefono": 123456789,
+			"descripcion": "manzana",
+			"id": 2
+		},
+		{
+			"telefono": "123456789",
+			"descripcion": "piña",
+			"id": 3
+		},
+		{
+			"telefono": "123456789",
+			"descripcion": "mandarina",
+			"id": 4
+		},
+		{
+			"telefono": "987654321",
+			"descripcion": "piña",
+			"id": 5
+		},
+		{
+			"telefono": "123456789",
+			"descripcion": " manzana",
+			"id": 6
+		}
+	],
+	"clientes": [
+		{
+			"num": 123456789,
+			"enderezo": "Rua da Rosa, 6, 6B",
+			"pedidoTipico": "manzana, piña, mandarina",
+			"id": 1
+		},
+		{
+			"num": 987654321,
+			"enderezo": "Rua Alfredo Brañas, 5, 5A",
+			"pedidoTipico": "manzana",
+			"id": 2
+		}
+	]
+}
