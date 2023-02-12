@@ -6,8 +6,9 @@ automática e transparente para a persoa usuaria. Isto permitirá que se a páxi
 pecha accidentalmente e se volve a abrir, o formulario aparecerá cuberto cos últimos
 valores introducidos. */
 
+//click cambiar
 let formulario = document.getElementById("myForm");
-formulario.addEventListener("change", funcionCambios);
+formulario.addEventListener("click", funcionCambios);
 function funcionCambios(e) {
 	console.log("funcion cambios " + e.target.id);
 	if (e.target.id == "nome") {
@@ -24,7 +25,11 @@ function funcionCambios(e) {
 	} else if (e.target.id == "check2") {
 		localStorage.setItem("check2", checkbox2.checked);
 	} else if (e.target.id == "check3") {
+		console.log(checkbox3.checked);
+		console.log("a   " + typeof localStorage.getItem("check3"));
 		localStorage.setItem("check3", checkbox3.checked);
+		console.log(checkbox3.checked);
+		console.log("b   " + typeof localStorage.getItem("check3"));
 	}
 }
 //nome
@@ -51,10 +56,12 @@ checkbox2.checked = localStorage.getItem("check2");
 
 //check3
 let checkbox3 = document.getElementById("check3");
-checkbox3.checked = localStorage.getItem("check3");
+console.log("x   " + localStorage.getItem("check3"));
+console.log("c   " + typeof Boolean(localStorage.getItem("check3")));
+checkbox3.checked = localStorage.getItem("check3") === "true" ? true : false;
 
 function recargaPaxina() {
-	for (let i = 0; i < localStorage.length; i++) {
+	/*for (let i = 0; i < localStorage.length; i++) {
 		//localStorage.removeItem(localStorage.key(i));
 		//console.log(localStorage.key(i));
 		if (localStorage.key(i) == "select1") {
@@ -95,11 +102,13 @@ function recargaPaxina() {
 				console.log("entro3");
 			} else if (localStorage.getItem("check3") === "false") {
 				console.log("entro else3");
+				checkbox3.setAttribute("checked", false);
 				localStorage.removeItem("check3");
 			}
 		}
-	}
+	}*/
 	nome.setAttribute("value", nome.value);
 	tel.setAttribute("value", tel.value);
+	//checkbox3.checked = localStorage.getItem("check3");
 }
 recargaPaxina();
