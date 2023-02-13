@@ -11,3 +11,29 @@ decrementalo.
 A información debe estar almacenada nun compoñente Vue e dende HTML debe
 accederse a ela. Con respecto á imaxe, a ruta está almacenada en Vue.
 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej2 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <p>Nombre: {{name}}</p>
+        <p>Ano: {{year}}</p>
+        <p>Ano + 5: {{year+5}}</p>
+        <img :src="rutaImg"></img><br>
+        <input type="text" :value="name"><br>
+        <button @click="decrement">-1</button>
+        {{ count }}
+        <button @click="increment">+1</button>
+    </div>
+    <script src="../vue.global.js"></script>
+    <script src="ej2.js"></script>
+</body>
+
+</html>
