@@ -1,7 +1,51 @@
 <!--
-1. Crea un formulario con, polo menos, unha caixa de texto, un área de texto, múltiples
-checkboxes, radiobuttons e select. Fai que o valor seleccionado en cada un dos
-campos se mostre en HTML.
+1. Crea un formulario con, polo menos, unha caixa de texto, un área de texto, múltiples checkboxes, radiobuttons e select. Fai que o valor seleccionado en cada un dos campos se mostre en HTML.
 Engade un botón para resetear o formulario, de forma que os valores
 escritos/seleccionados se borren.
 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej5 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <form>
+            <input type="text" v-model="textoNombre" placeholder="nombre"><br><br>
+            <textarea v-model="textoArea" placeholder="comentarios"></textarea><br><br>
+            <label for="c1">Pan</label>
+            <input type="checkbox" id="c1" value="Pan" v-model="check"><br>
+            <label for="c2">Aceite</label>
+            <input type="checkbox" id="c1" value="Aceite" v-model="check"><br>
+            <label for="c3">Agua</label>
+            <input type="checkbox" id="c1" value="Agua" v-model="check"><br><br>
+            <label for="r1">Ayer</label>
+            <input type="radio" id="r1" value="Ayer" name="dia" v-model="elegido"><br>
+            <label for="r2">Hoy</label>
+            <input type="radio" id="r2" value="Hoy" name="dia" v-model="elegido"><br><br>
+            <label for="s1">Provincia: </label>
+            <select name="select" id="s1" v-model="provincia">
+                <option value="A Coruña">A Coruña</option>
+                <option value="Vido">Vigo</option>
+                <option value="Ourense">Ourense</option>
+                <option value="Pontevedra">Pontevedra</option>
+            </select><br><br>
+            <input type="reset" id="reset1" value="Borrar datos" @click="borrar">
+        </form>
+        <p>Texto input: {{ textoNombre }}</p>
+        <p>Texto textArea: {{ textoArea }}</p>
+        <p>Checkbox: {{ check }}</p>
+        <p>Radio: {{ elegido }}</p>
+        <p>Select: {{ provincia }}</p>
+
+    </div>
+    <script src="../vue.global.js" defer></script>
+    <script src="ej5.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!-- 
+    2. Crea unha páxina web con dúas caixas de texto para introducir números a sumar e un elemento para mostrar o resultado. Cada vez que se modifique unha das caixas de texto, debe actualizarse e mostrarse o resultado da suma dos dous números. Ademais, unha vez obtido o resultado da suma, debe mostrarse tamén na páxina web se o resultado é un número par ou impar. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej6 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <label for="num1">Numero 1: </label>
+        <input type="number" v-model="num1" id="num1"><br>
+        <label for="num2">Numero 2: </label>
+        <input type="number" v-model="num2" id="num2">
+        <p>Suma: {{ suma }}</p>
+        <p>La suma es: {{ par }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="ej6.js"></script>
+</body>
+
+</html>

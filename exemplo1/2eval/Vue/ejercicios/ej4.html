@@ -1,13 +1,33 @@
 <!--
 1. Crea unha páxina web cos seguintes elementos:
-a. Un botón que mostre unha mensaxe por consola ao ser pulsado co botón do
-medio.
-b. Unha caixa de texto onde ao pulsar calquera tecla se mostre todo o seu
-contido nun parágrafo da páxina HTML.
-Observar que se se usa o evento keydown prodúcese un retraso nun
-carácter, pois o evento lánzase ao pulsar a tecla e o valor da caixa de texto
-actualízase cando se solta a tecla (o evento keydown xa rematou).
-c. Unha caixa de texto tal que ao pulsar a tecla ENTER se mostre o seu contido
-nun novo parágrafo da páxina HTML. Ademais, fai que o contido da caixa de
-texto se borre despois de pulsar ENTER.
+
+a. Un botón que mostre unha mensaxe por consola ao ser pulsado co botón do medio.
+
+b. Unha caixa de texto onde ao pulsar calquera tecla se mostre todo o seu contido nun parágrafo da páxina HTML. Observar que se se usa o evento keydown prodúcese un retraso nun carácter, pois o evento lánzase ao pulsar a tecla e o valor da caixa de texto actualízase cando se solta a tecla (o evento keydown xa rematou).
+
+c. Unha caixa de texto tal que ao pulsar a tecla ENTER se mostre o seu contido nun novo parágrafo da páxina HTML. Ademais, fai que o contido da caixa de texto se borre despois de pulsar ENTER.
 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej4 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <button @click.middle="mensaxe">Púlsame!</button><br>
+        <p>{{ textoBoton }}</p>
+        <input @keyup="update($event)" type="text">
+        <p>Texto: {{ texto }}</p>
+        <input @keyup.enter="updateEnter($event)" type="text">
+        <p>Texto Enter: {{ textoEnter }}</p>
+    </div>
+    <script src="../vue.global.js" defer></script>
+    <script src="ej4.js" defer></script>
+</body>
+
+</html>

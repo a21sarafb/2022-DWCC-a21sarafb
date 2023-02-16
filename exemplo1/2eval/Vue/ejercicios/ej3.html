@@ -1,5 +1,23 @@
 <!--
-1. Crea unha páxina web que conteña unha caixa de texto e un parágrafo que mostre
-automaticamente o texto da caixa de texto e que se actualice a medida que se
-engaden novas letras. Podes usar o evento input.
+1. Crea unha páxina web que conteña unha caixa de texto e un parágrafo que mostre automaticamente o texto da caixa de texto e que se actualice a medida que se engaden novas letras. Podes usar o evento input.
 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej3 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <input @input="update($event)" type="text">
+        <p>Texto: {{ texto }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="ej3.js"></script>
+</body>
+
+</html>

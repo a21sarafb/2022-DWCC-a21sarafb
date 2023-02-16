@@ -1,0 +1,51 @@
+<!--  
+1. Crea unha páxina web que teña un tableiro de celas, por exemplo de tamaño 3x3.
+Fai que ao pulsar sobre cada cela cambie alternativamente o estilo da mesma. Por exemplo podes cambiar o fondo e o borde da cela.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej7 Vue</title>
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="data">
+        <table>
+            <tr>
+                <td :style="styleColor" @click="cambio"></td>
+                <td :style="styleColor" @click="cambio"></td>
+                <td :style="styleColor" @click="cambio"></td>
+            </tr>
+            <tr>
+                <td :style="styleColor" @click="cambio"></td>
+                <td :style="styleColor" @click="cambio"></td>
+                <td :style="styleColor" @click="cambio"></td>
+            </tr>
+            <tr>
+                <td :style="styleColor" @click="cambio"></td>
+                <td :style="styleColor" @click="cambio"></td>
+                <td :style="styleColor" @click="cambio"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="ej7.js"></script>
+</body>
+
+</html>
