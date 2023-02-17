@@ -21,6 +21,11 @@ Fai que ao pulsar sobre cada cela cambie alternativamente o estilo da mesma. Por
             width: 100px;
             height: 100px;
         }
+
+        .activa {
+
+            background-color: red;
+        }
     </style>
 </head>
 
@@ -28,23 +33,12 @@ Fai que ao pulsar sobre cada cela cambie alternativamente o estilo da mesma. Por
     <div id="data">
         <table>
             <tr>
-                <td :style="styleColor" @click="cambio"></td>
-                <td :style="styleColor" @click="cambio"></td>
-                <td :style="styleColor" @click="cambio"></td>
-            </tr>
-            <tr>
-                <td :style="styleColor" @click="cambio"></td>
-                <td :style="styleColor" @click="cambio"></td>
-                <td :style="styleColor" @click="cambio"></td>
-            </tr>
-            <tr>
-                <td :style="styleColor" @click="cambio"></td>
-                <td :style="styleColor" @click="cambio"></td>
-                <td :style="styleColor" @click="cambio"></td>
+                <td :class="{activa: isRed}" id="1" @click="cambio">1</td>
+                <td :class="{activa: isRed2}" id="2" @click="cambio">2</td>
             </tr>
         </table>
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../vue.global.js"></script>
     <script src="ej7.js"></script>
 </body>
 
