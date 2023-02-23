@@ -3,20 +3,15 @@
 
 a. Tanto a vida do monstro como a da persoa que xoga terán valores entre 0 - 100.
 
-b. Cada vez que se pulsa o botón “Ataque” a vida do monstro diminúe, pero ao mesmo tempo este contraataca e a vida da persoa que está xogando tamén diminuirá. Para que o xogo non sexa preditivo, a vida do monstro diminuirá nun valor aleatorio entre 5 e 12 e a vida da persoa que xoga diminuirá nun
-valor aleatorio entre 8 e 15.
+b. Cada vez que se pulsa o botón “Ataque” a vida do monstro diminúe, pero ao mesmo tempo este contraataca e a vida da persoa que está xogando tamén diminuirá. Para que o xogo non sexa preditivo, a vida do monstro diminuirá nun valor aleatorio entre 5 e 12 e a vida da persoa que xoga diminuirá nun valor aleatorio entre 8 e 15.
 
-c. Visualiza, de forma gráfica, a vida do monstruo e da persoa que está xogando a través da modificación da propiedade width de CSS no <div class=”healthbar__value”>. NOTA: recoméndase usar propiedades
-calculadas.
+c. Visualiza, de forma gráfica, a vida do monstruo e da persoa que está xogando a través da modificación da propiedade width de CSS no <div class=”healthbar__value”>. NOTA: recoméndase usar propiedades calculadas.
 
 d. Cada vez que se pulsa o botón “Ataque especial” a vida do monstro diminúe un número aleatorio entre 10 e 25. Igual que no caso anterior, o monstro contraataca e a vida da persoa que está xogando tamén diminuirá un número aleatorio entre 8 e 15 (igual que antes).
 
-e. Cada vez que se pulsa un dos botóns “Ataqe”, “Ataque especial” ou
-“Curación” realízase unha acción no xogo. Fai que o botón “Ataque
-especial” só estea habilitado unha vez de cada 3 accións.
+e. Cada vez que se pulsa un dos botóns “Ataqe”, “Ataque especial” ou “Curación” realízase unha acción no xogo. Fai que o botón “Ataque especial” só estea habilitado unha vez de cada 3 accións.
 
-f. Ao pulsar o botón “Curación” a vida da persoa que xoga verase
-incrementada nun valor aleatorio entre 8 e 20 (hai que ter en conta non superar o límite de 100). Ademais, cada vez que se use este botón, a vida da persoa que xoga tamén se verá diminuída nun número aleatorio entre 8 e 15 (como se sufrise un ataque).
+f. Ao pulsar o botón “Curación” a vida da persoa que xoga verase incrementada nun valor aleatorio entre 8 e 20 (hai que ter en conta non superar o límite de 100). Ademais, cada vez que se use este botón, a vida da persoa que xoga tamén se verá diminuída nun número aleatorio entre 8 e 15 (como se sufrise un ataque).
 
 g. Comprobación de fin de partida. Cando a vida do monstro ou da persoa xogadora chegue a 0, a partida remata. Comproba cando suceda isto e mostra no navegador información de que a partida rematou e quen ganou: o monstro, a persoa xogadora ou produciuse un empate.
  
@@ -37,12 +32,69 @@ l. Mostra, a modo de rexistro, as accións realizadas na partida. A última acci
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ej12.css" />
     <title>Ej12 Vue</title>
 </head>
 
 <body>
+    <header>
+        <h1>Batalla</h1>
+    </header>
     <div id="data">
+        <!--
+            <button @click="ataque">Ataque</button>
+        <p>Vida xogador: {{vidaXogador}}</p>
+        <div class="healthbar__valueX">
 
+        </div>
+        <p>Vida monstruo: {{vidaMonstro}}</p>
+        <div class="healthbar__valueM">
+
+        </div> -->
+        <section id="monster" class="container">
+            <h2>Monstro</h2>
+            <div class="healthbar">
+                <div class="healthbar__value" :style="{width:vidaMonstroReal+'%'}"></div>
+            </div>
+        </section>
+        <section id="player" class="container">
+            <h2>Vostede</h2>
+            <div class="healthbar">
+                <div class="healthbar__value" :style="{width:vidaPersonaReal+'%'}"></div>
+            </div>
+        </section>
+        <section class="container" v-show="!jugando">
+            <h2>Fin partida!</h2>
+            <h3 v-show="(vidaPersonaReal==0 && vidaMonstroReal>0) || rendicion">
+                Perdiches!
+            </h3>
+            <h3 v-show="vidaPersonaReal>0 && vidaMonstroReal==0 && !rendicion">
+                Ganaches
+            </h3>
+            <h3 v-show="vidaPersonaReal==0 && vidaMonstroReal==0">Empate</h3>
+            <button @click="reiniciar">Novo xogo</button>
+        </section>
+        <section id="controls" v-show="jugando">
+            <button @click="ataque">ATAQUE</button>
+            <button @click="ataqueEspecial" :disabled="!ataqueEspecialDisponible">
+                ATAQUE ESPECIAL
+            </button>
+            <button @click="curacion">CURACIÓN</button>
+            <button @click="rendirse">RENDERSE</button>
+        </section>
+        <section id="log" class="container">
+            <h2>Rexistro da batalla</h2>
+            <ul v-for="log in logsReordenados">
+                <li>
+                    <span
+                        :class="{'log--player':log.origen=='Persona','log--monster':log.origen=='Monstro'}">{{log.origen}}</span>
+                    <span v-if="log.tipo=='daño'"> ataca con </span>
+                    <span v-else> recupera </span>
+                    <span
+                        :class="{'log--damage':log.tipo=='daño','log--heal':log.tipo=='curacion'}">{{log.cantidad}}</span>
+                </li>
+            </ul>
+        </section>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="ej12.js"></script>

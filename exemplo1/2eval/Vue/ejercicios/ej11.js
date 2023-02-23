@@ -1,18 +1,22 @@
 Vue.createApp({
 	data() {
 		return {
-			elemento: [],
-			o: true,
-			texto: "Ocultar lista",
+			nuevoElemento: "",
+			elementos: ["sara", "paula", "fer", "alba"],
+			mostrar: true,
 		};
 	},
 	methods: {
-		elementos(e) {
-			this.elemento.push(e.target.value);
+		añadirElemento() {
+			this.elementos.push(this.nuevoElemento);
+			this.nuevoElemento = "";
+		},
+		visualizar() {
+			this.mostrar = !this.mostrar;
 		},
 		eliminar(index) {
-			this.elemento.splice(index, 1);
+			console.log(index);
+			this.elementos.splice(index, 1);
 		},
-		bot() {},
 	},
 }).mount("#data");
