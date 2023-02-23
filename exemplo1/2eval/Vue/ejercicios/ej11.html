@@ -1,0 +1,30 @@
+<!-- 
+3. Crea unha páxina web que mostre unha lista de elementos (escolle ti o significado), coas seguintes funcionalidades:
+a. Deben mostrarse os elementos en forma de lista.
+b. Deben poder engadirse novos elementos á lista.
+c. Engade tamén un botón para mostrar/ocultar a lista. Fai que o texto deste botón sexa “Mostrar lista” ou “Ocultar lista” dependendo de se a lista é visible ou non.
+d. Fai que ao pulsar sobre un elemento, se elimine da lista.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej11 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <input type="text" @keyup.enter="elementos($event)">
+        <li v-for="(e, index) in elemento" @click="eliminar(index)">
+            {{e}}
+        </li>
+        <button @click="bot" v-show="o">{{texto}}</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="ej11.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!--
+2. Dado un array de números almacenado en JavaScript, utiliza a directiva v-for para mostrar só os números pares.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej10 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <ul v-for="par in pares">
+            <li v-if="par % 2 == 0">
+                {{par}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="ej10.js"></script>
+</body>
+
+</html>

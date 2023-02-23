@@ -1,0 +1,25 @@
+<!--
+2. Imaxina que queres realizar unha páxina web que mostre unha lista de tarefas pendentes. Para este exercicio, crea dende JavaScript un array con tarefas, que poden ser inicialmente unha cadea de texto. Para practicar o renderizado condicional, crea unha páxina web que mostre un parágrafo “Non hai tarefas pendentes” se o array coa lista de tarefas está baleiro e en caso contrario debería
+amosar a lista de tarefas, aínda que esta parte completarase no seguinte apartado.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej9 Vue</title>
+</head>
+
+<body>
+    <div id="data">
+        <p v-if="tarefa">{{tarefas}}</p>
+        <p v-else>Non hai tarefas pendentes</p>
+        <button @click="hayTarefa">Ver tarefas</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="ej9.js"></script>
+</body>
+
+</html>
