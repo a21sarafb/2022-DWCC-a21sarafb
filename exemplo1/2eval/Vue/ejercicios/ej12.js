@@ -1,66 +1,69 @@
+function numAleatorio(max, min) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
 Vue.createApp({
 	data() {
 		return {
 			vidaMonstro: 100,
 			vidaPersona: 100,
-			jugando: true,
-			numAccions: 0,
+			xogo: true,
+			numXogada: 0,
 			rendicion: false,
 			logs: [],
 		};
 	},
 	computed: {
-		vidaMonstroReal() {
+		vidaM() {
 			return this.vidaMonstro < 0 ? 0 : this.vidaMonstro;
 		},
-		vidaPersonaReal() {
+		vidaXogador() {
 			return this.vidaPersona < 0 ? 0 : this.vidaPersona;
 		},
 		ataqueEspecialDisponible() {
-			return this.numAccions >= 3;
+			return this.numXogada >= 3;
 		},
-		logsReordenados() {
+		logsOrdenados() {
 			return this.logs.reverse();
 		},
 	},
 	methods: {
 		ataque() {
-			let dañoMonstro = Math.floor(Math.random() * (12 - 5 + 1) + 5);
-			this.vidaMonstro = this.vidaMonstro - dañoMonstro;
+			let ataqueXogador = numAleatorio(12, 5);
+			this.vidaMonstro = this.vidaMonstro - ataqueXogador;
 			this.logs.push({
 				origen: "Persona",
-				cantidad: dañoMonstro,
+				cantidad: ataqueXogador,
 				tipo: "daño",
 			});
-			let dañoPersona = Math.floor(Math.random() * (15 - 8 + 1) + 8);
-			this.vidaPersona = this.vidaPersona - dañoPersona;
+			let ataqueMonstruo = numAleatorio(15, 8);
+			this.vidaPersona = this.vidaPersona - ataqueMonstruo;
 			this.logs.push({
 				origen: "Monstro",
-				cantidad: dañoPersona,
+				cantidad: ataqueMonstruo,
 				tipo: "daño",
 			});
-			this.numAccions++;
+			this.numXogada++;
 		},
 		ataqueEspecial() {
-			this.numAccions = 0;
-			let dañoMonstro = Math.floor(Math.random() * (25 - 10 + 1) + 10);
-			this.vidaMonstro = this.vidaMonstro - dañoMonstro;
+			this.numXogada = 0;
+			let ataqueXogador = numAleatorio(25, 10);
+			this.vidaMonstro = this.vidaMonstro - ataqueXogador;
 			this.logs.push({
 				origen: "Persona",
-				cantidad: dañoMonstro,
+				cantidad: ataqueXogador,
 				tipo: "daño",
 			});
-			let dañoPersona = Math.floor(Math.random() * (15 - 8 + 1) + 8);
-			this.vidaPersona = this.vidaPersona - dañoPersona;
+			let ataqueMonstruo = numAleatorio(15, 8);
+			this.vidaPersona = this.vidaPersona - ataqueMonstruo;
 			this.logs.push({
 				origen: "Monstro",
-				cantidad: dañoPersona,
+				cantidad: ataqueMonstruo,
 				tipo: "daño",
 			});
-			this.numAccions++;
+			this.numXogada++;
 		},
 		curacion() {
-			let curacion = Math.floor(Math.random() * (20 - 8 + 1) + 8);
+			let curacion = numAleatorio(20, 8);
 			this.vidaPersona =
 				this.vidaPersona + curacion > 100 ? 100 : this.vidaPersona + curacion;
 			this.logs.push({
@@ -68,37 +71,37 @@ Vue.createApp({
 				cantidad: curacion,
 				tipo: "curacion",
 			});
-			let dañoPersona = Math.floor(Math.random() * (15 - 8 + 1) + 8);
-			this.vidaPersona = this.vidaPersona - dañoPersona;
+			let ataqueMonstruo = numAleatorio(15, 8);
+			this.vidaPersona = this.vidaPersona - ataqueMonstruo;
 			this.logs.push({
 				origen: "Monstro",
-				cantidad: dañoPersona,
+				cantidad: ataqueMonstruo,
 				tipo: "daño",
 			});
-			this.numAccions++;
+			this.numXogada++;
 		},
 		reiniciar() {
 			this.vidaMonstro = 100;
 			this.vidaPersona = 100;
-			this.jugando = true;
-			this.numAccions = 0;
+			this.xogo = true;
+			this.numXogada = 0;
 			this.rendicion = false;
 			this.logs = [];
 		},
 		rendirse() {
 			this.rendicion = true;
-			this.jugando = false;
+			this.xogo = false;
 		},
 	},
 	watch: {
 		vidaMonstro() {
 			if (this.vidaMonstro <= 0) {
-				this.jugando = false;
+				this.xogo = false;
 			}
 		},
 		vidaPersona() {
 			if (this.vidaPersona <= 0) {
-				this.jugando = false;
+				this.xogo = false;
 			}
 		},
 	},

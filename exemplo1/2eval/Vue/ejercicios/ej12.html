@@ -41,40 +41,30 @@ l. Mostra, a modo de rexistro, as accións realizadas na partida. A última acci
         <h1>Batalla</h1>
     </header>
     <div id="data">
-        <!--
-            <button @click="ataque">Ataque</button>
-        <p>Vida xogador: {{vidaXogador}}</p>
-        <div class="healthbar__valueX">
-
-        </div>
-        <p>Vida monstruo: {{vidaMonstro}}</p>
-        <div class="healthbar__valueM">
-
-        </div> -->
         <section id="monster" class="container">
             <h2>Monstro</h2>
             <div class="healthbar">
-                <div class="healthbar__value" :style="{width:vidaMonstroReal+'%'}"></div>
+                <div class="healthbar__value" :style="{width:vidaM+'%'}"></div>
             </div>
         </section>
         <section id="player" class="container">
             <h2>Vostede</h2>
             <div class="healthbar">
-                <div class="healthbar__value" :style="{width:vidaPersonaReal+'%'}"></div>
+                <div class="healthbar__value" :style="{width:vidaXogador+'%'}"></div>
             </div>
         </section>
-        <section class="container" v-show="!jugando">
+        <section class="container" v-show="!xogo">
             <h2>Fin partida!</h2>
-            <h3 v-show="(vidaPersonaReal==0 && vidaMonstroReal>0) || rendicion">
+            <h3 v-show="(vidaXogador==0 && vidaM>0) || rendicion">
                 Perdiches!
             </h3>
-            <h3 v-show="vidaPersonaReal>0 && vidaMonstroReal==0 && !rendicion">
+            <h3 v-show="vidaXogador>0 && vidaM==0 && !rendicion">
                 Ganaches
             </h3>
-            <h3 v-show="vidaPersonaReal==0 && vidaMonstroReal==0">Empate</h3>
+            <h3 v-show="vidaXogador==0 && vidaM==0">Empate</h3>
             <button @click="reiniciar">Novo xogo</button>
         </section>
-        <section id="controls" v-show="jugando">
+        <section id="controls" v-show="xogo">
             <button @click="ataque">ATAQUE</button>
             <button @click="ataqueEspecial" :disabled="!ataqueEspecialDisponible">
                 ATAQUE ESPECIAL
@@ -84,7 +74,7 @@ l. Mostra, a modo de rexistro, as accións realizadas na partida. A última acci
         </section>
         <section id="log" class="container">
             <h2>Rexistro da batalla</h2>
-            <ul v-for="log in logsReordenados">
+            <ul v-for="log in logsOrdenados">
                 <li>
                     <span
                         :class="{'log--player':log.origen=='Persona','log--monster':log.origen=='Monstro'}">{{log.origen}}</span>
