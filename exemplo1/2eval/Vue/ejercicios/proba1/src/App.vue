@@ -1,4 +1,7 @@
 <script>
+import Ej1HolaMundo from "./components/Ej1HolaMundo.vue";
+import Ej2BotonContador from "./components/Ej2BotonContador.vue";
+import Ej3Datos from "./components/Ej3Datos.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 export default {
 	// Escribir as opcións do compoñente: data, methods, watch, ...
@@ -8,6 +11,9 @@ export default {
 		};
 	},
 	components: {
+		Ej1HolaMundo,
+		Ej2BotonContador,
+		Ej3Datos,
 		HelloWorld,
 	},
 };
@@ -22,6 +28,30 @@ export default {
 			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
 		</a>
 	</div>
+	<br />
+	<br />
+	<div class="ej">
+		<p>Ej1</p>
+		<Ej1HolaMundo />
+	</div>
+	<br />
+	<br />
+	<div class="ej">
+		<p>Ej2</p>
+		<Ej2BotonContador />
+		<Ej2BotonContador />
+		<Ej2BotonContador />
+	</div>
+	<br />
+	<br />
+	<div class="ej">
+		<p>Ej3</p>
+		<h2>Listado</h2>
+		<Ej3Datos />
+		<Ej3Datos />
+	</div>
+	<br />
+	<br />
 	<button @click="count++">You clicked me {{ count }} times.</button>
 	<HelloWorld />
 </template>
