@@ -12,15 +12,15 @@ export default {
 		textoMostrar() {
 			return this.isHidden ? "Mostrar Detalles" : "Ocultar Detalles";
 		},
-		textoFavorito() {
+		favorito() {
 			return this.datos.isFavorito ? "(Favorito)" : "";
 		},
 	},
 	methods: {
-		changeVisivility() {
+		ocultar() {
 			this.isHidden = !this.isHidden;
 		},
-		changeFavorito() {
+		cambioFavorito() {
 			this.$emit("changeFavorito", this.datos.id);
 		},
 	},
@@ -29,9 +29,9 @@ export default {
 </script>
 <template>
 	<div>
-		<h3>{{ datos.nombre }} {{ datos.apellidos }} {{ textoFavorito }}</h3>
-		<button @click="changeFavorito">Cambiar favorito</button>
-		<button @click="changeVisivility">{{ textoMostrar }}</button>
+		<h3>{{ datos.nombre }} {{ datos.apellidos }} {{ favorito }}</h3>
+		<button @click="cambioFavorito">Cambiar favorito</button>
+		<button @click="ocultar">{{ textoMostrar }}</button>
 		<div :class="{ hidden: isHidden }">
 			<p><b>Telefono:</b> {{ datos.telefono }}</p>
 			<p><b>Correo:</b> {{ datos.correo }}</p>

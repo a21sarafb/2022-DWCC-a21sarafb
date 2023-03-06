@@ -2,7 +2,7 @@
 import Ej1HolaMundo from "./components/Ej1HolaMundo.vue";
 import Ej2BotonContador from "./components/Ej2BotonContador.vue";
 import Ej3Datos from "./components/Ej3Datos.vue";
-import HelloWorld from "./components/HelloWorld.vue";
+//import HelloWorld from "./components/HelloWorld.vue";
 import Ej4Datos from "./components/Ej4Datos.vue";
 import Ej5Datos from "./components/Ej5Datos.vue";
 export default {
@@ -92,18 +92,14 @@ export default {
 	</div>
 	<br />
 	<br />
-	<button @click="count++">You clicked me {{ count }} times.</button>
-	<HelloWorld />
 </template>
 
-<style>
+<style scoped>
 .ej {
 	border: 1px solid black;
 	border-radius: 25px;
 	padding: 5px;
 }
-</style>
-<style scoped>
 .logo {
 	height: 6em;
 	padding: 1.5em;
