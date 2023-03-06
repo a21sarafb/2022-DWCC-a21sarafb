@@ -1,10 +1,11 @@
 <script>
-import Ej1HolaMundo from "./components/Ej1HolaMundo.vue";
-import Ej2BotonContador from "./components/Ej2BotonContador.vue";
-import Ej3Datos from "./components/Ej3Datos.vue";
+//import Ej1HolaMundo from "./components/Ej1HolaMundo.vue";
+//import Ej2BotonContador from "./components/Ej2BotonContador.vue";
+//import Ej3Datos from "./components/Ej3Datos.vue";
 //import HelloWorld from "./components/HelloWorld.vue";
-import Ej4Datos from "./components/Ej4Datos.vue";
+//import Ej4Datos from "./components/Ej4Datos.vue";
 import Ej5Datos from "./components/Ej5Datos.vue";
+import Ej5A from "./components/Ej5a.vue";
 export default {
 	data() {
 		return {
@@ -30,7 +31,7 @@ export default {
 	},
 	computed: {
 		maxId() {
-			return this.listado.maxId();
+			return this.listado.maxId;
 		},
 	},
 	methods: {
@@ -41,13 +42,31 @@ export default {
 				}
 			}
 		},
+		addPersona(nombre, apellidos, telefono, correo, isFavorito) {
+			this.listado.push({
+				id: this.maxId,
+				nombre: nombre,
+				apellido: apellidos,
+				telefono: telefono,
+				correo: correo,
+				isFavorito: isFavorito,
+			});
+		},
+		removePersona(id) {
+			for (const [index, persona] of this.listado.entries()) {
+				if (persona.id == id) {
+					this.listado.splice(index, 1);
+				}
+			}
+		},
 	},
 	components: {
-		Ej1HolaMundo,
-		Ej2BotonContador,
-		Ej3Datos,
-		Ej4Datos,
+		//Ej1HolaMundo,
+		//Ej2BotonContador,
+		//Ej3Datos,
+		//Ej4Datos,
 		Ej5Datos,
+		Ej5A,
 	},
 };
 </script>
@@ -88,9 +107,11 @@ export default {
 			:key="persona.id"
 			:datos="persona"
 			@change-favorito="changeFavorito"
+			@remove-persona="removePersona"
 		></Ej5Datos>
 	</div>
 	<br />
+	<Ej5A @add-persona="addPersona"></Ej5A>
 	<br />
 </template>
 
@@ -99,17 +120,5 @@ export default {
 	border: 1px solid black;
 	border-radius: 25px;
 	padding: 5px;
-}
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-	transition: filter 300ms;
-}
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-	filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
