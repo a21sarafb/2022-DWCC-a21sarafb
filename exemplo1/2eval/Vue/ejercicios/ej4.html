@@ -21,7 +21,7 @@ c. Unha caixa de texto tal que ao pulsar a tecla ENTER se mostre o seu contido n
     <div id="data">
         <button @click.middle="mensaxe">Púlsame!</button><br>
         <p>{{ textoBoton }}</p>
-        <input @keyup="update($event)" type="text">
+        <input @keydown="update($event)" type="text">
         <p>Texto: {{ texto }}</p>
         <input @keyup.enter="updateEnter($event)" type="text">
         <p>Texto Enter: {{ textoEnter }}</p>

@@ -19,11 +19,12 @@ input.addEventListener("click", elimTexto);
 /*● Cando se escriba algo na caixa de texto, debe mostrarse a tecla pulsada no
 div e tamén o código da tecla pulsada. Ademais, se o div estaba oculto, debe
 mostrarse.*/
-let cajaDeTexto = document.getElementById("textoExercicio1");
-function onKeyDownHandler(event) {
-	divTexto.style.display = "";
-	let keyValue = event.key;
-	let codeValue = event.code;
-	divTexto.append("\nkeyValue: " + keyValue + "\n");
-	divTexto.append("\ncodeValue: " + codeValue + "\n");
-}
+let escribir = (e) => {
+	document.getElementById("texto").classList.remove("oculto");
+	document.getElementById(
+		"texto"
+	).innerHTML = `Tecla: ${e.key} Codigo: ${e.code}`;
+};
+document
+	.getElementById("textoExercicio1")
+	.addEventListener("keypress", escribir);

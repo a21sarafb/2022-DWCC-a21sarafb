@@ -8,4 +8,4 @@ Vue.createApp({
 			objeto: { nombre: "Sara", apellidos: "Facal Boullosa" },
 		};
 	},
-}).mount("#data");
+}).mount("#ej1");

@@ -9,4 +9,4 @@ Vue.createApp({
 			this.texto = e.target.value;
 		},
 	},
-}).mount("#data");
+}).mount(".ej3");
