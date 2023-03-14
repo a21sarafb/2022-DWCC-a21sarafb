@@ -31,7 +31,7 @@ export default {
 	},
 	computed: {
 		maxId() {
-			return this.listado.maxId;
+			return this.listado.maxId + 1;
 		},
 	},
 	methods: {

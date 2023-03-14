@@ -22,7 +22,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(167, 3, 3, 0.5);
   display: flex;
 }
 .modal-container {
@@ -31,8 +31,8 @@
   padding: 20px 30px;
   background-color: #fff;
   border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  border: 3px solid black;
+  box-shadow: 0 2px 8px rgb(255, 145, 0);
+  border: 3px solid rgb(255, 230, 0);
   text-align: left;
 }
 .button {
