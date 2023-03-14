@@ -279,7 +279,7 @@ for (let i = 0; i < 8; i++) {
 	let div1 = document.createElement("div");
 	div1.setAttribute("class", "div" + (i + 1));
 	let img = document.createElement("img");
-	img.setAttribute("src", "/img/reverso.jfif");
+	img.setAttribute("src", "img/reverso.jfif");
 	img.setAttribute("class", "img" + (i + 1));
 	div1.append(img);
 	principal.append(div1);
@@ -320,7 +320,7 @@ function pulsar(e) {
 		/*e. Debes buscar un mecanismo para saber se unha carta está volteada ou non.*/
 		cartaPulsada.setAttribute("id", "volteada");
 		let name = cartaPulsada.getAttribute("name");
-		cartaPulsada.setAttribute("src", "/img/" + name);
+		cartaPulsada.setAttribute("src", "img/" + name);
 	}
 	/*g. Cando hai dúas cartas volteadas comprobarase se a letra que esconden é igual, producíndose unha parella. Neste caso as cartas quedarán xiradas e non se poderá volver a pulsar sobre elas.*/
 	let volteada = [];
@@ -349,8 +349,8 @@ function pulsar(e) {
 				//quitarle atributo volteada
 				vol[0].removeAttribute("id");
 				vol[1].removeAttribute("id");
-				vol[0].setAttribute("src", "/img/reverso.jfif");
-				vol[1].setAttribute("src", "/img/reverso.jfif");
+				vol[0].setAttribute("src", "img/reverso.jfif");
+				vol[1].setAttribute("src", "img/reverso.jfif");
 				console.log(vol[0]);
 				console.log(vol[1]);
 				contadorVuelta = 0;
