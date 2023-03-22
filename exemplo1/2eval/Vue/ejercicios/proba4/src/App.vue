@@ -13,14 +13,14 @@ export default {
 </script>
 
 <template>
-	<div v-for="comp in compList" id="contenedor">
-		<input
-			type="radio"
-			name="component"
-			:key="comp"
-			@click="currentComponent = comp"
-			:checked="currentComponent == comp"
-		/>
+	<div v-for="comp in compList" 
+	id="contenedor">
+		<input 
+		type="radio" 
+		name="component" 
+		:key="comp" 
+	  @click="currentComponent = comp" 
+		:checked="currentComponent == comp" />
 		<label>{{ comp }}</label>
 	</div>
 	<KeepAlive>

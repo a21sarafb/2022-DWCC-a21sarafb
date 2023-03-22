@@ -7,7 +7,6 @@ d. Fai que ao pulsar sobre un elemento, se elimine da lista.
 -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,19 +16,21 @@ d. Fai que ao pulsar sobre un elemento, se elimine da lista.
 
 <body>
     <div id="data">
-        <input type="text" v-model="nuevoElemento" @keyup.enter="añadirElemento" />
+        <input type="text" v-model="nuevoElemento" 
+        @keyup.enter="añadirElemento" />
         <div v-show="mostrar">
             <ul v-for="elemento,index in elementos">
-                <li @click="eliminar(index)" :key="index"> {{elemento}}
+                <li @click="eliminar(index)" :key="index"> 
+                    {{elemento}}
                 </li>
             </ul>
         </div>
         <button @click="visualizar">
-            <span v-if="mostrar">Ocultar lista</span><span v-else>Mostrar lista</span>
+            <span v-if="mostrar">Ocultar lista</span>
+            <span v-else>Mostrar lista</span>
         </button>
     </div>
     <script src="../vue.global.js"></script>
     <script src="ej11.js"></script>
 </body>
-
 </html>

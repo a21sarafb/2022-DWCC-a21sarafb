@@ -84,3 +84,11 @@ finDeSemana();
 console.log(
 	"6. Crea unha función que reciba unha data como parámetro e devolva o número de días que pasaron dende que comezou o ano."
 );
+function ejercicio6DiasDesdeInicioDeAño(fecha) {
+	return Math.floor(
+	  (fecha - new Date(fecha.getFullYear(), 0, 1)) / 1000 / 3600 / 24
+	);
+  }
+  
+  console.log(ejercicio6DiasDesdeInicioDeAño(new Date("January 31, 2022")));
+  

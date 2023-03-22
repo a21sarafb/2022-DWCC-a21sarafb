@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Probas</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div v-bind="objectOfAttrs"></div>
+        <div>{{ //number //+ //1}}</div>
+        <div>{{ //isButtonDisabled //? /*'YES' : 'NO'*/}}</div>
+        <button :disabled="isButtonDisabled" @click="increment">Button{{ //number }}</button>
+        <button @click="say('hello')">Say hello</button>
+        <button @click="say('bye', $event)">Say bye</button>
+
+        <p v-once>Contador inicial: {{ //count}}</p>
+        <p>{{ //count}}</p>
+
+
+        <button @click="increment">{{ //count}}</button>
+        <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Enviar</button>
+        </form> -->
+        <div :class="classObject"></div>
+        <form @submit.prevent="addTodo">
+            <input v-model="newTodo">
+            <button>Add Todo</button>
+          </form>
+          <ul>
+            <li v-for="todo in filteredTodos" :key="todo.id">
+              <input type="checkbox" v-model="todo.done">
+              <span :class="{ done: todo.done }">{{ todo.text }}</span>
+              <button @click="removeTodo(todo)">X</button>
+            </li>
+          </ul>
+          <button @click="hideCompleted = !hideCompleted">
+            {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+          </button>
+          <ul>
+            <li v-for="item in list" ref="items">
+              {{ item }}
+            </li>
+          </ul>
+
+          
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="probas.js"></script>
+</body>
+
+</html>

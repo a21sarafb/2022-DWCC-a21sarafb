@@ -11,35 +11,33 @@ Fai que ao pulsar sobre cada cela cambie alternativamente o estilo da mesma. Por
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ej7 Vue</title>
     <style>
-        th,
-        td {
+        th, td {
             border: 1px solid black;
-
         }
-
         td {
             width: 100px;
             height: 100px;
         }
-
         .activa {
-
-            background-color: red;
+            background-color: azure;
+            border-color: aqua;
         }
     </style>
 </head>
-
 <body>
     <div id="data">
         <table>
-            <tr>
-                <td :class="{activa: isRed}" id="1" @click="cambio">1</td>
-                <td :class="{activa: isRed2}" id="2" @click="cambio">2</td>
-            </tr>
+            <tbody>
+                <tr>
+                  <td id="1" @click="alternar"
+                    :class="{activa: selection.activa1}"></td>
+                  <td id="2" @click="alternar"
+                    :class="{activa: selection.activa2}"></td>
+                </tr>
+              </tbody>
         </table>
     </div>
     <script src="../vue.global.js"></script>
     <script src="ej7.js"></script>
 </body>
-
 </html>

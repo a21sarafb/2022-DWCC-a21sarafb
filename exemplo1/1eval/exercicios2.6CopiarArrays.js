@@ -92,3 +92,17 @@ const camelCase = (arrayEntrada) => {
 	return mensaxeDeRetorno;
 };
 camelCase(arrayEntrada);
+
+const arrayEntrada2 = ["last_NAME", "first_name"];
+
+arrayEntrada2.forEach((variable) =>
+  console.log(
+    `${variable.toLowerCase().replace(
+      `_${variable.toLowerCase().charAt(variable.indexOf("_") + 1)}`,
+      variable
+        .toLowerCase()
+        .charAt(variable.indexOf("_") + 1)
+        .toUpperCase()
+    )}`
+  )
+);

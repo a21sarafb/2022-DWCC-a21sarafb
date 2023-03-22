@@ -13,7 +13,6 @@
     </div>
   </div>
 </template>
-
 <style scoped>
 .modal-mask {
   position: fixed;

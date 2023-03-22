@@ -8,9 +8,7 @@ export default {
 	},
 	methods: {
 		toggleCase() {
-			this.texto = !this.mayus
-				? this.texto.toUpperCase()
-				: this.texto.toLowerCase();
+			this.texto = !this.mayus ? this.texto.toUpperCase() : this.texto.toLowerCase();
 			this.mayus = !this.mayus;
 		},
 		addCharacter() {

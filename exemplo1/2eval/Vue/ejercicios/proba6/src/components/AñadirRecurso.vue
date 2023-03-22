@@ -72,7 +72,6 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
-
 .hidden {
   display: none;
 }

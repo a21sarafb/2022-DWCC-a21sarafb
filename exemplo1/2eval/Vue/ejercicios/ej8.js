@@ -1,8 +1,16 @@
 Vue.createApp({
 	data() {
-		return {};
+	  return {
+		clase: "",
+		isHidden: false,
+		isVisible: true,
+		color: "",
+	  };
 	},
 	methods: {
-		cambio(e) {},
+	  ocultar() {
+		this.isHidden = !this.isHidden;
+		this.isVisible = !this.isVisible;
+	  },
 	},
-}).mount("#data");
+  }).mount("#data");

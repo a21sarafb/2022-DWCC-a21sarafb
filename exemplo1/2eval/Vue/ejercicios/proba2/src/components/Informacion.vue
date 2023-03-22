@@ -4,13 +4,13 @@ export default {
 		return {};
 	},
 	props: {
-		persona: Object,
+		per: Object,
 	},
 };
 </script>
 <template>
 	<div>
-		<h3>{{ persona.nombre }} {{ persona.apellidos }}</h3>
-		<p><b>Ano nacemento:</b> {{ persona.ano_nacemento }}</p>
+		<h3>{{ per.nombre }} {{ per.apellidos }}</h3>
+		<p><b>Ano nacemento:</b> {{ per.ano_nacemento }}</p>
 	</div>
 </template>

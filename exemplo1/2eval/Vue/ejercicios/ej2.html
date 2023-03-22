@@ -27,7 +27,7 @@ accederse a ela. Con respecto á imaxe, a ruta está almacenada en Vue.
         <p>Ano: {{year}}</p>
         <p>Ano + 5: {{year+5}}</p>
         <img :src="rutaImg"></img><br>
-        <input type="text" :placeholder="name"><br>
+        <input type="text" v-bind:placeholder="name"><br>
         <button @click="decrement">-1</button>
         <p>{{ count }}</p>
         <button @click="increment">+1</button>

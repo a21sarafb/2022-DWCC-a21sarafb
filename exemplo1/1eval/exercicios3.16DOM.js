@@ -14,3 +14,18 @@ let aquarium = dentroFishes[1].getElementsByTagName("li");
 dentroFishes[1].before("[" + aquarium.length + "]");
 let sea = dentroFishes[2].getElementsByTagName("li");
 dentroFishes[2].before("[" + sea.length + "]");
+
+let listaOriginal = document.getElementById("listaAnimais");
+function recursiva(elemento) {
+    for (const element of elemento.children) {
+      if (element.children.length > 0) {
+        element.insertAdjacentText(
+          "beforebegin",
+          element.tagName != "UL" ? "" : `[${element.children.length}]`
+        );
+        recursiva(element);
+      }
+    }
+  }
+  
+  recursiva(listaOriginal);

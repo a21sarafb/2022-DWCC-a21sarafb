@@ -1,5 +1,4 @@
-<script>
-export default {
+<script> export default {
 	data() {
 		return {};
 	},
@@ -8,12 +7,12 @@ export default {
 	methods: {
 		seleccionar(e) {
 			this.$emit("update:modelValue", e.target.textContent);
-
+			console.log(e.target.textContent);
+			console.log(e.target.id);
 			if (!this.selection[`seleccionado${e.target.id}`]) {
 				for (const property in this.selection) {
 					this.selection[property] = false;
 				}
-
 				this.selection[`seleccionado${e.target.id}`] = true;
 			}
 		},
@@ -23,39 +22,21 @@ export default {
 <template>
 	<ul>
 		<li>
-			<button
-				type="button"
-				@click="seleccionar"
-				:class="{ seleccionado: selection.seleccionado1 }"
-				id="1"
-			>
-				Baixo
-			</button>
+			<button type="button" @click="seleccionar" :class="{ seleccionado: selection.seleccionado1 }" id="1"> Baixo </button>
 		</li>
 		<li>
-			<button
-				type="button"
-				@click="seleccionar"
-				:class="{ seleccionado: selection.seleccionado2 }"
-				id="2"
-			>
-				Medio
-			</button>
+			<button type="button" @click="seleccionar" :class="{ seleccionado: selection.seleccionado2 }" id="2"> Medio </button>
 		</li>
 		<li>
-			<button
-				type="button"
-				@click="seleccionar"
-				:class="{ seleccionado: selection.seleccionado3 }"
-				id="3"
-			>
-				Alto
-			</button>
+			<button type="button" @click="seleccionar" :class="{ seleccionado: selection.seleccionado3 }" id="3"> Alto </button>
 		</li>
 	</ul>
 </template>
-
 <style scoped>
+.seleccionado {
+	border-color: rgb(255, 181, 193);
+	background: rgb(236, 101, 124);
+}
 ul {
 	display: flex;
 	gap: 10px;
@@ -63,8 +44,5 @@ ul {
 li {
 	list-style: none;
 }
-.seleccionado {
-	border-color: rgb(255, 181, 193);
-	background: rgb(236, 101, 124);
-}
+
 </style>

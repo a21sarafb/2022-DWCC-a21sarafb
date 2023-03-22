@@ -19,7 +19,7 @@ c. Unha caixa de texto tal que ao pulsar a tecla ENTER se mostre o seu contido n
 
 <body>
     <div id="data">
-        <button @click.middle="mensaxe">Púlsame!</button><br>
+        <button @click.left="mensaxe">Púlsame!</button><br>
         <p>{{ textoBoton }}</p>
         <input @keydown="update($event)" type="text">
         <p>Texto: {{ texto }}</p>

@@ -1,17 +1,19 @@
 Vue.createApp({
 	data() {
 		return {
-			num1: "",
-			num2: "",
+			num1: 0,
+			num2: 0,
+			par: true,
 		};
 	},
 	computed: {
 		suma() {
-			return this.num1 + this.num2;
+		  return this.num1 + this.num2;
 		},
-		par() {
-			if (this.num1 + this.num2 == 0) return "";
-			return (this.num1 + this.num2) % 2 == 0 ? "par" : "impar";
+	  },
+	  watch: {
+		suma() {
+		  this.par = this.suma % 2 === 0 ? true : false;
 		},
-	},
+	  }
 }).mount("#data");

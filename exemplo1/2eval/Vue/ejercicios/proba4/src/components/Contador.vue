@@ -11,6 +11,7 @@ export default {
 <template>
 	<div>
 		<p>{{ cont }}</p>
-		<button @click="cont++">Incrementar</button>
+		<button @click="cont++">
+			Incrementar</button>
 	</div>
 </template>

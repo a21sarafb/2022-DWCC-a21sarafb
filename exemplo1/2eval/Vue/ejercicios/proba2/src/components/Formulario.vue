@@ -4,7 +4,7 @@ export default {
 		return {};
 	},
 	props: {
-		persona: Object,
+		per: Object,
 	},
 };
 </script>
@@ -12,14 +12,14 @@ export default {
 	<div>
 		<form>
 			<label for="nombre">Nombre:</label>
-			<input type="text" name="nombre" id="nombre" v-model="persona.nombre" />
+			<input type="text" name="nombre" id="nombre" v-model="per.nombre" />
 			<br />
 			<label for="apellidos">Apellidos:</label>
 			<input
 				type="text"
 				name="apellidos"
 				id="apellidos"
-				v-model="persona.apellidos"
+				v-model="per.apellidos"
 			/>
 			<br />
 			<label for="ano_nacemento">Ano Nacemento:</label>
@@ -27,7 +27,7 @@ export default {
 				type="number"
 				name="ano_nacemento"
 				id="ano_nacemento"
-				v-model="persona.ano_nacemento"
+				v-model="per.ano_nacemento"
 			/>
 			<br />
 		</form>

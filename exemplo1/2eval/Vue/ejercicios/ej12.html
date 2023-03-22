@@ -37,20 +37,20 @@ l. Mostra, a modo de rexistro, as accións realizadas na partida. A última acci
 </head>
 
 <body>
-    <header>
-        <h1>Batalla</h1>
-    </header>
+    <header> <h1>Batalla</h1> </header>
     <div id="data">
         <section id="monster" class="container">
             <h2>Monstro</h2>
             <div class="healthbar">
-                <div class="healthbar__value" :style="{width:vidaM+'%'}"></div>
+                <div class="healthbar__value" 
+                :style="{width:vidaM+'%'}"></div>
             </div>
         </section>
         <section id="player" class="container">
             <h2>Vostede</h2>
             <div class="healthbar">
-                <div class="healthbar__value" :style="{width:vidaXogador+'%'}"></div>
+                <div class="healthbar__value" 
+                :style="{width:vidaXogador+'%'}"></div>
             </div>
         </section>
         <section class="container" v-show="!xogo">
@@ -66,7 +66,8 @@ l. Mostra, a modo de rexistro, as accións realizadas na partida. A última acci
         </section>
         <section id="controls" v-show="xogo">
             <button @click="ataque">ATAQUE</button>
-            <button @click="ataqueEspecial" :disabled="!ataqueEspecialDisponible">
+            <button @click="ataqueEspecial" 
+                    :disabled="!ataqueEspecialDisponible">
                 ATAQUE ESPECIAL
             </button>
             <button @click="curacion">CURACIÓN</button>
@@ -77,11 +78,15 @@ l. Mostra, a modo de rexistro, as accións realizadas na partida. A última acci
             <ul v-for="log in logsOrdenados">
                 <li>
                     <span
-                        :class="{'log--player':log.origen=='Persona','log--monster':log.origen=='Monstro'}">{{log.origen}}</span>
+                        :class="{'log--player':log.origen=='Persona',
+                        'log--monster':log.origen=='Monstro'}">
+                        {{log.origen}}</span>
                     <span v-if="log.tipo=='daño'"> ataca con </span>
                     <span v-else> recupera </span>
                     <span
-                        :class="{'log--damage':log.tipo=='daño','log--heal':log.tipo=='curacion'}">{{log.cantidad}}</span>
+                        :class="{'log--damage':log.tipo=='daño',
+                        'log--heal':log.tipo=='curacion'}">
+                        {{log.cantidad}}</span>
                 </li>
             </ul>
         </section>

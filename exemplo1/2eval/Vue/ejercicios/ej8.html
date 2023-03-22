@@ -26,13 +26,35 @@ e. Engade á páxina web unha nova caixa de texto e un novo parágrafo. Usando e
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ej8 Vue</title>
 </head>
-
+<style>
+    .claseA {
+      background-color: black;
+      color: white;
+    }
+    .claseB {
+      background-color: navy;
+      color: yellow;
+    }
+    .hidden {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+  </style>
 <body>
     <div id="data">
+      <input type="text" v-model="clase" />
+      <button @click="ocultar">Visible?</button><br />
+      <p :class="[clase,{hidden:isHidden, visible:isVisible}]">
+        Hola mundo!</p>
 
+      <input type="text" v-model="color" />
+      <p :style="{'background-color': color}">Hola mundo!</p>
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script 
+      src="https://unpkg.com/vue@3/dist/vue.global.js">
+    </script>
     <script src="ej8.js"></script>
 </body>
-
 </html>
